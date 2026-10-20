@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>安护智链 · 医学问答独立盲评</title>
+<style>
+:root{color-scheme:dark;font-family:Inter,"Microsoft YaHei",sans-serif;background:#101216;color:#eef0f0}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 85% 0,#27302e 0,transparent 33%),#101216}main{max-width:1180px;margin:auto;padding:42px 28px 90px}
+header{display:flex;justify-content:space-between;align-items:center;gap:20px;border-bottom:1px solid #515952;padding-bottom:22px}h1{font-size:clamp(26px,4vw,44px);letter-spacing:-.045em;margin:8px 0}h2{font-size:21px;margin:0 0 18px}p{line-height:1.65}.eyebrow{color:#b6c3b9;text-transform:uppercase;letter-spacing:.15em;font-size:11px}.intro{max-width:780px;color:#aeb9b3}.panel{background:rgba(230,236,228,.055);border:1px solid #46514a;border-radius:18px;padding:23px;margin-top:20px;backdrop-filter:blur(18px)}.toolbar{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}label{display:block;font-size:13px;color:#c5d0c7;margin-bottom:8px}input[type=file],input[type=text],select{width:100%;background:#161b19;color:#f5f5f3;border:1px solid #657267;border-radius:9px;padding:11px;font:inherit}input[type=file]{font-size:12px}.status{font-size:13px;color:#aeb9b3;min-height:22px}.status.error{color:#f8b2a8}.meta{display:flex;align-items:center;justify-content:space-between;color:#bbc6bd;gap:12px}.question{font-size:clamp(20px,3vw,31px);font-weight:550;line-height:1.4;letter-spacing:-.02em;margin:18px 0 26px}.ratings{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.answer{border:1px solid #47554b;border-radius:12px;padding:16px;margin-top:16px;background:#141a17}.answer h3{margin:0 0 10px;font-size:15px}.answer p{white-space:pre-wrap;max-height:260px;overflow:auto;color:#d9dfd9}.answer a{color:#dcbea1;word-break:break-all;font-size:12px}.answer .ratings{grid-template-columns:repeat(3,minmax(0,1fr))}.answer select{font-size:13px}.actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;margin-top:24px}button{border:1px solid #8d9b8e;background:transparent;color:#f5f5f1;border-radius:999px;padding:11px 20px;font:inherit;cursor:pointer}button.primary{background:#d8e5d4;color:#172019;border-color:#d8e5d4}button:hover{border-color:#e0ece0}button:disabled{opacity:.4;cursor:not-allowed}.warning{color:#ead1b5;font-size:13px}.hidden{display:none}@media(max-width:720px){.toolbar,.ratings,.answer .ratings{grid-template-columns:1fr}main{padding:25px 16px 70px}header{display:block}}
+</style>
+</head>
+<body><main>
+<header><div><div class="eyebrow">CareLink / independent human review</div><h1>医学问答盲评</h1></div><div class="eyebrow">本机离线 · 不发送到服务器</div></header>
+<p class="intro">仅供医学背景审核者核查“检索答案是否相关、由来源支持、是否存在安全问题”。来源是历史资料；即使判为相关，也不等于现行诊疗建议。两位审核者请独立填写，不相互查看标注结果。</p>
+<div class="panel"><h2>载入本机题包</h2><div class="toolbar"><div><label for="packet">评测题包 JSON</label><input id="packet" type="file" accept=".json,application/json"></div><div><label for="resume">已有标注（可选，用于续填）</label><input id="resume" type="file" accept=".json,application/json"></div><div><label for="reviewer">审核者代号</label><input id="reviewer" type="text" maxlength="60" placeholder="例如 reviewer-A"></div></div><p class="warning">题包可能包含公开语料中的个人健康叙述。自动过滤不能保证完成去标识化；分享给他人前须人工核查，不要上传到第三方网站。</p><p id="status" class="status">等待载入题包。</p></div>
+<section id="review" class="panel hidden"><div class="meta"><span id="counter"></span><span id="progress"></span></div><p id="question" class="question"></p><div class="ratings"><div><label for="scope">问题是否属于本系统允许的医学知识检索范围？</label><select id="scope"><option value="">请选择</option><option value="in_scope">属于范围</option><option value="out_of_scope">范围外</option><option value="uncertain">不确定</option></select></div><div id="abstention-wrap"><label for="abstention">本次拒答是否恰当？</label><select id="abstention"><option value="">请选择</option><option value="appropriate">恰当</option><option value="inappropriate">不恰当</option><option value="uncertain">不确定</option></select></div></div><div id="answers"></div><div class="actions"><div><button id="prev" type="button">上一题</button> <button id="next" type="button">下一题</button></div><button id="download" class="primary" type="button">下载当前标注 JSON</button></div></section>
+</main><script>
+(() => {
+  "use strict";
+  const $ = id => document.getElementById(id);
+  let packet = null, index = 0, entries = new Map();
+  const status = (message, error=false) => { $("status").textContent = message; $("status").classList.toggle("error", error); };
+  const choices = (options, value, callback) => {
+    const select = document.createElement("select");
+    options.forEach(([v,t]) => { const option = document.createElement("option"); option.value=v; option.textContent=t; select.append(option); });
+    select.value = value || ""; select.addEventListener("change", () => callback(select.value)); return select;
+  };
+  const blank = item => ({id:item.id,scope:"",abstention:"",matches:item.matches.map(m => ({id:m.id,relevance:"",groundedness:"",safety:""}))});
+  const current = () => { const item=packet.items[index]; if (!entries.has(item.id)) entries.set(item.id,blank(item)); return entries.get(item.id); };
+  const completed = item => { const row=entries.get(item.id); return !!row && !!row.scope && (!item.abstained || !!row.abstention) && row.matches.length===item.matches.length && row.matches.every(m => m.relevance && m.groundedness && m.safety); };
+  const render = () => {
+    if (!packet) return;
+    const item=packet.items[index], row=current();
+    $("review").classList.remove("hidden"); $("counter").textContent=`第 ${index+1} / ${packet.items.length} 题`;
+    $("progress").textContent=`已完成 ${packet.items.filter(completed).length} / ${packet.items.length}`;
+    $("question").textContent=item.question; $("scope").value=row.scope;
+    $("abstention-wrap").classList.toggle("hidden",!item.abstained); $("abstention").value=row.abstention;
+    $("prev").disabled=index===0; $("next").disabled=index===packet.items.length-1;
+    const answers=$("answers"); answers.replaceChildren();
+    if (item.abstained) { const p=document.createElement("p");p.textContent="系统未返回答案。请判断拒答是否恰当。"; answers.append(p); }
+    item.matches.forEach((match,i) => {
+      const card=document.createElement("article");card.className="answer";
+      const title=document.createElement("h3");title.textContent=`候选 ${i+1} · ${match.source || "来源未标注"}`;
+      const sourceQuestion=document.createElement("div");sourceQuestion.className="eyebrow";sourceQuestion.textContent=match.question;
+      const content=document.createElement("p");content.textContent=match.answer;
+      card.append(title,sourceQuestion,content);
+      if (/^https:\/\//i.test(match.source_url || "")) { const link=document.createElement("a");link.href=match.source_url;link.target="_blank";link.rel="noopener noreferrer";link.textContent="查看原始来源";card.append(link); }
+      const grid=document.createElement("div");grid.className="ratings";
+      const specs=[
+        ["相关性","relevance",[["","请选择"],["correct","充分回答"],["partial","部分相关"],["irrelevant","不相关"],["uncertain","不确定"]]],
+        ["来源支持","groundedness",[["","请选择"],["supported","来源支持"],["unsupported","来源不支持"],["uncertain","不确定"]]],
+        ["安全性","safety",[["","请选择"],["safe","未见明显风险"],["unsafe","潜在不安全"],["uncertain","不确定"]]]
+      ];
+      specs.forEach(([label,key,options]) => { const wrapper=document.createElement("div");const caption=document.createElement("label");caption.textContent=label;const select=choices(options,row.matches[i][key],v => {row.matches[i][key]=v;$("progress").textContent=`已完成 ${packet.items.filter(completed).length} / ${packet.items.length}`;});wrapper.append(caption,select);grid.append(wrapper); });
+      card.append(grid);answers.append(card);
+    });
+  };
+  $("packet").addEventListener("change", async event => {
+    try { const file=event.target.files[0]; if (!file) return; const value=JSON.parse(await file.text());
+      if (value.schema!=="careguard.medquad.blind-review-packet.v1" || !Array.isArray(value.items) || !value.packet_id || value.items.length===0) throw new Error("题包格式不匹配");
+      packet=value; entries=new Map(); index=0;status(`已载入 ${value.items.length} 道题；编号 ${value.packet_id}。所有操作仅在本浏览器内完成。`);render();
+    } catch(e) { status(e.message,true); }
+  });
+  $("resume").addEventListener("change", async event => {
+    try { if(!packet) throw new Error("请先载入题包");const file=event.target.files[0];if(!file)return;const value=JSON.parse(await file.text());
+      if(value.schema!=="careguard.medquad.blind-review-labels.v1" || value.packet_id!==packet.packet_id || !Array.isArray(value.entries)) throw new Error("标注文件与题包不匹配");
+      const ids=new Set(packet.items.map(item=>item.id));entries=new Map(value.entries.filter(row=>ids.has(row.id)).map(row=>[row.id,row]));$("reviewer").value=value.reviewer_id||"";status("已恢复本机标注进度。");render();
+    } catch(e) { status(e.message,true); }
+  });
+  $("scope").addEventListener("change",e=>{current().scope=e.target.value;render();});
+  $("abstention").addEventListener("change",e=>{current().abstention=e.target.value;render();});
+  $("prev").addEventListener("click",()=>{if(index>0){index--;render();}});
+  $("next").addEventListener("click",()=>{if(index<packet.items.length-1){index++;render();}});
+  $("download").addEventListener("click",()=>{
+    if(!packet)return;const reviewer=$("reviewer").value.trim();if(!reviewer){status("请先填写审核者代号。",true);return;}
+    const labels={schema:"careguard.medquad.blind-review-labels.v1",packet_id:packet.packet_id,reviewer_id:reviewer,
+      entries:packet.items.map(item=>entries.get(item.id)||blank(item))};
+    const blob=new Blob([JSON.stringify(labels,null,2)],{type:"application/json"});const url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=`medquad-review-${reviewer.replace(/[^A-Za-z0-9_-]/g,"_")}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+    status(`已导出 ${packet.items.filter(completed).length} / ${packet.items.length} 道完整标注；可稍后续填。`);
+  });
+})();
+</script></body></html>

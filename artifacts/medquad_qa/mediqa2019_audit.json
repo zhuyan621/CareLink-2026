@@ -1,0 +1,38 @@
+{
+  "schema": "careguard.medquad.mediqa2019-audit.v1",
+  "evaluated_date": "2026-10-12",
+  "source_url": "https://github.com/abachaa/MEDIQA2019/blob/master/MEDIQA_Task3_QA/MEDIQA2019-Task3-QA-TestSet-wLabels.xml",
+  "source_sha256": "df9bca894d252279f200ee78e85d871b57a94b224d75467b7fa38a4a0952cc1d",
+  "model_sha256": "863f88d54398aabe3494495c0fb2f7ba9610d4969fc02a910ecefd076d30f960",
+  "questions_total": 150,
+  "exact_medquad_question_overlaps_excluded": 6,
+  "strict_evaluable_questions": 52,
+  "alignment": "ReferenceScore >=3, answer prefix of at least 120 normalized characters identical to MedQuAD, non-identical question wording",
+  "deployed_baseline": {
+    "known_answer_at_1_hits": 22,
+    "known_answer_at_3_hits": 32,
+    "known_source_at_3_hits": 49,
+    "answered_hits": 52,
+    "out_of_scope_abstained": 10,
+    "out_of_scope_count": 10
+  },
+  "answer_field_candidate": {
+    "description": "0.8 deployed hybrid + 0.2 answer-field lexical similarity; first 600 answer characters; unchanged refusal gates",
+    "known_answer_at_1_hits": 21,
+    "known_answer_at_3_hits": 35,
+    "known_source_at_3_hits": 50,
+    "answered_hits": 52,
+    "out_of_scope_abstained": 10,
+    "out_of_scope_count": 10,
+    "promotion_decision": "rejected; baseline retained",
+    "reason": "First-rank known-answer retrieval declined by one case despite three more top-three known answers."
+  },
+  "locked_top1_followup": {
+    "scope": "Post-hoc experiment on already exposed LiveQA and MEDIQA questions; not independent validation",
+    "previous_liveqa_count": 80,
+    "previous_liveqa_baseline_at_3_hits": 35,
+    "previous_liveqa_candidate_at_3_hits": 34,
+    "decision": "rejected; baseline retained"
+  },
+  "limitations": "Positive-only incomplete relevance labels; not comprehensive answer accuracy, expert blind review, clinical validity, or future-disease prediction. Raw patient narratives are not included in delivery."
+}

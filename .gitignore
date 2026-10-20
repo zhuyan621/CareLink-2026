@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.pyo
+.env
+.venv/
+venv/
+logs/
+*.log
+.DS_Store
+Thumbs.db
+data/foot_ulcer_fuseg2021/
+data/prospective/
+artifacts/prospective_neural/
+artifacts/prospective_neural_candidate*/
+artifacts/prospective_neural_backup*/

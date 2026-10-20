@@ -1,0 +1,147 @@
+"""Offline, versioned LoRA training from clinician-reviewed MAPFM feedback.
+
+This is the real parameter-efficient training path.  It is intentionally separated
+from the request-serving process: training requires an explicit base model, reviewed
+labels, reproducible arguments, and produces a PEFT adapter plus a manifest.
+"""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+from pathlib import Path
+from typing import Any, Dict, List
+
+
+def load_reviewed_examples(path: Path) -> List[str]:
+    examples: List[str] = []
+    with path.open("r", encoding="utf-8") as handle:
+        for line in handle:
+            if not line.strip():
+                continue
+            event = json.loads(line)
+            label = str(event.get("human_label", "")).strip()
+            record = event.get("record", {}) or {}
+            query = str(record.get("query", "")).strip()
+            if not query or not label or label.upper() == "REJECTED":
+                continue
+            examples.append(
+                "<clinical_case>\n" + query + "\n</clinical_case>\n"
+                "<reviewed_label>" + label + "</reviewed_label>"
+            )
+    if len(examples) < 10:
+        raise ValueError("At least 10 clinician-reviewed, non-rejected examples are required")
+    return examples
+
+
+def train(args: argparse.Namespace) -> Dict[str, Any]:
+    try:
+        import torch
+        from peft import LoraConfig, TaskType, get_peft_model
+        from torch.utils.data import Dataset
+        from transformers import (
+            AutoModelForCausalLM,
+            AutoTokenizer,
+            DataCollatorForLanguageModeling,
+            Trainer,
+            TrainingArguments,
+        )
+    except ImportError as exc:
+        raise RuntimeError("Install requirements-lora.txt before LoRA training") from exc
+
+    feedback_path = Path(args.feedback).resolve()
+    output_dir = Path(args.output).resolve()
+    examples = load_reviewed_examples(feedback_path)
+    tokenizer = AutoTokenizer.from_pretrained(args.base_model, trust_remote_code=False)
+    if tokenizer.pad_token is None:
+        tokenizer.pad_token = tokenizer.eos_token
+    model = AutoModelForCausalLM.from_pretrained(args.base_model, trust_remote_code=False)
+    model = get_peft_model(
+        model,
+        LoraConfig(
+            task_type=TaskType.CAUSAL_LM,
+            r=args.rank,
+            lora_alpha=args.alpha,
+            lora_dropout=args.dropout,
+            target_modules=[item.strip() for item in args.target_modules.split(",") if item.strip()],
+            bias="none",
+        ),
+    )
+
+    class ReviewDataset(Dataset):
+        def __len__(self) -> int:
+            return len(examples)
+
+        def __getitem__(self, index: int) -> Dict[str, torch.Tensor]:
+            encoded = tokenizer(
+                examples[index], truncation=True, max_length=args.max_length,
+                return_tensors="pt",
+            )
+            return {key: value.squeeze(0) for key, value in encoded.items()}
+
+    output_dir.mkdir(parents=True, exist_ok=True)
+    training_args = TrainingArguments(
+        output_dir=str(output_dir / "checkpoints"),
+        num_train_epochs=args.epochs,
+        per_device_train_batch_size=args.batch_size,
+        gradient_accumulation_steps=args.gradient_accumulation,
+        learning_rate=args.learning_rate,
+        seed=args.seed,
+        logging_steps=5,
+        save_strategy="epoch",
+        report_to=[],
+    )
+    trainer = Trainer(
+        model=model,
+        args=training_args,
+        train_dataset=ReviewDataset(),
+        data_collator=DataCollatorForLanguageModeling(tokenizer=tokenizer, mlm=False),
+    )
+    result = trainer.train()
+    adapter_dir = output_dir / "adapter"
+    model.save_pretrained(str(adapter_dir))
+    tokenizer.save_pretrained(str(adapter_dir))
+    digest = hashlib.sha256(feedback_path.read_bytes()).hexdigest()
+    manifest = {
+        "implementation": "PEFT_LoRA",
+        "base_model": args.base_model,
+        "reviewed_examples": len(examples),
+        "feedback_sha256": digest,
+        "rank": args.rank,
+        "alpha": args.alpha,
+        "dropout": args.dropout,
+        "target_modules": args.target_modules.split(","),
+        "epochs": args.epochs,
+        "learning_rate": args.learning_rate,
+        "train_loss": float(result.training_loss),
+        "clinical_validation": False,
+        "warning": "Training completion is not clinical validation. Evaluate on a held-out patient-level external cohort.",
+    }
+    (output_dir / "training_manifest.json").write_text(
+        json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+    return manifest
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--feedback", required=True, help="Clinician-reviewed JSONL generated by the dashboard")
+    parser.add_argument("--base-model", required=True, help="Local path or Hugging Face causal-LM identifier")
+    parser.add_argument("--output", required=True)
+    parser.add_argument("--rank", type=int, default=8)
+    parser.add_argument("--alpha", type=int, default=16)
+    parser.add_argument("--dropout", type=float, default=0.05)
+    parser.add_argument("--target-modules", default="q_proj,k_proj,v_proj,o_proj")
+    parser.add_argument("--epochs", type=float, default=3.0)
+    parser.add_argument("--batch-size", type=int, default=1)
+    parser.add_argument("--gradient-accumulation", type=int, default=8)
+    parser.add_argument("--learning-rate", type=float, default=2e-4)
+    parser.add_argument("--max-length", type=int, default=1024)
+    parser.add_argument("--seed", type=int, default=42)
+    return parser
+
+
+if __name__ == "__main__":
+    parsed = build_parser().parse_args()
+    print(json.dumps(train(parsed), ensure_ascii=False, indent=2))
+

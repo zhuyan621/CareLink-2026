@@ -1,0 +1,2303 @@
+{
+  "files": {
+    ".env.example": {
+      "bytes": 674,
+      "sha256": "193f22e468cdd22db91f5a3b9b5fdfada0f198d57b5d9b8fb349953b17d6f470"
+    },
+    ".gitignore": {
+      "bytes": 229,
+      "sha256": "90b8d1a6464be24b816476605ee642f72e5455a500c007e1804121d8675f565d"
+    },
+    "AI_TOOL_DISCLOSURE_TEMPLATE.md": {
+      "bytes": 1415,
+      "sha256": "1254a28cf3a6c5cd412fb8f869d8684171a891764e8d80fe39fcc3f2191696d2"
+    },
+    "ARCHITECTURE_UPGRADE.md": {
+      "bytes": 16015,
+      "sha256": "9039b31db72d8f2bd8ac9107f2bd7e3a46c5a01b137e88cf5a6010c889f15ebc"
+    },
+    "COMPETITION_DELTA.md": {
+      "bytes": 4321,
+      "sha256": "c861e376b0296e303a0340e057f4a49301c1e34bdb12549d8055642ab45a9165"
+    },
+    "COMPETITION_UPGRADE.md": {
+      "bytes": 5570,
+      "sha256": "675f5b41d18bed30e518b879b05c4c3d9e1a44fc14e90e30068ec66fc783e75f"
+    },
+    "DELIVERY_QA_20261011.md": {
+      "bytes": 3984,
+      "sha256": "4f91382d7a77f45dfc523b98c9e0dc792cf7df42429f6d2c93b9b96cba2f39cb"
+    },
+    "DELIVERY_QA_MEDQUAD_20261012.md": {
+      "bytes": 2615,
+      "sha256": "78c51e4185f3dcae967e263d38b5cd9ebe43764b1ff2c04b999e369f098d28eb"
+    },
+    "DELIVERY_QA_MEDQUAD_GENERALIZATION_20261012.md": {
+      "bytes": 2941,
+      "sha256": "0b95a771892da32bc8dc68f6f662af8ed437b9719d85454cc962a30a87763af9"
+    },
+    "DEMO_3_MIN.md": {
+      "bytes": 2891,
+      "sha256": "f68df9fd3daa72d2fe0cac99af56241ae7fa78bdd45e63deafe7eede21cb0795"
+    },
+    "DEPLOYMENT_GUIDE.md": {
+      "bytes": 17869,
+      "sha256": "085ba52111c323845dea07d5872706213522c670a35bb04ae9cf49a3c412efe2"
+    },
+    "ENGINE_SOURCE_MERGE.md": {
+      "bytes": 2509,
+      "sha256": "1bcaf92d5d330a96e3121fce5f48257f5bf16bbb6e5549d2456a939acbe59a8e"
+    },
+    "EVIDENCE_MATRIX.md": {
+      "bytes": 3120,
+      "sha256": "2aaba49af9294bed25cf76b9c643f49ab076c939eabf120b1d05748f92c13dd8"
+    },
+    "FILE_MANIFEST.txt": {
+      "bytes": 1187,
+      "sha256": "314d53dad36444ef4cef49f69bd9c9a5418267a7602bc999d39c9dd81f7301a6"
+    },
+    "FORMAT_SPECIFICATION.md": {
+      "bytes": 10909,
+      "sha256": "fcad7160d17ba0399b753abbd24e9a55801da4f7b5c4127bcfe32090f5facceb"
+    },
+    "LITERATURE_VALIDATION_BASIS.md": {
+      "bytes": 5616,
+      "sha256": "d385d98c16bb8899e1921a0a048763556a00246e72735f18131b977ba7dcac77"
+    },
+    "Modelfile": {
+      "bytes": 772,
+      "sha256": "fce6a2ed2fd702dde05156a0fd5560c30ea8574fa27c1d7d06df4d5a8b2b8e39"
+    },
+    "Modelfile.fp16": {
+      "bytes": 775,
+      "sha256": "843d905b91874d91056e57502eab15386bec0fd822f30a211d1ef4486e5ff4b0"
+    },
+    "Modelfile.int4": {
+      "bytes": 851,
+      "sha256": "714be15396f2a2deb62732e1b4e2df6bb7bdae399ac71e35de89a02cca6e0314"
+    },
+    "Modelfile.int8": {
+      "bytes": 772,
+      "sha256": "fce6a2ed2fd702dde05156a0fd5560c30ea8574fa27c1d7d06df4d5a8b2b8e39"
+    },
+    "ORIGINAL_PACKAGE_SNAPSHOT.md": {
+      "bytes": 1751,
+      "sha256": "7f59b7ca03dd38718458d9bccdd39f219cad5b49272dff0f8032b9cf960673ff"
+    },
+    "README.md": {
+      "bytes": 24472,
+      "sha256": "2322768129a5261a618bf08202635d5c909c627e465119f862ade242ba360abe"
+    },
+    "RESEARCH_LAB_METHOD.md": {
+      "bytes": 6026,
+      "sha256": "739216356533d3afc7cd75865ec41b10665459511c59a79fcde3c327c6660438"
+    },
+    "START_HERE_新同事打开网页.md": {
+      "bytes": 8859,
+      "sha256": "21d170ee722ff20c4106b1c1784d7c3aa83951872e0fa9810dc7e83cbfc8b5ce"
+    },
+    "SUBMISSION_PACKAGE_OVERVIEW.md": {
+      "bytes": 6582,
+      "sha256": "a5fe5d1b0c3a8a4218d477b2956a8a696a9f11155964589021374b5df37425d8"
+    },
+    "TEST_PLAN.md": {
+      "bytes": 7756,
+      "sha256": "5e6aa5fb42f7ec09c9038d5da6d86aec38a3a7a472e9d01d73fc19a9cdc6fdce"
+    },
+    "TEST_REPORT.md": {
+      "bytes": 4869,
+      "sha256": "f823af30b8d88785ae82136cb97ff426d8213c3ff293109ef62cbca064f52f7d"
+    },
+    "TEST_REPORT_TEMPLATE.md": {
+      "bytes": 6619,
+      "sha256": "7f1766258cfb5f374b8e3827325d8678f5a5728eddd862f189600acd25aca956"
+    },
+    "TROUBLESHOOTING.md": {
+      "bytes": 6541,
+      "sha256": "ae329d60fe82ca60fabd90077a1dcbaf4c53d35301a09b96e16b63b4c3d7d22e"
+    },
+    "VALIDATION_REPORT.txt": {
+      "bytes": 1268,
+      "sha256": "6f7ab86e7c01991be0570b51fbc21e48d5edce43571e70be2f6d81d51eeef99d"
+    },
+    "_live_test.py": {
+      "bytes": 6075,
+      "sha256": "cf965be775da4993ff64a63a68435a31eb470518400a51b1997a7f938da36e70"
+    },
+    "api.py": {
+      "bytes": 25137,
+      "sha256": "c3605d39fbfd43afdf2b427c602f557f98fd5173075cdc4a3a62d789c09b9df5"
+    },
+    "artifacts/competition/careguard_engineering_smoke_latest.json": {
+      "bytes": 848,
+      "sha256": "725476d2720acd0b0bce0402b417bcab5720424a89cb322862f2a1c6bd4102cc"
+    },
+    "artifacts/competition/careguard_live_smoke_latest.json": {
+      "bytes": 521,
+      "sha256": "360fa458d6f8bd46c9c85ab7fb938379875bbc929f2285cc52e37ed27de965ad"
+    },
+    "artifacts/competition/careguard_pytest_latest.xml": {
+      "bytes": 25784,
+      "sha256": "645d816ab4295c849445de9d316fdaea1be44be6345a8ae47b0caf43f920f264"
+    },
+    "artifacts/medquad_qa/answer_records.jsonl": {
+      "bytes": 25646987,
+      "sha256": "8f97b47a63130cd531fac5c62cea4cb4bf012840c391116705259c7e3c9cff8c"
+    },
+    "artifacts/medquad_qa/blind_eval_manifest_20261014.json": {
+      "bytes": 3279,
+      "sha256": "f6cc0b6307eb4bb20fb3c47435e5993cd2283c70a3fe3101d0359fde04161306"
+    },
+    "artifacts/medquad_qa/generalization_20261014.json": {
+      "bytes": 2353,
+      "sha256": "3dd8c4b1bfdf9fd5aa6832e75b6dfacc1ff9b8fbec0d7ab23e5cfb69a01a5efa"
+    },
+    "artifacts/medquad_qa/generalization_benchmark.json": {
+      "bytes": 5114,
+      "sha256": "eccadf662a9f67109725a450ee730043bfb026e657ec5bf7da24690924516e04"
+    },
+    "artifacts/medquad_qa/liveqa_test_questions.xml": {
+      "bytes": 266041,
+      "sha256": "f6384fcf03e9b1bd0d9a15f6ea1a1aafc9491082e63fef0922ae2d6bc451805b"
+    },
+    "artifacts/medquad_qa/medication_development_manifest_20261014.json": {
+      "bytes": 848,
+      "sha256": "8ae64491711855a2b0c62424fab0dd2a0fb4c0af4c096c907d44a223a32dea64"
+    },
+    "artifacts/medquad_qa/mediqa2019_audit.json": {
+      "bytes": 1931,
+      "sha256": "b0f3b22c9d3d8f956ab2552ad6e3a4dbc9da1c2640c53329534341251c383951"
+    },
+    "artifacts/medquad_qa/medquad_retrieval.joblib": {
+      "bytes": 9799127,
+      "sha256": "863f88d54398aabe3494495c0fb2f7ba9610d4969fc02a910ecefd076d30f960"
+    },
+    "artifacts/medquad_qa/robustness_audit.json": {
+      "bytes": 2408,
+      "sha256": "42422eb3546fa20e3501bdb55128dccedf491c9c660e4ba289f4ae4e09b41b41"
+    },
+    "artifacts/medquad_qa/semantic/encoder/1_Pooling/config.json": {
+      "bytes": 190,
+      "sha256": "4be450dde3b0273bb9787637cfbd28fe04a7ba6ab9d36ac48e92b11e350ffc23"
+    },
+    "artifacts/medquad_qa/semantic/encoder/README.md": {
+      "bytes": 10454,
+      "sha256": "7dfc82496ec33f906b5b0d6750c1e2397da6530c74d1ae3568c55bc2739125e7"
+    },
+    "artifacts/medquad_qa/semantic/encoder/config.json": {
+      "bytes": 612,
+      "sha256": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41"
+    },
+    "artifacts/medquad_qa/semantic/encoder/config_sentence_transformers.json": {
+      "bytes": 116,
+      "sha256": "061ca9d39661d6c6d6de5ba27f79a1cd5770ea247f8d46412a68a498dc5ac9f3"
+    },
+    "artifacts/medquad_qa/semantic/encoder/model.safetensors": {
+      "bytes": 90868376,
+      "sha256": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db"
+    },
+    "artifacts/medquad_qa/semantic/encoder/modules.json": {
+      "bytes": 349,
+      "sha256": "84e40c8e006c9b1d6c122e02cba9b02458120b5fb0c87b746c41e0207cf642cf"
+    },
+    "artifacts/medquad_qa/semantic/encoder/sentence_bert_config.json": {
+      "bytes": 53,
+      "sha256": "fc1993fde0a95c24ec6c022539d41cf6e2f7c9721e5415d6fb6897472a9cd4b7"
+    },
+    "artifacts/medquad_qa/semantic/encoder/special_tokens_map.json": {
+      "bytes": 112,
+      "sha256": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3"
+    },
+    "artifacts/medquad_qa/semantic/encoder/tokenizer.json": {
+      "bytes": 466247,
+      "sha256": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037"
+    },
+    "artifacts/medquad_qa/semantic/encoder/tokenizer_config.json": {
+      "bytes": 350,
+      "sha256": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b"
+    },
+    "artifacts/medquad_qa/semantic/encoder/vocab.txt": {
+      "bytes": 231508,
+      "sha256": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+    },
+    "artifacts/medquad_qa/semantic/semantic_embeddings.npy": {
+      "bytes": 25201280,
+      "sha256": "dec02591444c064dda7dafbdbf3704010951569faa59afe50184e77787bf43d7"
+    },
+    "artifacts/medquad_qa/semantic/semantic_report.json": {
+      "bytes": 1797,
+      "sha256": "7c0150efb6ccc6a3778c605fb2aa99879f09f2eaf941766c6e3b90cfad951ab3"
+    },
+    "artifacts/medquad_qa/training_report.json": {
+      "bytes": 2372,
+      "sha256": "1f65984448bbc9e8be1ed11d7c391a3fc9047fbbd50cb5eab6387423b3e0e784"
+    },
+    "artifacts/prospective_neural/mapfm_prospective_weights.pt": {
+      "bytes": 11907,
+      "sha256": "f923f5d17d27afd6f47b6e628309dd876091a932fbbb00d39af5b4c7a0c0468e"
+    },
+    "artifacts/prospective_neural/training_report.json": {
+      "bytes": 2938,
+      "sha256": "407d7cb3a65a9678ddbfa619a345f57486da9e4898baffc7c202b6cdcf077ee2"
+    },
+    "artifacts/site-qa/carelink-brand-20261014.jpg": {
+      "bytes": 109317,
+      "sha256": "9f3b0e559dbd8ff292403bd641e4eb3bf6d1046048d86c22ea572c2d87f91993"
+    },
+    "artifacts/site-qa/competition-delta-2026-10-11.png": {
+      "bytes": 63846,
+      "sha256": "7e2d641a329ce2d66e37d0e13f2e7b3faa8bf53442e38313d183a351280807f6"
+    },
+    "artifacts/site-qa/home-2026-10-11.png": {
+      "bytes": 82840,
+      "sha256": "4a545000c3115b6abaa9c00d8ec816f127e94140d46b78ebe7eb8addd8015a8b"
+    },
+    "artifacts/site-qa/join-2026-10-11.png": {
+      "bytes": 110487,
+      "sha256": "31997c1233450d0bc0827a44c6d69407c3f46c7f8d6c9e650444cc1e1a5dfdd2"
+    },
+    "artifacts/site-qa/lab-2026-10-11.png": {
+      "bytes": 122620,
+      "sha256": "a162dcae8fc764a51935aeb7831d9f4607d8f79b8e42763e52b03c594c6fe63a"
+    },
+    "artifacts/site-qa/mapfm-agent-handbook-20261014.jpg": {
+      "bytes": 74960,
+      "sha256": "a77a0fb49d8ca6eea5f529e731431cd35e6fc8e24d3c5c2524e25de6039a2fb9"
+    },
+    "artifacts/site-qa/mapfm-ten-agents-20261014.jpg": {
+      "bytes": 72677,
+      "sha256": "24151a9642d69840b6d8cdde4ae39cc71bdf05bb8f516b8dae6af6afff64f21f"
+    },
+    "artifacts/site-qa/medquad-studio-20261012.png": {
+      "bytes": 56247,
+      "sha256": "2f725e66b9c78843b7a15e9a87c1d10d185c6b309c91c3fa6e6115e662d9694b"
+    },
+    "artifacts/site-qa/prospective-neural-live-2026-10-12.png": {
+      "bytes": 69608,
+      "sha256": "de7c8f71b6853b76515c253061abd72a6bc8dadf7c85e42d3cbf7207a65c503e"
+    },
+    "artifacts/site-qa/prospective-neural-v2-live-2026-10-12.png": {
+      "bytes": 72672,
+      "sha256": "4db56090d43aaebb8a2e30514bbc9bb7d5de4508532c0db989ae34eefe221b4e"
+    },
+    "artifacts/site-qa/workspace-2026-10-11.png": {
+      "bytes": 84807,
+      "sha256": "125f1fd363a8a1221ec828370d3d5b4339e833d0ec0e0744081a10c6d197f709"
+    },
+    "audit_logger.py": {
+      "bytes": 645,
+      "sha256": "6cd2947f97a01c2185c4c21ff1b3904ebac5a2b2e2902b42a74ec925eafdc6d6"
+    },
+    "build_competition_manifest.py": {
+      "bytes": 3706,
+      "sha256": "38dba166739aaa4d65ac76f44528c85a4101cda168fc6a69ee19077fe8c73c60"
+    },
+    "build_medquad_semantic.py": {
+      "bytes": 2821,
+      "sha256": "fdf8ce0d8679d290876c987105c087a6ce4d06cf7e2db691ebdb7fc1c9ba9243"
+    },
+    "careguard_app.py": {
+      "bytes": 37760,
+      "sha256": "a59e41f38837f75b1e4cc0413b9ed8585a9733013c315b6a099fe15bb76f2a39"
+    },
+    "careguard_cases.py": {
+      "bytes": 2686,
+      "sha256": "655a8c22d965e2553d353a428ab97d750294eade8f7f5bcda531703838e785d7"
+    },
+    "careguard_engineering_smoke.py": {
+      "bytes": 4027,
+      "sha256": "d7dafbb0b30ecba59fca9619a1aebe61e4f9007b073a6fe434699f83a3ce1908"
+    },
+    "careguard_join.py": {
+      "bytes": 7999,
+      "sha256": "e98815ef13bee7db938d15ab212581762d4dd04c0bff4b2f9e9d5aae924b7875"
+    },
+    "careguard_presenter.py": {
+      "bytes": 13132,
+      "sha256": "d6a1403157a9581c70003c2bc3f5bb47698125edc6e9286de787ce972b073eb6"
+    },
+    "careguard_site.py": {
+      "bytes": 6146,
+      "sha256": "38c840215e51c64c6ee5721d7b68a64cf24d56b8e8f6df8353e7e34fe1903ba1"
+    },
+    "careguard_smoke.py": {
+      "bytes": 3625,
+      "sha256": "7522b50b58755950d1fa957a7ae47f31a048b828c4d25e4e9620866ee58c82d1"
+    },
+    "careguard_web/architecture-details.js": {
+      "bytes": 16910,
+      "sha256": "501958d5ff73b53bb0e8db87250fe9229568506fb196f8e3fdd2f78110403e10"
+    },
+    "careguard_web/architecture.css": {
+      "bytes": 19317,
+      "sha256": "bd3734d1672c57ddafd4e9edce4caf4c3083a3d704a5af484ae6b4252347a905"
+    },
+    "careguard_web/architecture.js": {
+      "bytes": 15776,
+      "sha256": "b085a6f58210c9fbdfcd6885e8219147e3b9b86ae39d7f83d85f5c824126d33b"
+    },
+    "careguard_web/assets/archive/field-group.jpg": {
+      "bytes": 696045,
+      "sha256": "5e4250f944d36fccadf9e706f7b01cc435b49a0dbec1cdc73881f1ac5ffc4f98"
+    },
+    "careguard_web/assets/archive/field-pharmacy.jpg": {
+      "bytes": 243332,
+      "sha256": "fa3f554dfb1d39385eddcd4b8b0da37b1001e9050e92130c4b371869f5bef441"
+    },
+    "careguard_web/assets/archive/field-visit.jpeg": {
+      "bytes": 695962,
+      "sha256": "eee42790efc1e51cc66871929b3f8057ffa2fe138b48220fbc56333ffe2cb612"
+    },
+    "careguard_web/assets/archive/legacy-interface.jpeg": {
+      "bytes": 60330,
+      "sha256": "ba01b799b8485e14f9c1c4589b042d41ea8fea7422c8fb786c552380af26c863"
+    },
+    "careguard_web/assets/archive/team-work.jpg": {
+      "bytes": 219706,
+      "sha256": "1c6e45515a40cfcdfd87bc81639608682090d7154e14001ec081d80b493886c7"
+    },
+    "careguard_web/assets/join/field-place.jpeg": {
+      "bytes": 695962,
+      "sha256": "eee42790efc1e51cc66871929b3f8057ffa2fe138b48220fbc56333ffe2cb612"
+    },
+    "careguard_web/assets/join/field-team.jpeg": {
+      "bytes": 231342,
+      "sha256": "bb5a1b8c28ef8df1e34527b02514e049a10b4fd110679a81ad7473dfafb454c1"
+    },
+    "careguard_web/assets/join/working-session.jpeg": {
+      "bytes": 165447,
+      "sha256": "888a82b9918694e71c7c27b81cef5fe0463d4264c736ef5caec35ba3c3cbd2af"
+    },
+    "careguard_web/assets/research/mapfm-paper-first-page.png": {
+      "bytes": 236773,
+      "sha256": "cf6798612ac9675848bbd7d9105042c029ecaf7527aae110e4564cfbc1eb9b2b"
+    },
+    "careguard_web/assets/research/shwid-2025-contents.png": {
+      "bytes": 66229,
+      "sha256": "a73b33e2740e8bb8e9c0c9ee50af1e67ab197ff0a5a5958fa0655575b7a814ea"
+    },
+    "careguard_web/assets/research/shwid-2025-cover.png": {
+      "bytes": 177576,
+      "sha256": "68a8d2345dbb42152c4cf24af80c4a3759894e024bdd95a977fbf49e356b2b54"
+    },
+    "careguard_web/dataset.js": {
+      "bytes": 7584,
+      "sha256": "afd1984e5668ee76a4c9fdb2be17a456e920574707664cdbf928cb9a8670bc9d"
+    },
+    "careguard_web/diabetes.css": {
+      "bytes": 7437,
+      "sha256": "083f4f0128b3e5b24fad3bbe995aa9bf083567b49909fe60dccb945af339e0dd"
+    },
+    "careguard_web/diabetes.js": {
+      "bytes": 9349,
+      "sha256": "2c5fbbb37fe4bc3eb3a3e072adb9e4b36c09d1ff1beda2333f287528c2661363"
+    },
+    "careguard_web/engineering.css": {
+      "bytes": 3448,
+      "sha256": "278094e3e997e4d1d9589833a3d3715ba088800da5aea9e3b3ffa469d03a005a"
+    },
+    "careguard_web/handoff.js": {
+      "bytes": 3494,
+      "sha256": "2ec3e5821a0394388205f18531d40dc093bec2b963af9c8bbb46e10f088e4617"
+    },
+    "careguard_web/index.html": {
+      "bytes": 112011,
+      "sha256": "9f2430bed636b8e0cb3fed5c3a7f6aa51b59940ae3d2caf1229687e916ab55dc"
+    },
+    "careguard_web/join.js": {
+      "bytes": 6770,
+      "sha256": "658e4e3abf1ae0339622f522192721a6195255b4bd65dd00d0a9134a069a1b59"
+    },
+    "careguard_web/lab-data.js": {
+      "bytes": 6677,
+      "sha256": "058a7d309687c0002de6a3ae49ab9b3cdfa380534db8f3134a63817187f0cbcf"
+    },
+    "careguard_web/lab3d.js": {
+      "bytes": 24500,
+      "sha256": "ffacc519e842728017634c4900035f0bf3d9bd31997a750f776b47eb65fc172c"
+    },
+    "careguard_web/medical-language.css": {
+      "bytes": 5909,
+      "sha256": "4a605db70aa81ef62ca45cde1a33d84db1b0939e2da0e8e1a3bb4c0401b333a9"
+    },
+    "careguard_web/medical-language.js": {
+      "bytes": 9188,
+      "sha256": "8978d8034982516bf501c0e3ed4fc76cc1e5825a4d081ee090a7f80361189d09"
+    },
+    "careguard_web/medical.js": {
+      "bytes": 5278,
+      "sha256": "cf652ac1d4508f38d52d39f54e0bd96690e1e8f62e9258f66a95e3cd44b3aeed"
+    },
+    "careguard_web/medquad-review.css": {
+      "bytes": 9981,
+      "sha256": "fba6c3a60e0dd7aabf7c7f5cc6c916305854fda939cf17f243d34c2d14cacf59"
+    },
+    "careguard_web/medquad-review.js": {
+      "bytes": 8579,
+      "sha256": "d9f2fe4682e9c94a14ef3c300da931cf9c1bf0fd86c3b478d437057468822247"
+    },
+    "careguard_web/medquad.css": {
+      "bytes": 5276,
+      "sha256": "b164a0366e40dbcb3c9f46dded02632b0a3f7515f932452360b25f1a77cddc8a"
+    },
+    "careguard_web/medquad.js": {
+      "bytes": 9411,
+      "sha256": "e172e9f2d03a25df98b523fec8ebd7ad02fab0ed3b73c9d6b3308e2032290e98"
+    },
+    "careguard_web/particles.js": {
+      "bytes": 10297,
+      "sha256": "2d5f8019d037640cf6ea551b36c773b99579d26096f7179febaef73c300d2393"
+    },
+    "careguard_web/prospective-neural.css": {
+      "bytes": 4322,
+      "sha256": "c295986e289dfa31822b8e1dc460dc9e72d1d6abd35651ffb98b07927ccd59d4"
+    },
+    "careguard_web/prospective-neural.js": {
+      "bytes": 6951,
+      "sha256": "7d91c1619075b29fbb2b8ab7377f19d879aad32af002d23d6c41f1f3047607fc"
+    },
+    "careguard_web/site.css": {
+      "bytes": 138058,
+      "sha256": "6aefe99bbe3e97a4522f8a289318f1488b9ef6c02f24c83ab62218ab5f1fc973"
+    },
+    "careguard_web/site.js": {
+      "bytes": 73057,
+      "sha256": "f021a6c7bc8cd7057a6072ab65414dd3df6e8061c825b33309a75f5016c44f56"
+    },
+    "careguard_web/studio.css": {
+      "bytes": 62044,
+      "sha256": "53ce733b93cfd66f5bbb73bb5280d98fb02e83dca58629ca795fe4f5bdab5028"
+    },
+    "careguard_web/workspace-guidance.css": {
+      "bytes": 5513,
+      "sha256": "fec92bed0def871838e6994c42d306832e05b52f0d48f982980c961293790be1"
+    },
+    "chronic_dataset_gate.py": {
+      "bytes": 7257,
+      "sha256": "7a7b8a83f301ea599bbabea4ac605781421b6c25b4cf58c99f3f9899f0a4cb30"
+    },
+    "clinical_validation.py": {
+      "bytes": 10651,
+      "sha256": "10eb3ed5f4c2e3b7b9eb89d6b4c1892ab6d15f9e88570ad59260d2963e060e80"
+    },
+    "clinical_validation_artifact.example.json": {
+      "bytes": 713,
+      "sha256": "96d5ae1e7627e109a08097e60e218a8ca0581d827c43f7e5a3a154ab6b9b953e"
+    },
+    "competition_readiness.py": {
+      "bytes": 13357,
+      "sha256": "fb28d95578746411134a1ef4d4d28b11c51edebfe081a418a67507bb7ba5618c"
+    },
+    "config.yaml": {
+      "bytes": 1280,
+      "sha256": "3263a85f2417ebe3c69112fde7637eacf96a7806564c4b66182ff5114e883874"
+    },
+    "config_loader.py": {
+      "bytes": 1983,
+      "sha256": "22da4bdedc04bb489696754b47eba795c60fba1f0ae98f4fa6cc028342908026"
+    },
+    "dashboard.py": {
+      "bytes": 7871,
+      "sha256": "6632e1bb56d04040bc2369f55aba4da2bd9501c72f715b9ea8199936f62aa08b"
+    },
+    "dashboard/__init__.py": {
+      "bytes": 52,
+      "sha256": "ceab8931c91b18d79b4999929e46defefc9a4de7f46b559a1bf8a7c4698caa91"
+    },
+    "dashboard/auth.py": {
+      "bytes": 19270,
+      "sha256": "2cb689fae2e96186e5b30661435007547eed5f5748d315d7e1de7e46bd78420d"
+    },
+    "dashboard/components.py": {
+      "bytes": 21900,
+      "sha256": "952c5432ec0355a45fbbe048e12f8a088ec999370b5d71a3e75d8231857796e9"
+    },
+    "dashboard/i18n.py": {
+      "bytes": 43498,
+      "sha256": "47838d72d3d04647965c5afe487656eeaad047b5f515c91eaeaeebc4ad1f4cb1"
+    },
+    "dashboard/pages/__init__.py": {
+      "bytes": 4024,
+      "sha256": "639ce874efec19ac2755dd0ab2a41468712bc59a7bc309446f24c71c06341fb6"
+    },
+    "dashboard/pages/page_agent_monitor.py": {
+      "bytes": 20673,
+      "sha256": "eadf6b242d6f1ab5172236655dadbe8cf91c188648f25a14bd7460e8d4126835"
+    },
+    "dashboard/pages/page_audit_log.py": {
+      "bytes": 21291,
+      "sha256": "bdc947a1cfe9b14b839437ce4a324bd7d3d23fe717b6945af59f5b63500dccb6"
+    },
+    "dashboard/pages/page_clinical_safety.py": {
+      "bytes": 18243,
+      "sha256": "b206e7d3552573a9d9043ab01a9d7702a44901905b6400f8fa6596ab7b0124fd"
+    },
+    "dashboard/pages/page_competition.py": {
+      "bytes": 4581,
+      "sha256": "86d3054a0eaa6229023331f6c262a540449e25a2d9988127bf5bf000bf2a1f18"
+    },
+    "dashboard/pages/page_diagnosis.py": {
+      "bytes": 29807,
+      "sha256": "9bf9d2f93054a7aac11285dd492f7833423814d1c3d92ed1b7453bb4f51ad6c0"
+    },
+    "dashboard/pages/page_experiments.py": {
+      "bytes": 31603,
+      "sha256": "bdc0ae5036a9e015844e741ee52a01b8f87cb0fdcfadbf6f8fbaa950ebcc61bc"
+    },
+    "dashboard/pages/page_global_config.py": {
+      "bytes": 31461,
+      "sha256": "46c8cd0f57f0fbad8b17449362ec5df61a2c579e35652f9a1bac10a64c602daf"
+    },
+    "dashboard/pages/page_hardware_metrics.py": {
+      "bytes": 28239,
+      "sha256": "bbc836e723bf58afd17074cbf19331e1ce6d8169183e10ea284103ec97c7b463"
+    },
+    "dashboard/pages/page_history_logs.py": {
+      "bytes": 22155,
+      "sha256": "446df1972c6c8ea12e828fd341a0d68cd053cc1e984479cee64de151dacfc8dd"
+    },
+    "dashboard/pages/page_human_review.py": {
+      "bytes": 16411,
+      "sha256": "1669f8e1d1eabaeb3f68a7dc464d46e4d07f822c1c63491317fbded20ff96bda"
+    },
+    "dashboard/pages/page_knowledge_base.py": {
+      "bytes": 13523,
+      "sha256": "3d25ba8edcf5d8753f3a3d8c723b57a830adb3f928d209b66578b3a153e14486"
+    },
+    "dashboard/pages/page_overview.py": {
+      "bytes": 19325,
+      "sha256": "d60ab04417f7a0af809141ce456bd3e521921d2191968d4f2fc6a60fbcb74c3d"
+    },
+    "dashboard/theme.py": {
+      "bytes": 29875,
+      "sha256": "8dbfcb43c43c0a5574ad264b73c17566b9f87472dde180fc361c0f9cb29f8def"
+    },
+    "demo_assets/careguard_theme.css": {
+      "bytes": 25904,
+      "sha256": "e272b2ae60e2c74889ea8a8d19d428790bcbfc3b2ccbe859fde1b19d40c163a0"
+    },
+    "demo_assets/sample_vitals.csv": {
+      "bytes": 217,
+      "sha256": "967af3ae20d276f5d00a6db90d5fb69afc194f335ff5c470996e4e73b6b11509"
+    },
+    "deploy_medtsllm.py": {
+      "bytes": 14174,
+      "sha256": "5c60cd99e6d69a5f612e95bd448fd4710377faca2bf9b9c5d2da761dea31acf9"
+    },
+    "desensitizer.py": {
+      "bytes": 597,
+      "sha256": "dd64588e6a167c1658f4a53b2cb152a667598dc76415126e4ab9c860d0b8cbb2"
+    },
+    "diabetes_risk.py": {
+      "bytes": 4216,
+      "sha256": "0a4edd3b892d005bb4050e591994b17df999207c67f2e1768fc5057929f61b97"
+    },
+    "diagnostic_check.py": {
+      "bytes": 7071,
+      "sha256": "5c2d672d7042ed2e3f6a04ec87299c8d47123dadb9d2d4b93b77bd781cab9610"
+    },
+    "docs/3-2.png": {
+      "bytes": 219262,
+      "sha256": "8cdb23703cafa96d0fecdc9ea12ab9d6b3d3ac36cde8205a4e0534480f9928bf"
+    },
+    "docs/4-6.png": {
+      "bytes": 549074,
+      "sha256": "75ae78ba65329deffba5f285562663df9ce25539b5bda6fbe262c75dd2a3ac1c"
+    },
+    "docs/ACCEPTANCE LETTER.png": {
+      "bytes": 595462,
+      "sha256": "883ba20f73949cce17019b6083b06d67bb02c7652975362783720c1fa9c64f59"
+    },
+    "docs/ACCURACY CONTRAST.png": {
+      "bytes": 2057494,
+      "sha256": "21ce368c27a78c81e8a79336078156160ddf338236ec5af95cc9db577af42b24"
+    },
+    "docs/DIABETES_PREDICTION.md": {
+      "bytes": 4021,
+      "sha256": "4aa3d17322497ceb27550cfef8b0f3c6857bfd08c99ead26d08290048c743dd1"
+    },
+    "docs/F1-SCORE CONTRAST.png": {
+      "bytes": 1712702,
+      "sha256": "36cea9b99e941b0c528b728e8c64b581cde0f934e989ef937a879c5d237e9032"
+    },
+    "docs/F1-Score Comparison Across All Model.png": {
+      "bytes": 168626,
+      "sha256": "3861cd3117b31e0fe7f6a985d20b7f63ead9da341f0e069e3fb2e36d5ef91462"
+    },
+    "docs/HMAE_Mathematical_Foundations.aux": {
+      "bytes": 777,
+      "sha256": "b7c4dfa27631ba159feb576df77d859096c4139fefd4c3692869dd92cfa26458"
+    },
+    "docs/HMAE_Mathematical_Foundations.out": {
+      "bytes": 898,
+      "sha256": "6ea7256e094342e9ea087aafec6f617e52984645e4af65649044b1ceaf0b951e"
+    },
+    "docs/HMAE_Mathematical_Foundations.pdf": {
+      "bytes": 543599,
+      "sha256": "9a86d5537f80e8c88b4062aaa5dde8824e885a8a801841ce2ca1ed27ee776ecc"
+    },
+    "docs/HMAE_Mathematical_Foundations.tex": {
+      "bytes": 185287,
+      "sha256": "8c2609c46b7adfdc12c38f5c7126bb663f0ede36707373492175e2696c3565ab"
+    },
+    "docs/HMAE_Mathematical_Foundations.toc": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/HMAE_Mathematical_Foundations_enriched.pdf": {
+      "bytes": 731007,
+      "sha256": "66289608551aff1efb0257bb7307ab7b1983bce01fd52db21eaca5133066c08b"
+    },
+    "docs/HMAE_Retail_Migration_Report.aux": {
+      "bytes": 11400,
+      "sha256": "35256e5eb08ebdb8ea04632c2c1c2b1ea3dd4d0fcb274003fa5bbcd8fbabdd47"
+    },
+    "docs/HMAE_Retail_Migration_Report.out": {
+      "bytes": 7918,
+      "sha256": "45b7760cd7014cad5e62f40d20bf47db050ee6d0f499b72fd23ccfbec0aa7175"
+    },
+    "docs/HMAE_Retail_Migration_Report.pdf": {
+      "bytes": 501991,
+      "sha256": "7f31cfd277a8d644e31dec1c64e0b321a09cd4bb8ab50a22b99705e7e298afc1"
+    },
+    "docs/HMAE_Retail_Migration_Report.tex": {
+      "bytes": 68722,
+      "sha256": "725fd47d6f1a90a5fd41b49254d6c5ecad5fc70c15e36c458df02ae6058676d7"
+    },
+    "docs/HMAE_Retail_Migration_Report.toc": {
+      "bytes": 5472,
+      "sha256": "dd0d1a34b414c8cbcef60b6fa56d405da487c218646f5c814d9ca49028854bcb"
+    },
+    "docs/HMAE_Textbook.pdf": {
+      "bytes": 1193212,
+      "sha256": "5b1d65a9f298e12d2b20ade0176f90b4c5c9a1902b343bb06ea97d504c3a45cd"
+    },
+    "docs/HMAE_Textbook_ZeroBasis.aux": {
+      "bytes": 40247,
+      "sha256": "5588860e81be34c3c7096038cab6e46a4228b025767bc77879e3a2cad0c1a44b"
+    },
+    "docs/HMAE_Textbook_ZeroBasis.bak.tex": {
+      "bytes": 57994,
+      "sha256": "38829517257b3ade4572c582addcd54a2fe2817dbe540bae9708a491c3d7f5b0"
+    },
+    "docs/HMAE_Textbook_ZeroBasis.out": {
+      "bytes": 39692,
+      "sha256": "86e0e97106924f5336e5178f398932c3d8c7d09a56026affbe9e5f3b0f454d52"
+    },
+    "docs/HMAE_Textbook_ZeroBasis.tex": {
+      "bytes": 243407,
+      "sha256": "7170dbe6358d88d259b0a181178d84211a0038219f5a9b0f29d1541be1887c5d"
+    },
+    "docs/HMAE_Textbook_ZeroBasis.toc": {
+      "bytes": 24687,
+      "sha256": "39ff57ee01af536c1161a93233f8875b1ed3d6a4263bcab0ccc2b13339838650"
+    },
+    "docs/MAPFM.png": {
+      "bytes": 1278440,
+      "sha256": "8b4e5a33d44e44475396a57b44557bf81768f64e7dd5633d5e732ce0f55eadbd"
+    },
+    "docs/MAPFM_Test_Report.pdf": {
+      "bytes": 253082,
+      "sha256": "154e7079f2ac22bd8ca472c175f7dc0962d0a840c583bc1e6a2295458e1925f4"
+    },
+    "docs/MEDICAL_LANGUAGE_WORKSPACE.md": {
+      "bytes": 5506,
+      "sha256": "19011e62ea194d13db3365b1766b66a46ca282f75af17d091dc97175cd2129a4"
+    },
+    "docs/MEDQUAD_BLIND_EVAL_20261014.md": {
+      "bytes": 5262,
+      "sha256": "13f53cb73d75b824d33321c8d483a71d4e1d27dc51ba3b93ee2c9a2f11791c07"
+    },
+    "docs/MEDQUAD_GENERALIZATION_20261014.md": {
+      "bytes": 3274,
+      "sha256": "eba05202be9737e601436a13e429bdbc09d5e84587fd75670adef4141511ed40"
+    },
+    "docs/MEDQUAD_MEDIQA2019.md": {
+      "bytes": 3348,
+      "sha256": "fea0a78086c5ead561a48b706fa295ff4510986911cad407e42d191539a16a1f"
+    },
+    "docs/MEDQUAD_QA.md": {
+      "bytes": 6215,
+      "sha256": "6892a5e3d168f8718b5352ff8fa0a85298bf1812c9a0701570b6d01365fcaf42"
+    },
+    "docs/MEDQUAD_ROBUSTNESS.md": {
+      "bytes": 3516,
+      "sha256": "93918bc6c92266470444d5619aaf71673cc3731ed8afd6a648a60f18245f6ac9"
+    },
+    "docs/PRECISE CONTRAST.png": {
+      "bytes": 1817391,
+      "sha256": "ddef6d9a91e3ebf641cb1d2f25ce8f1dcb9b0815bff61f1d769ba644f5e11b3b"
+    },
+    "docs/RECALL CONTRAST.png": {
+      "bytes": 1633647,
+      "sha256": "d35f5b96d5ae13677c0bafdcba88ac81a5c99d912655b403f79c78cae2d2a622"
+    },
+    "docs/SWOT.png": {
+      "bytes": 369513,
+      "sha256": "1059c1d45bb0d29ae605d5fe86d63cb46ef2d8964a9fb498ca6f717d6b7fba7b"
+    },
+    "docs/SmartNursingAI/3-2.png": {
+      "bytes": 219262,
+      "sha256": "8cdb23703cafa96d0fecdc9ea12ab9d6b3d3ac36cde8205a4e0534480f9928bf"
+    },
+    "docs/SmartNursingAI/4-6.png": {
+      "bytes": 549074,
+      "sha256": "75ae78ba65329deffba5f285562663df9ce25539b5bda6fbe262c75dd2a3ac1c"
+    },
+    "docs/SmartNursingAI/ACCEPTANCE LETTER.png": {
+      "bytes": 595462,
+      "sha256": "883ba20f73949cce17019b6083b06d67bb02c7652975362783720c1fa9c64f59"
+    },
+    "docs/SmartNursingAI/MAPFM.png": {
+      "bytes": 1278440,
+      "sha256": "8b4e5a33d44e44475396a57b44557bf81768f64e7dd5633d5e732ce0f55eadbd"
+    },
+    "docs/SmartNursingAI/README.md": {
+      "bytes": 478,
+      "sha256": "341b115ef43ff35c808653f9a53af2cbec6c20cc27ad98f289b295721a4532cd"
+    },
+    "docs/SmartNursingAI/assets/business-plan.pdf": {
+      "bytes": 8904568,
+      "sha256": "fc925c95398b72f64c1b975bbdb6ba8380ed521ab84fd62426f25e4fe8cbb7e7"
+    },
+    "docs/SmartNursingAI/index.html": {
+      "bytes": 126398,
+      "sha256": "230c27ab896a1b9cb23a61818c9e3bf1a52883c6b293e91b23de1453060f94ed"
+    },
+    "docs/SmartNursingAI/“智医算”：多模态感知&多智能体博弈驱动的医疗免陪照护智能护理机器人预测系统项目计划书.pdf": {
+      "bytes": 8904568,
+      "sha256": "fc925c95398b72f64c1b975bbdb6ba8380ed521ab84fd62426f25e4fe8cbb7e7"
+    },
+    "docs/SmartNursingAI/专利.png": {
+      "bytes": 147175,
+      "sha256": "3c1ff7d59b23dd42785126b3219b53990d092e4d560f2641ca67c73e106c374a"
+    },
+    "docs/SmartNursingAI/义诊.jpg": {
+      "bytes": 296609,
+      "sha256": "4768f21cf88f4cfe42faa69d7bca104395541d15180ba79d62a4416fc7a09c8f"
+    },
+    "docs/SmartNursingAI/于海桐.jpg": {
+      "bytes": 110816,
+      "sha256": "4e075752bbbe3c51c03072c937a21ec56ce1f9a73110e38519c8adc47c0e4b1b"
+    },
+    "docs/SmartNursingAI/于海桐干嘛.png": {
+      "bytes": 31794,
+      "sha256": "f87f279bad335083853b2b8d88f4c54f63069d297a16e6db3ea2cd78be933174"
+    },
+    "docs/SmartNursingAI/卢子涵.jpg": {
+      "bytes": 28112,
+      "sha256": "431d3960242356072d7f1b814f053e939cdac4f74b5c8f42c65ccc3330824195"
+    },
+    "docs/SmartNursingAI/合同.jpg": {
+      "bytes": 165135,
+      "sha256": "42b8236510ef27a7fc436f33933315af29ed099ddd2a89330245bf853bf0b330"
+    },
+    "docs/SmartNursingAI/合影.jpg": {
+      "bytes": 696045,
+      "sha256": "5e4250f944d36fccadf9e706f7b01cc435b49a0dbec1cdc73881f1ac5ffc4f98"
+    },
+    "docs/SmartNursingAI/张宝瑄.jpg": {
+      "bytes": 139675,
+      "sha256": "4908ccd88a2ba99e1066367a15eeae6f75dbf2ac17e88edcfb08a0707d766863"
+    },
+    "docs/SmartNursingAI/张涵.jpg": {
+      "bytes": 145304,
+      "sha256": "6bc4316904bad058ec33ce89a1bd798ba4fda70117d730208a1a2a52b3d24fda"
+    },
+    "docs/SmartNursingAI/张芸嘉.jpg": {
+      "bytes": 134327,
+      "sha256": "e27bcc28b63f9baf4df34082bf3b319d1f1068ad1c0248fe4f496953f7d24b14"
+    },
+    "docs/SmartNursingAI/月姬.jpeg": {
+      "bytes": 72747,
+      "sha256": "caa0e5d18585f93c418290dd4d822979516cca78dbeaff9770533d8446f3a04b"
+    },
+    "docs/SmartNursingAI/李玥莹.jpg": {
+      "bytes": 38551,
+      "sha256": "996f6d4ea15f5284ec4e7d14a185bbaf3afa91f6a4f86c25c78b019152d20a79"
+    },
+    "docs/SmartNursingAI/祝萌璐.jpg": {
+      "bytes": 63515,
+      "sha256": "6edb332e704e72eaba2581d8b358c2ee1d3233498f6780b984d113302cb5f0ba"
+    },
+    "docs/SmartNursingAI/赵梓含.jpg": {
+      "bytes": 288764,
+      "sha256": "ade52703e6102b60eab21cab0986e250973976ba56eec13297e61003c65cacd7"
+    },
+    "docs/SmartNursingAI/陈炎希.jpg": {
+      "bytes": 116215,
+      "sha256": "a82abc35728af0327af3c2d7fd3b48c22a08a18af0b812a4dd7554a330096333"
+    },
+    "docs/_rebrand.py": {
+      "bytes": 14418,
+      "sha256": "e108f498e4da6dbb284f381f72a3cfe19605a3a14e9f43016773d8ea5a186651"
+    },
+    "docs/assets/business-plan.pdf": {
+      "bytes": 9123240,
+      "sha256": "b7a83e4c189984be2a1e3b11791bd220e7c132a4d8e5df677ae96b230c29e469"
+    },
+    "docs/chart_ablation.png": {
+      "bytes": 45067,
+      "sha256": "ae960527dff372fd6ca937667708c22be7441e0c5f3db9aa0e8315d4ae9c9c6b"
+    },
+    "docs/chart_adaptability.png": {
+      "bytes": 54532,
+      "sha256": "4296b61b442f96f6ae5fe41fa30008c43688007ba210c1a83aa2c71cee72cf5b"
+    },
+    "docs/chart_common_rare.png": {
+      "bytes": 33576,
+      "sha256": "50b121919ea1c8f0f04de368e0ecacad1ce4532b94deb0a19522595f854787e4"
+    },
+    "docs/chart_noise.png": {
+      "bytes": 62871,
+      "sha256": "058c4f858385617d6ef60fb9de91931bc2245fdac37330ff6cad5a3d9a38f0ae"
+    },
+    "docs/chart_timing.png": {
+      "bytes": 37705,
+      "sha256": "99e3544293bd64eb8881fcf677868d999daeb2b65258449927cb96c2edea4b95"
+    },
+    "docs/index.html": {
+      "bytes": 251874,
+      "sha256": "3395cdc8bfa03ddbbce08f124dcf74cf4259553814df15a63fd71ceefdbb58fe"
+    },
+    "docs/nagala_diabetes_governance.json": {
+      "bytes": 597,
+      "sha256": "433ab0a5e55dcf9351b9faff4c345c3b6dc1a84761bacb7ac78f1a900c0f555b"
+    },
+    "docs/page_diagnosis_prompt.md": {
+      "bytes": 13260,
+      "sha256": "7432b74dc703fd9721a4f534abbcc623ee65be80a02c2e26fdfa16a5a3874bf7"
+    },
+    "docs/test data.JPG": {
+      "bytes": 66873,
+      "sha256": "d4dc48a33513bbac992ce29a81162313394dd92c9cdb8af20b9b1cfe836703b5"
+    },
+    "docs/“智医算”：多模态感知&多智能体博弈驱动的医疗免陪照护智能护理机器人预测系统项目计划书.pdf": {
+      "bytes": 8904568,
+      "sha256": "fc925c95398b72f64c1b975bbdb6ba8380ed521ab84fd62426f25e4fe8cbb7e7"
+    },
+    "docs/专利.png": {
+      "bytes": 147175,
+      "sha256": "3c1ff7d59b23dd42785126b3219b53990d092e4d560f2641ca67c73e106c374a"
+    },
+    "docs/义诊.jpg": {
+      "bytes": 296609,
+      "sha256": "4768f21cf88f4cfe42faa69d7bca104395541d15180ba79d62a4416fc7a09c8f"
+    },
+    "docs/于海桐.jpg": {
+      "bytes": 110816,
+      "sha256": "4e075752bbbe3c51c03072c937a21ec56ce1f9a73110e38519c8adc47c0e4b1b"
+    },
+    "docs/于海桐干嘛.png": {
+      "bytes": 31794,
+      "sha256": "f87f279bad335083853b2b8d88f4c54f63069d297a16e6db3ea2cd78be933174"
+    },
+    "docs/代码": {
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    "docs/华圣调研.jpg": {
+      "bytes": 243332,
+      "sha256": "fa3f554dfb1d39385eddcd4b8b0da37b1001e9050e92130c4b371869f5bef441"
+    },
+    "docs/卢子涵.jpg": {
+      "bytes": 28112,
+      "sha256": "431d3960242356072d7f1b814f053e939cdac4f74b5c8f42c65ccc3330824195"
+    },
+    "docs/合同.jpg": {
+      "bytes": 165135,
+      "sha256": "42b8236510ef27a7fc436f33933315af29ed099ddd2a89330245bf853bf0b330"
+    },
+    "docs/合影.jpg": {
+      "bytes": 696045,
+      "sha256": "5e4250f944d36fccadf9e706f7b01cc435b49a0dbec1cdc73881f1ac5ffc4f98"
+    },
+    "docs/团队成长.jpg": {
+      "bytes": 219706,
+      "sha256": "1c6e45515a40cfcdfd87bc81639608682090d7154e14001ec081d80b493886c7"
+    },
+    "docs/张宝瑄.jpg": {
+      "bytes": 139675,
+      "sha256": "4908ccd88a2ba99e1066367a15eeae6f75dbf2ac17e88edcfb08a0707d766863"
+    },
+    "docs/张涵.jpg": {
+      "bytes": 145304,
+      "sha256": "6bc4316904bad058ec33ce89a1bd798ba4fda70117d730208a1a2a52b3d24fda"
+    },
+    "docs/张芸嘉.jpg": {
+      "bytes": 134327,
+      "sha256": "e27bcc28b63f9baf4df34082bf3b319d1f1068ad1c0248fe4f496953f7d24b14"
+    },
+    "docs/月姬.jpeg": {
+      "bytes": 72747,
+      "sha256": "caa0e5d18585f93c418290dd4d822979516cca78dbeaff9770533d8446f3a04b"
+    },
+    "docs/李玥莹.jpg": {
+      "bytes": 38551,
+      "sha256": "996f6d4ea15f5284ec4e7d14a185bbaf3afa91f6a4f86c25c78b019152d20a79"
+    },
+    "docs/混合检索.pdf": {
+      "bytes": 254184,
+      "sha256": "1c500f544e325a7d2c9de68498201ff1c8c3dbfb6b2f62ab622c0b5d28f6ff6d"
+    },
+    "docs/祝萌璐.jpg": {
+      "bytes": 63515,
+      "sha256": "6edb332e704e72eaba2581d8b358c2ee1d3233498f6780b984d113302cb5f0ba"
+    },
+    "docs/自适应.pdf": {
+      "bytes": 261141,
+      "sha256": "198284c28ff7ca6ee2198cd2f4ed8ec7e2e9db9bc39cb7d45d0b0f99e0a950bf"
+    },
+    "docs/赵梓含.jpg": {
+      "bytes": 288764,
+      "sha256": "ade52703e6102b60eab21cab0986e250973976ba56eec13297e61003c65cacd7"
+    },
+    "docs/重排序.pdf": {
+      "bytes": 269119,
+      "sha256": "44ff8a9ae78142747ee24dc5a21b1e83b231fa551464d6aec6666d15b41f1f75"
+    },
+    "docs/陈炎希.jpg": {
+      "bytes": 116215,
+      "sha256": "a82abc35728af0327af3c2d7fd3b48c22a08a18af0b812a4dd7554a330096333"
+    },
+    "evaluate_metrics.py": {
+      "bytes": 5730,
+      "sha256": "8411e3b3f253e973d196a2c27f0093f86188b7bece04e7af73e426065ee1b4ee"
+    },
+    "evidence_ingestion.py": {
+      "bytes": 6531,
+      "sha256": "98053ae3e537806762dce0a56e0a34295b40d62e3a548aade0de2d451098e881"
+    },
+    "examples/run_single_request.py": {
+      "bytes": 723,
+      "sha256": "a12d9ce5a6970a74f88876802c2014f7d2414c42290d1722c8a688c688f6506f"
+    },
+    "exceptions.py": {
+      "bytes": 1434,
+      "sha256": "682c400d2b8f1df048a1e68aa69b169569826a1cb380cc8be896910e6b0bef81"
+    },
+    "generate_innovation_report.py": {
+      "bytes": 35934,
+      "sha256": "9574a08afc1d7e1d17a555133b264c0ce52762e9811920b0a8b8fac4a85df1b4"
+    },
+    "generate_report.py": {
+      "bytes": 18703,
+      "sha256": "27f2a7f927648338653c88b0bbe6448e8f224499ef5955f756a08d51caac7fe6"
+    },
+    "generate_test_report.py": {
+      "bytes": 28647,
+      "sha256": "47c76fda990d3cc94c30e6cd44f7d0d05e28f2612d4b66d0aeda4f746f8aad80"
+    },
+    "logging_config.py": {
+      "bytes": 2429,
+      "sha256": "3958d59bc1cfa180629f216d67817f3522efb126d0aa929c5f52ce6296105c77"
+    },
+    "mapfm_chronic_extension.py": {
+      "bytes": 3884,
+      "sha256": "7037d2e5f3d607b9bbfbb90c634e218c9566769744a94cd283b08fec1714836a"
+    },
+    "mapfm_ecosystem_repaired.py": {
+      "bytes": 236989,
+      "sha256": "99a51b18bdb7e1b806e73af0ef7b3252734106e6accfd83b89cdb0043effa529"
+    },
+    "mapfm_prospective_neural.py": {
+      "bytes": 14355,
+      "sha256": "b39640f45baf58840f123602f6d30394aea71d42d67e4676928ee9930614661b"
+    },
+    "mapfm_utils/__init__.py": {
+      "bytes": 22,
+      "sha256": "bae9a5994c2e740aa888d439b5af349735e7d12790ddb554b3b1815d57d7b96b"
+    },
+    "mapfm_utils/multimodal_utils.py": {
+      "bytes": 23684,
+      "sha256": "36e6ab0bef79593d8cfa4f281731a313b17c5a78d3af3a3d06251712afdbea02"
+    },
+    "mapfm_utils/system_monitor.py": {
+      "bytes": 19201,
+      "sha256": "e10e33a2d6d33b152687532fd625ab96c86865968be307e47363b6dcce9545dc"
+    },
+    "med-ts-llm_source/configs/datasets/bidmc.toml": {
+      "bytes": 1052,
+      "sha256": "bcaf67ff3589db2a3d533083036227ad7933112b04dac7b6caaa71ca48cbdea6"
+    },
+    "med-ts-llm_source/configs/datasets/ecgmit-anom.toml": {
+      "bytes": 1085,
+      "sha256": "f9f5e7974eb84ff20734843e6c2973f176663ae2c061899bac99704bcc8bff31"
+    },
+    "med-ts-llm_source/configs/datasets/ecgmit-seg.toml": {
+      "bytes": 1032,
+      "sha256": "f9a3cb22903cb3e33e0478f5976e02a53ba76d8b09e2f8ad39d0e4426ec9bc81"
+    },
+    "med-ts-llm_source/datasets/__init__.py": {
+      "bytes": 1083,
+      "sha256": "4593ee74d5f990a4b3687cf6f416bda6ec877b2e1566555fe918f427eea47ba3"
+    },
+    "med-ts-llm_source/datasets/base.py": {
+      "bytes": 10316,
+      "sha256": "8c7394487277d10110599dca534e254cbefb86a9f79ca0f62647daa7ae40f26a"
+    },
+    "med-ts-llm_source/models/__init__.py": {
+      "bytes": 375,
+      "sha256": "9ee6629cfc371f290061483f5d39e174e7afbf4297bdbf6c09d875e285676cd3"
+    },
+    "med-ts-llm_source/models/layers/RevIN.py": {
+      "bytes": 2177,
+      "sha256": "55e5bdf814bf951b326540a2f8a7d59bf16451491b8d618be065dc556c6735b8"
+    },
+    "med-ts-llm_source/models/layers/embed.py": {
+      "bytes": 7364,
+      "sha256": "6db574579ff96f3ad79068f3f427d612872d11da3e75c957cb9190119765826a"
+    },
+    "med-ts-llm_source/models/medtsllm.py": {
+      "bytes": 24111,
+      "sha256": "065a8a3a56e4000b67f8f18e43db03f8fceaded13852c89924886253233980b1"
+    },
+    "med-ts-llm_source/recommended.txt": {
+      "bytes": 71,
+      "sha256": "318fa9eff036c5f427b70fed8127ec4ffb6a9ac03a738d552e216e3b4f862cdf"
+    },
+    "med-ts-llm_source/requirements.txt": {
+      "bytes": 319,
+      "sha256": "fb70c0b4ec8521c714d7ae03f33749b059510f918239b8777f099c0860219e8c"
+    },
+    "med-ts-llm_source/tasks/__init__.py": {
+      "bytes": 662,
+      "sha256": "852d672140247f85c1b2872e47ea741164c1b2e2268956379f4d4d642f0e727b"
+    },
+    "med-ts-llm_source/tasks/anomaly_detection.py": {
+      "bytes": 10035,
+      "sha256": "1896b96ae51670074c3925eefb9006ebf7c3ec8cfedc92ce602caa4a4d87246b"
+    },
+    "med-ts-llm_source/tasks/base.py": {
+      "bytes": 11182,
+      "sha256": "17666e766b4144004a55bac1e6d1c4d95a73f20122d1c13a8fc9d695c2f30939"
+    },
+    "med-ts-llm_source/tasks/forecasting.py": {
+      "bytes": 4047,
+      "sha256": "8af2bf0b30cfef5802320f699ce2584d4bcb8dfcfe2362304b626d085762d56b"
+    },
+    "med-ts-llm_source/tasks/pretraining.py": {
+      "bytes": 1277,
+      "sha256": "82e9de355ba1d7abb8e3a8a6f40bffc51015ab368ce49c3b808f2c899998306e"
+    },
+    "med-ts-llm_source/tasks/reconstruction.py": {
+      "bytes": 4076,
+      "sha256": "d45318d48d652f8ca83d432a512592fc2200cd32505547d1e78b4cd9d68f00a0"
+    },
+    "med-ts-llm_source/tasks/segmentation.py": {
+      "bytes": 12553,
+      "sha256": "59e6414692889cd781b26ceadb2c205210fc2d31ece9976e1986a885b9b1b56a"
+    },
+    "med-ts-llm_source/tasks/semantic_segmentation.py": {
+      "bytes": 6162,
+      "sha256": "463e6f3851f9e1b1d7bcc4541329b1e7f47139ea06b0d0d0a0bc5d3d746703d4"
+    },
+    "med-ts-llm_source/test.py": {
+      "bytes": 1138,
+      "sha256": "9a544e8d42c9504f6c8e7595d6caf0cca48e796469af99eb4237509b32213ab3"
+    },
+    "med-ts-llm_source/train.py": {
+      "bytes": 664,
+      "sha256": "5668df5360db789bbaab6a4274ee3c4e0d9014f01114597473c67b09d96be079"
+    },
+    "med-ts-llm_source/utils.py": {
+      "bytes": 2459,
+      "sha256": "eb844d8d42cf0e18f799d0255e0db9276fa81e4fc88a9ede2d89875c94a65362"
+    },
+    "medNo.22.csv": {
+      "bytes": 1338191,
+      "sha256": "00474d427edd5e93ed96424923ad4e8b66d91bc451ee25e653c1a050bd36384e"
+    },
+    "medical_language.py": {
+      "bytes": 7081,
+      "sha256": "208596e4422a969cc015ab2dfb156337b64f9933a3fbcabc0f31812abff02708"
+    },
+    "medquad_blind_eval.py": {
+      "bytes": 23698,
+      "sha256": "947a2d2ce8fb873095d58af52f8505330942d929de7e2c109b2a436cfe8f5301"
+    },
+    "medquad_generalization.py": {
+      "bytes": 10852,
+      "sha256": "7db45c1f9f43e7bc4fff74bed0d87b82a8320af328090b6cd42469b897790d67"
+    },
+    "medquad_holdout.py": {
+      "bytes": 7498,
+      "sha256": "20c2d8a5a4047778520121bd2feff52b2e3351c47531eb7f5ce2f20803fe2b8a"
+    },
+    "medquad_mediqa_audit.py": {
+      "bytes": 4571,
+      "sha256": "1a966d817987d2ce529f2886247e053639337ea81aa1709473264c5054bc2271"
+    },
+    "medquad_meqsum_audit.py": {
+      "bytes": 3003,
+      "sha256": "2bd02bfee52d93bc2263b1a3a39855f87a9c9c275913fec43251c9fb3b6ba9ae"
+    },
+    "medquad_meqsum_eval.py": {
+      "bytes": 2904,
+      "sha256": "d621f24594be615f9f288e965d9a5b012aa3e406cf3077ff8a8c997eb7c60ab9"
+    },
+    "medquad_meqsum_qa_trial.py": {
+      "bytes": 6300,
+      "sha256": "3b4275adb1e0951fc0ec191cea258780d23aebfb0d1bab77f3a4d9a6382047ca"
+    },
+    "medquad_official_master.zip": {
+      "bytes": 16185461,
+      "sha256": "45aeef400844f3551a7862c3378cc9edf72818ef09d6c1d400f227207ee5179d"
+    },
+    "medquad_qa.py": {
+      "bytes": 19509,
+      "sha256": "f3b3fa2a17f615b4a41c190003b9b3f91634fb4e19e47bf177078b86efadda3f"
+    },
+    "medquad_rqe_benchmark.py": {
+      "bytes": 4399,
+      "sha256": "1e710e9609eb66c0c8d3ca20e905482ad861109fde902925833b64a72c0cb1e4"
+    },
+    "medquad_rqe_encoder_eval.py": {
+      "bytes": 2316,
+      "sha256": "d18d38d36eb5b3d11ac622ac1edb8af47363254883aef642a971b84fda431aad"
+    },
+    "medquad_rqe_trial.py": {
+      "bytes": 6907,
+      "sha256": "80f50cec6b87cbe45132c41c9ec05b0b00dd47cde72295b56dfa2202e6ccf7d1"
+    },
+    "medtsllm_adapter.py": {
+      "bytes": 20770,
+      "sha256": "a771ff4cb2dbff1f4180ac642914326cbd3a6844379468c2a592b97944c89899"
+    },
+    "medtsllm_deployment_report.json": {
+      "bytes": 1164,
+      "sha256": "5cd153521f2967c60b0775f9382ee18acd093f8700d9fccc1a259fafc952da35"
+    },
+    "original/GU YUANJIE.docx": {
+      "bytes": 73220,
+      "sha256": "43c7e5359f206aa2d7cbfbbd3f4ff1e211c4520adbc9a9b1cbc33831c9a8c579"
+    },
+    "original/GU_YUANJIE_original.py": {
+      "bytes": 116834,
+      "sha256": "a16b7a762e23a6cc9e98cad5103a915e422b65a649762e518946809589539ef3"
+    },
+    "original/heterogeneous_multi_agent_ecosystem.py": {
+      "bytes": 116834,
+      "sha256": "a16b7a762e23a6cc9e98cad5103a915e422b65a649762e518946809589539ef3"
+    },
+    "original/prompt5.19.docx": {
+      "bytes": 19118,
+      "sha256": "77b9ae3c1773c1210c17b176edf773894b7f01cf330309c3e4f7df537ea4effc"
+    },
+    "original_engine_package/.env.example": {
+      "bytes": 674,
+      "sha256": "193f22e468cdd22db91f5a3b9b5fdfada0f198d57b5d9b8fb349953b17d6f470"
+    },
+    "original_engine_package/.gitignore": {
+      "bytes": 75,
+      "sha256": "7e498b6b6bbcf091d1ff08dd903f781bfdcd66e11267ed7378bf7e3d4a5800b9"
+    },
+    "original_engine_package/ARCHITECTURE_UPGRADE.md": {
+      "bytes": 16015,
+      "sha256": "9039b31db72d8f2bd8ac9107f2bd7e3a46c5a01b137e88cf5a6010c889f15ebc"
+    },
+    "original_engine_package/DEPLOYMENT_GUIDE.md": {
+      "bytes": 17869,
+      "sha256": "085ba52111c323845dea07d5872706213522c670a35bb04ae9cf49a3c412efe2"
+    },
+    "original_engine_package/FILE_MANIFEST.txt": {
+      "bytes": 1187,
+      "sha256": "314d53dad36444ef4cef49f69bd9c9a5418267a7602bc999d39c9dd81f7301a6"
+    },
+    "original_engine_package/FORMAT_SPECIFICATION.md": {
+      "bytes": 10909,
+      "sha256": "fcad7160d17ba0399b753abbd24e9a55801da4f7b5c4127bcfe32090f5facceb"
+    },
+    "original_engine_package/LITERATURE_VALIDATION_BASIS.md": {
+      "bytes": 5616,
+      "sha256": "d385d98c16bb8899e1921a0a048763556a00246e72735f18131b977ba7dcac77"
+    },
+    "original_engine_package/Modelfile": {
+      "bytes": 772,
+      "sha256": "fce6a2ed2fd702dde05156a0fd5560c30ea8574fa27c1d7d06df4d5a8b2b8e39"
+    },
+    "original_engine_package/Modelfile.fp16": {
+      "bytes": 775,
+      "sha256": "843d905b91874d91056e57502eab15386bec0fd822f30a211d1ef4486e5ff4b0"
+    },
+    "original_engine_package/Modelfile.int4": {
+      "bytes": 851,
+      "sha256": "714be15396f2a2deb62732e1b4e2df6bb7bdae399ac71e35de89a02cca6e0314"
+    },
+    "original_engine_package/Modelfile.int8": {
+      "bytes": 772,
+      "sha256": "fce6a2ed2fd702dde05156a0fd5560c30ea8574fa27c1d7d06df4d5a8b2b8e39"
+    },
+    "original_engine_package/README.md": {
+      "bytes": 12120,
+      "sha256": "4fb6f14609023cec07e5c31de62ec989a52cbb64d413f29dc257d428661b4b40"
+    },
+    "original_engine_package/TEST_PLAN.md": {
+      "bytes": 7756,
+      "sha256": "5e6aa5fb42f7ec09c9038d5da6d86aec38a3a7a472e9d01d73fc19a9cdc6fdce"
+    },
+    "original_engine_package/TEST_REPORT.md": {
+      "bytes": 4869,
+      "sha256": "f823af30b8d88785ae82136cb97ff426d8213c3ff293109ef62cbca064f52f7d"
+    },
+    "original_engine_package/TEST_REPORT_TEMPLATE.md": {
+      "bytes": 6619,
+      "sha256": "7f1766258cfb5f374b8e3827325d8678f5a5728eddd862f189600acd25aca956"
+    },
+    "original_engine_package/TROUBLESHOOTING.md": {
+      "bytes": 6541,
+      "sha256": "ae329d60fe82ca60fabd90077a1dcbaf4c53d35301a09b96e16b63b4c3d7d22e"
+    },
+    "original_engine_package/VALIDATION_REPORT.txt": {
+      "bytes": 1268,
+      "sha256": "6f7ab86e7c01991be0570b51fbc21e48d5edce43571e70be2f6d81d51eeef99d"
+    },
+    "original_engine_package/_codex_pre_competition_upgrade_20260919/api.py": {
+      "bytes": 9616,
+      "sha256": "dd04fbbdaaac489b3f78d0a21b9cfddd3d4aa7d78a1ac501238417a764b12b5a"
+    },
+    "original_engine_package/_codex_pre_competition_upgrade_20260919/config.yaml": {
+      "bytes": 1016,
+      "sha256": "caa049ebb2561ac2645fe2b941b0d598696d086642dac71185997280ac7937c1"
+    },
+    "original_engine_package/_codex_pre_competition_upgrade_20260919/dashboard.py": {
+      "bytes": 7268,
+      "sha256": "5380414e56edcc58c0f9df7622a414f64c7735dc2f8bf0b3ccef9bbb8d26fc42"
+    },
+    "original_engine_package/_codex_pre_competition_upgrade_20260919/dashboard/auth.py": {
+      "bytes": 17680,
+      "sha256": "ceba09e66fb023cff6a1f411da0846bd7b37c179ddc3d000a791fe5cd4cee8de"
+    },
+    "original_engine_package/_codex_pre_competition_upgrade_20260919/dashboard/i18n.py": {
+      "bytes": 43544,
+      "sha256": "7bb7511819fdc45421ebf04d0249dcf48383e950f8660c1ea0bfaa8ea8525a8e"
+    },
+    "original_engine_package/_codex_pre_competition_upgrade_20260919/dashboard/pages/page_human_review.py": {
+      "bytes": 16051,
+      "sha256": "28c6d279495be59204336f4e9c0037b2a60195d10d872096a215c5a200cfc062"
+    },
+    "original_engine_package/_codex_pre_competition_upgrade_20260919/mapfm_ecosystem_repaired.py": {
+      "bytes": 216551,
+      "sha256": "88663fc6b52392265e52eb8f509ba2d0c8a09bc9c3342535b4841bc3aa458416"
+    },
+    "original_engine_package/_codex_pre_competition_upgrade_20260919/medtsllm_adapter.py": {
+      "bytes": 18923,
+      "sha256": "a1c51acfa17f82928ced9ef701f9a0c185a75e1c3d417b009ae8868abf043873"
+    },
+    "original_engine_package/_codex_pre_competition_upgrade_20260919/requirements.txt": {
+      "bytes": 1300,
+      "sha256": "1f41e37aeee876d09f41de1e2db88eb525b68cdccb3241b543c688a595bb3c5f"
+    },
+    "original_engine_package/_codex_pre_competition_upgrade_20260919/utils/__init__.py": {
+      "bytes": 17717,
+      "sha256": "4985d1d9023206624e0861df8036f60b8f49f31a7d87efc967642e4303d9bce1"
+    },
+    "original_engine_package/_live_result.json": {
+      "bytes": 42387,
+      "sha256": "6609af4ce6d334715a593fdebd5469736e3f3af229bb3177f8e3a03a0cbbe709"
+    },
+    "original_engine_package/_live_test.py": {
+      "bytes": 6075,
+      "sha256": "cf965be775da4993ff64a63a68435a31eb470518400a51b1997a7f938da36e70"
+    },
+    "original_engine_package/api.py": {
+      "bytes": 11334,
+      "sha256": "6eae3f38f97fc3cd62e679724ff9853355a7ea12206ff6e70dcfe014fdfa864a"
+    },
+    "original_engine_package/api_backup.py": {
+      "bytes": 9417,
+      "sha256": "7a0897de4d44a6ee46edd93dfd96091a7caef52d7fa173e230b8915693273b37"
+    },
+    "original_engine_package/artifacts/competition/competition_readiness_20260920_151024.json": {
+      "bytes": 4551,
+      "sha256": "eef0d65efa78ae66f3a4f148d904b91ff3b92f0355252cd5d3080506726f19e7"
+    },
+    "original_engine_package/artifacts/competition/competition_readiness_20260920_154754.json": {
+      "bytes": 5385,
+      "sha256": "1864bbc834fb71dcad354e8c8458105f99173f448d729c98689e9991a5552043"
+    },
+    "original_engine_package/artifacts/competition/competition_readiness_latest.json": {
+      "bytes": 5385,
+      "sha256": "1864bbc834fb71dcad354e8c8458105f99173f448d729c98689e9991a5552043"
+    },
+    "original_engine_package/artifacts/competition/live_pipeline_20260920_151342.json": {
+      "bytes": 16077,
+      "sha256": "6a57d1fba11691e574d00f4580ea8013b9213d3ae336cdd5aa4b414628edbe4e"
+    },
+    "original_engine_package/artifacts/competition/live_pipeline_20260920_152250.json": {
+      "bytes": 23588,
+      "sha256": "aa006271b30b26b3fa0d27f2319f004c9e79ac01c09fc51330132480be7b7adc"
+    },
+    "original_engine_package/artifacts/competition/live_pipeline_20260920_152838.json": {
+      "bytes": 23938,
+      "sha256": "a7ec9cfda732fe57e1f27d2405e3b968cb4150af8d415302bbbf970bef04d195"
+    },
+    "original_engine_package/artifacts/competition/live_pipeline_20260920_153735.json": {
+      "bytes": 24080,
+      "sha256": "d51ebe0564d8da94a1b65ce1723801bc55c1da3a0d2fe56277abfd62586adb9e"
+    },
+    "original_engine_package/artifacts/competition/live_pipeline_20260920_154904.json": {
+      "bytes": 24114,
+      "sha256": "f88a3f3e7c8dbafa2e245f195454b27c4759ca74ad81f8b59a0ad0e00365d63c"
+    },
+    "original_engine_package/artifacts/competition/live_pipeline_latest.json": {
+      "bytes": 24114,
+      "sha256": "f88a3f3e7c8dbafa2e245f195454b27c4759ca74ad81f8b59a0ad0e00365d63c"
+    },
+    "original_engine_package/artifacts/competition/pytest_full_report.xml": {
+      "bytes": 10155,
+      "sha256": "d9b420863cc5fb1280e01cac693e0aac26a6999c5bd3abc6a865355d4e4b3081"
+    },
+    "original_engine_package/artifacts/competition/release_manifest_20260920_155328.json": {
+      "bytes": 1651,
+      "sha256": "242348922cbc1cfefef6edc85ee91acf36276d27d2234f3a92e6a35410c957f5"
+    },
+    "original_engine_package/artifacts/competition/release_manifest_latest.json": {
+      "bytes": 1651,
+      "sha256": "242348922cbc1cfefef6edc85ee91acf36276d27d2234f3a92e6a35410c957f5"
+    },
+    "original_engine_package/audit_logger.py": {
+      "bytes": 645,
+      "sha256": "6cd2947f97a01c2185c4c21ff1b3904ebac5a2b2e2902b42a74ec925eafdc6d6"
+    },
+    "original_engine_package/build_competition_manifest.py": {
+      "bytes": 3706,
+      "sha256": "38dba166739aaa4d65ac76f44528c85a4101cda168fc6a69ee19077fe8c73c60"
+    },
+    "original_engine_package/clinical_validation.py": {
+      "bytes": 10651,
+      "sha256": "10eb3ed5f4c2e3b7b9eb89d6b4c1892ab6d15f9e88570ad59260d2963e060e80"
+    },
+    "original_engine_package/clinical_validation_artifact.example.json": {
+      "bytes": 713,
+      "sha256": "96d5ae1e7627e109a08097e60e218a8ca0581d827c43f7e5a3a154ab6b9b953e"
+    },
+    "original_engine_package/competition_readiness.py": {
+      "bytes": 13357,
+      "sha256": "fb28d95578746411134a1ef4d4d28b11c51edebfe081a418a67507bb7ba5618c"
+    },
+    "original_engine_package/config.yaml": {
+      "bytes": 1280,
+      "sha256": "3263a85f2417ebe3c69112fde7637eacf96a7806564c4b66182ff5114e883874"
+    },
+    "original_engine_package/config_backup.yaml": {
+      "bytes": 1013,
+      "sha256": "215777fe239e63e929497aed9e7c77ae07c0a7737be93616eac17ca44d405f20"
+    },
+    "original_engine_package/config_loader.py": {
+      "bytes": 1983,
+      "sha256": "22da4bdedc04bb489696754b47eba795c60fba1f0ae98f4fa6cc028342908026"
+    },
+    "original_engine_package/dashboard.py": {
+      "bytes": 7871,
+      "sha256": "6632e1bb56d04040bc2369f55aba4da2bd9501c72f715b9ea8199936f62aa08b"
+    },
+    "original_engine_package/dashboard/__init__.py": {
+      "bytes": 52,
+      "sha256": "ceab8931c91b18d79b4999929e46defefc9a4de7f46b559a1bf8a7c4698caa91"
+    },
+    "original_engine_package/dashboard/auth.py": {
+      "bytes": 19270,
+      "sha256": "2cb689fae2e96186e5b30661435007547eed5f5748d315d7e1de7e46bd78420d"
+    },
+    "original_engine_package/dashboard/components.py": {
+      "bytes": 21900,
+      "sha256": "952c5432ec0355a45fbbe048e12f8a088ec999370b5d71a3e75d8231857796e9"
+    },
+    "original_engine_package/dashboard/i18n.py": {
+      "bytes": 43498,
+      "sha256": "47838d72d3d04647965c5afe487656eeaad047b5f515c91eaeaeebc4ad1f4cb1"
+    },
+    "original_engine_package/dashboard/pages/__init__.py": {
+      "bytes": 4024,
+      "sha256": "639ce874efec19ac2755dd0ab2a41468712bc59a7bc309446f24c71c06341fb6"
+    },
+    "original_engine_package/dashboard/pages/page_agent_monitor.py": {
+      "bytes": 20673,
+      "sha256": "eadf6b242d6f1ab5172236655dadbe8cf91c188648f25a14bd7460e8d4126835"
+    },
+    "original_engine_package/dashboard/pages/page_audit_log.py": {
+      "bytes": 21291,
+      "sha256": "bdc947a1cfe9b14b839437ce4a324bd7d3d23fe717b6945af59f5b63500dccb6"
+    },
+    "original_engine_package/dashboard/pages/page_clinical_safety.py": {
+      "bytes": 18243,
+      "sha256": "b206e7d3552573a9d9043ab01a9d7702a44901905b6400f8fa6596ab7b0124fd"
+    },
+    "original_engine_package/dashboard/pages/page_competition.py": {
+      "bytes": 4581,
+      "sha256": "86d3054a0eaa6229023331f6c262a540449e25a2d9988127bf5bf000bf2a1f18"
+    },
+    "original_engine_package/dashboard/pages/page_diagnosis.py": {
+      "bytes": 29807,
+      "sha256": "9bf9d2f93054a7aac11285dd492f7833423814d1c3d92ed1b7453bb4f51ad6c0"
+    },
+    "original_engine_package/dashboard/pages/page_experiments.py": {
+      "bytes": 31603,
+      "sha256": "bdc0ae5036a9e015844e741ee52a01b8f87cb0fdcfadbf6f8fbaa950ebcc61bc"
+    },
+    "original_engine_package/dashboard/pages/page_global_config.py": {
+      "bytes": 31461,
+      "sha256": "46c8cd0f57f0fbad8b17449362ec5df61a2c579e35652f9a1bac10a64c602daf"
+    },
+    "original_engine_package/dashboard/pages/page_hardware_metrics.py": {
+      "bytes": 28239,
+      "sha256": "bbc836e723bf58afd17074cbf19331e1ce6d8169183e10ea284103ec97c7b463"
+    },
+    "original_engine_package/dashboard/pages/page_history_logs.py": {
+      "bytes": 22155,
+      "sha256": "446df1972c6c8ea12e828fd341a0d68cd053cc1e984479cee64de151dacfc8dd"
+    },
+    "original_engine_package/dashboard/pages/page_human_review.py": {
+      "bytes": 16411,
+      "sha256": "1669f8e1d1eabaeb3f68a7dc464d46e4d07f822c1c63491317fbded20ff96bda"
+    },
+    "original_engine_package/dashboard/pages/page_knowledge_base.py": {
+      "bytes": 13523,
+      "sha256": "3d25ba8edcf5d8753f3a3d8c723b57a830adb3f928d209b66578b3a153e14486"
+    },
+    "original_engine_package/dashboard/pages/page_overview.py": {
+      "bytes": 19325,
+      "sha256": "d60ab04417f7a0af809141ce456bd3e521921d2191968d4f2fc6a60fbcb74c3d"
+    },
+    "original_engine_package/dashboard/theme.py": {
+      "bytes": 29875,
+      "sha256": "8dbfcb43c43c0a5574ad264b73c17566b9f87472dde180fc361c0f9cb29f8def"
+    },
+    "original_engine_package/deploy_medtsllm.py": {
+      "bytes": 14174,
+      "sha256": "5c60cd99e6d69a5f612e95bd448fd4710377faca2bf9b9c5d2da761dea31acf9"
+    },
+    "original_engine_package/desensitizer.py": {
+      "bytes": 597,
+      "sha256": "dd64588e6a167c1658f4a53b2cb152a667598dc76415126e4ab9c860d0b8cbb2"
+    },
+    "original_engine_package/diagnostic_check.py": {
+      "bytes": 7071,
+      "sha256": "5c2d672d7042ed2e3f6a04ec87299c8d47123dadb9d2d4b93b77bd781cab9610"
+    },
+    "original_engine_package/docs/3-2.png": {
+      "bytes": 219262,
+      "sha256": "8cdb23703cafa96d0fecdc9ea12ab9d6b3d3ac36cde8205a4e0534480f9928bf"
+    },
+    "original_engine_package/docs/4-6.png": {
+      "bytes": 549074,
+      "sha256": "75ae78ba65329deffba5f285562663df9ce25539b5bda6fbe262c75dd2a3ac1c"
+    },
+    "original_engine_package/docs/ACCEPTANCE LETTER.png": {
+      "bytes": 595462,
+      "sha256": "883ba20f73949cce17019b6083b06d67bb02c7652975362783720c1fa9c64f59"
+    },
+    "original_engine_package/docs/ACCURACY CONTRAST.png": {
+      "bytes": 2057494,
+      "sha256": "21ce368c27a78c81e8a79336078156160ddf338236ec5af95cc9db577af42b24"
+    },
+    "original_engine_package/docs/F1-SCORE CONTRAST.png": {
+      "bytes": 1712702,
+      "sha256": "36cea9b99e941b0c528b728e8c64b581cde0f934e989ef937a879c5d237e9032"
+    },
+    "original_engine_package/docs/F1-Score Comparison Across All Model.png": {
+      "bytes": 168626,
+      "sha256": "3861cd3117b31e0fe7f6a985d20b7f63ead9da341f0e069e3fb2e36d5ef91462"
+    },
+    "original_engine_package/docs/HMAE_Mathematical_Foundations.aux": {
+      "bytes": 777,
+      "sha256": "b7c4dfa27631ba159feb576df77d859096c4139fefd4c3692869dd92cfa26458"
+    },
+    "original_engine_package/docs/HMAE_Mathematical_Foundations.log": {
+      "bytes": 50548,
+      "sha256": "e11d4da5af30a9380ad8733678bf217ac13fbf8e25bdeaeb253429dc8c1dd06f"
+    },
+    "original_engine_package/docs/HMAE_Mathematical_Foundations.out": {
+      "bytes": 898,
+      "sha256": "6ea7256e094342e9ea087aafec6f617e52984645e4af65649044b1ceaf0b951e"
+    },
+    "original_engine_package/docs/HMAE_Mathematical_Foundations.pdf": {
+      "bytes": 543599,
+      "sha256": "9a86d5537f80e8c88b4062aaa5dde8824e885a8a801841ce2ca1ed27ee776ecc"
+    },
+    "original_engine_package/docs/HMAE_Mathematical_Foundations.tex": {
+      "bytes": 185287,
+      "sha256": "8c2609c46b7adfdc12c38f5c7126bb663f0ede36707373492175e2696c3565ab"
+    },
+    "original_engine_package/docs/HMAE_Mathematical_Foundations.toc": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "original_engine_package/docs/HMAE_Mathematical_Foundations_enriched.pdf": {
+      "bytes": 731007,
+      "sha256": "66289608551aff1efb0257bb7307ab7b1983bce01fd52db21eaca5133066c08b"
+    },
+    "original_engine_package/docs/HMAE_Retail_Migration_Report.aux": {
+      "bytes": 11400,
+      "sha256": "35256e5eb08ebdb8ea04632c2c1c2b1ea3dd4d0fcb274003fa5bbcd8fbabdd47"
+    },
+    "original_engine_package/docs/HMAE_Retail_Migration_Report.log": {
+      "bytes": 60486,
+      "sha256": "b35b86109251e9440c00e9e66e548fd7a319346707b9f1c6a3c2995e32b994aa"
+    },
+    "original_engine_package/docs/HMAE_Retail_Migration_Report.out": {
+      "bytes": 7918,
+      "sha256": "45b7760cd7014cad5e62f40d20bf47db050ee6d0f499b72fd23ccfbec0aa7175"
+    },
+    "original_engine_package/docs/HMAE_Retail_Migration_Report.pdf": {
+      "bytes": 501991,
+      "sha256": "7f31cfd277a8d644e31dec1c64e0b321a09cd4bb8ab50a22b99705e7e298afc1"
+    },
+    "original_engine_package/docs/HMAE_Retail_Migration_Report.tex": {
+      "bytes": 68722,
+      "sha256": "725fd47d6f1a90a5fd41b49254d6c5ecad5fc70c15e36c458df02ae6058676d7"
+    },
+    "original_engine_package/docs/HMAE_Retail_Migration_Report.toc": {
+      "bytes": 5472,
+      "sha256": "dd0d1a34b414c8cbcef60b6fa56d405da487c218646f5c814d9ca49028854bcb"
+    },
+    "original_engine_package/docs/HMAE_Textbook.pdf": {
+      "bytes": 1193212,
+      "sha256": "5b1d65a9f298e12d2b20ade0176f90b4c5c9a1902b343bb06ea97d504c3a45cd"
+    },
+    "original_engine_package/docs/HMAE_Textbook_ZeroBasis.aux": {
+      "bytes": 40247,
+      "sha256": "5588860e81be34c3c7096038cab6e46a4228b025767bc77879e3a2cad0c1a44b"
+    },
+    "original_engine_package/docs/HMAE_Textbook_ZeroBasis.bak.tex": {
+      "bytes": 57994,
+      "sha256": "38829517257b3ade4572c582addcd54a2fe2817dbe540bae9708a491c3d7f5b0"
+    },
+    "original_engine_package/docs/HMAE_Textbook_ZeroBasis.log": {
+      "bytes": 78888,
+      "sha256": "cb1475a7630894f16036222f8b5fe98f0a682e46f74fa1c395585072ac9a2d9f"
+    },
+    "original_engine_package/docs/HMAE_Textbook_ZeroBasis.out": {
+      "bytes": 39692,
+      "sha256": "86e0e97106924f5336e5178f398932c3d8c7d09a56026affbe9e5f3b0f454d52"
+    },
+    "original_engine_package/docs/HMAE_Textbook_ZeroBasis.tex": {
+      "bytes": 243407,
+      "sha256": "7170dbe6358d88d259b0a181178d84211a0038219f5a9b0f29d1541be1887c5d"
+    },
+    "original_engine_package/docs/HMAE_Textbook_ZeroBasis.toc": {
+      "bytes": 24687,
+      "sha256": "39ff57ee01af536c1161a93233f8875b1ed3d6a4263bcab0ccc2b13339838650"
+    },
+    "original_engine_package/docs/MAPFM.png": {
+      "bytes": 1278440,
+      "sha256": "8b4e5a33d44e44475396a57b44557bf81768f64e7dd5633d5e732ce0f55eadbd"
+    },
+    "original_engine_package/docs/MAPFM_Test_Report.pdf": {
+      "bytes": 253082,
+      "sha256": "154e7079f2ac22bd8ca472c175f7dc0962d0a840c583bc1e6a2295458e1925f4"
+    },
+    "original_engine_package/docs/PRECISE CONTRAST.png": {
+      "bytes": 1817391,
+      "sha256": "ddef6d9a91e3ebf641cb1d2f25ce8f1dcb9b0815bff61f1d769ba644f5e11b3b"
+    },
+    "original_engine_package/docs/RECALL CONTRAST.png": {
+      "bytes": 1633647,
+      "sha256": "d35f5b96d5ae13677c0bafdcba88ac81a5c99d912655b403f79c78cae2d2a622"
+    },
+    "original_engine_package/docs/SWOT.png": {
+      "bytes": 369513,
+      "sha256": "1059c1d45bb0d29ae605d5fe86d63cb46ef2d8964a9fb498ca6f717d6b7fba7b"
+    },
+    "original_engine_package/docs/SmartNursingAI/3-2.png": {
+      "bytes": 219262,
+      "sha256": "8cdb23703cafa96d0fecdc9ea12ab9d6b3d3ac36cde8205a4e0534480f9928bf"
+    },
+    "original_engine_package/docs/SmartNursingAI/4-6.png": {
+      "bytes": 549074,
+      "sha256": "75ae78ba65329deffba5f285562663df9ce25539b5bda6fbe262c75dd2a3ac1c"
+    },
+    "original_engine_package/docs/SmartNursingAI/ACCEPTANCE LETTER.png": {
+      "bytes": 595462,
+      "sha256": "883ba20f73949cce17019b6083b06d67bb02c7652975362783720c1fa9c64f59"
+    },
+    "original_engine_package/docs/SmartNursingAI/MAPFM.png": {
+      "bytes": 1278440,
+      "sha256": "8b4e5a33d44e44475396a57b44557bf81768f64e7dd5633d5e732ce0f55eadbd"
+    },
+    "original_engine_package/docs/SmartNursingAI/README.md": {
+      "bytes": 478,
+      "sha256": "341b115ef43ff35c808653f9a53af2cbec6c20cc27ad98f289b295721a4532cd"
+    },
+    "original_engine_package/docs/SmartNursingAI/assets/business-plan.pdf": {
+      "bytes": 8904568,
+      "sha256": "fc925c95398b72f64c1b975bbdb6ba8380ed521ab84fd62426f25e4fe8cbb7e7"
+    },
+    "original_engine_package/docs/SmartNursingAI/index.html": {
+      "bytes": 126398,
+      "sha256": "230c27ab896a1b9cb23a61818c9e3bf1a52883c6b293e91b23de1453060f94ed"
+    },
+    "original_engine_package/docs/SmartNursingAI/“智医算”：多模态感知&多智能体博弈驱动的医疗免陪照护智能护理机器人预测系统项目计划书.pdf": {
+      "bytes": 8904568,
+      "sha256": "fc925c95398b72f64c1b975bbdb6ba8380ed521ab84fd62426f25e4fe8cbb7e7"
+    },
+    "original_engine_package/docs/SmartNursingAI/专利.png": {
+      "bytes": 147175,
+      "sha256": "3c1ff7d59b23dd42785126b3219b53990d092e4d560f2641ca67c73e106c374a"
+    },
+    "original_engine_package/docs/SmartNursingAI/义诊.jpg": {
+      "bytes": 296609,
+      "sha256": "4768f21cf88f4cfe42faa69d7bca104395541d15180ba79d62a4416fc7a09c8f"
+    },
+    "original_engine_package/docs/SmartNursingAI/于海桐.jpg": {
+      "bytes": 110816,
+      "sha256": "4e075752bbbe3c51c03072c937a21ec56ce1f9a73110e38519c8adc47c0e4b1b"
+    },
+    "original_engine_package/docs/SmartNursingAI/于海桐干嘛.png": {
+      "bytes": 31794,
+      "sha256": "f87f279bad335083853b2b8d88f4c54f63069d297a16e6db3ea2cd78be933174"
+    },
+    "original_engine_package/docs/SmartNursingAI/卢子涵.jpg": {
+      "bytes": 28112,
+      "sha256": "431d3960242356072d7f1b814f053e939cdac4f74b5c8f42c65ccc3330824195"
+    },
+    "original_engine_package/docs/SmartNursingAI/合同.jpg": {
+      "bytes": 165135,
+      "sha256": "42b8236510ef27a7fc436f33933315af29ed099ddd2a89330245bf853bf0b330"
+    },
+    "original_engine_package/docs/SmartNursingAI/合影.jpg": {
+      "bytes": 696045,
+      "sha256": "5e4250f944d36fccadf9e706f7b01cc435b49a0dbec1cdc73881f1ac5ffc4f98"
+    },
+    "original_engine_package/docs/SmartNursingAI/张宝瑄.jpg": {
+      "bytes": 139675,
+      "sha256": "4908ccd88a2ba99e1066367a15eeae6f75dbf2ac17e88edcfb08a0707d766863"
+    },
+    "original_engine_package/docs/SmartNursingAI/张涵.jpg": {
+      "bytes": 145304,
+      "sha256": "6bc4316904bad058ec33ce89a1bd798ba4fda70117d730208a1a2a52b3d24fda"
+    },
+    "original_engine_package/docs/SmartNursingAI/张芸嘉.jpg": {
+      "bytes": 134327,
+      "sha256": "e27bcc28b63f9baf4df34082bf3b319d1f1068ad1c0248fe4f496953f7d24b14"
+    },
+    "original_engine_package/docs/SmartNursingAI/月姬.jpeg": {
+      "bytes": 72747,
+      "sha256": "caa0e5d18585f93c418290dd4d822979516cca78dbeaff9770533d8446f3a04b"
+    },
+    "original_engine_package/docs/SmartNursingAI/李玥莹.jpg": {
+      "bytes": 38551,
+      "sha256": "996f6d4ea15f5284ec4e7d14a185bbaf3afa91f6a4f86c25c78b019152d20a79"
+    },
+    "original_engine_package/docs/SmartNursingAI/祝萌璐.jpg": {
+      "bytes": 63515,
+      "sha256": "6edb332e704e72eaba2581d8b358c2ee1d3233498f6780b984d113302cb5f0ba"
+    },
+    "original_engine_package/docs/SmartNursingAI/赵梓含.jpg": {
+      "bytes": 288764,
+      "sha256": "ade52703e6102b60eab21cab0986e250973976ba56eec13297e61003c65cacd7"
+    },
+    "original_engine_package/docs/SmartNursingAI/陈炎希.jpg": {
+      "bytes": 116215,
+      "sha256": "a82abc35728af0327af3c2d7fd3b48c22a08a18af0b812a4dd7554a330096333"
+    },
+    "original_engine_package/docs/_rebrand.py": {
+      "bytes": 14407,
+      "sha256": "e22924bfcb1d4803acb3277f18cbefe5c23bd0599f966e4c92a85d6cd5d5cac9"
+    },
+    "original_engine_package/docs/assets/business-plan.pdf": {
+      "bytes": 9123240,
+      "sha256": "b7a83e4c189984be2a1e3b11791bd220e7c132a4d8e5df677ae96b230c29e469"
+    },
+    "original_engine_package/docs/chart_ablation.png": {
+      "bytes": 45067,
+      "sha256": "ae960527dff372fd6ca937667708c22be7441e0c5f3db9aa0e8315d4ae9c9c6b"
+    },
+    "original_engine_package/docs/chart_adaptability.png": {
+      "bytes": 54532,
+      "sha256": "4296b61b442f96f6ae5fe41fa30008c43688007ba210c1a83aa2c71cee72cf5b"
+    },
+    "original_engine_package/docs/chart_common_rare.png": {
+      "bytes": 33576,
+      "sha256": "50b121919ea1c8f0f04de368e0ecacad1ce4532b94deb0a19522595f854787e4"
+    },
+    "original_engine_package/docs/chart_noise.png": {
+      "bytes": 62871,
+      "sha256": "058c4f858385617d6ef60fb9de91931bc2245fdac37330ff6cad5a3d9a38f0ae"
+    },
+    "original_engine_package/docs/chart_timing.png": {
+      "bytes": 37705,
+      "sha256": "99e3544293bd64eb8881fcf677868d999daeb2b65258449927cb96c2edea4b95"
+    },
+    "original_engine_package/docs/index.html": {
+      "bytes": 251532,
+      "sha256": "17358c593b7720b3bda875ff1815a584427a81be259c685083f4731672d9acdf"
+    },
+    "original_engine_package/docs/page_diagnosis_prompt.md": {
+      "bytes": 13260,
+      "sha256": "7432b74dc703fd9721a4f534abbcc623ee65be80a02c2e26fdfa16a5a3874bf7"
+    },
+    "original_engine_package/docs/test data.JPG": {
+      "bytes": 66873,
+      "sha256": "d4dc48a33513bbac992ce29a81162313394dd92c9cdb8af20b9b1cfe836703b5"
+    },
+    "original_engine_package/docs/“智医算”：多模态感知&多智能体博弈驱动的医疗免陪照护智能护理机器人预测系统项目计划书.pdf": {
+      "bytes": 8904568,
+      "sha256": "fc925c95398b72f64c1b975bbdb6ba8380ed521ab84fd62426f25e4fe8cbb7e7"
+    },
+    "original_engine_package/docs/专利.png": {
+      "bytes": 147175,
+      "sha256": "3c1ff7d59b23dd42785126b3219b53990d092e4d560f2641ca67c73e106c374a"
+    },
+    "original_engine_package/docs/义诊.jpg": {
+      "bytes": 296609,
+      "sha256": "4768f21cf88f4cfe42faa69d7bca104395541d15180ba79d62a4416fc7a09c8f"
+    },
+    "original_engine_package/docs/于海桐.jpg": {
+      "bytes": 110816,
+      "sha256": "4e075752bbbe3c51c03072c937a21ec56ce1f9a73110e38519c8adc47c0e4b1b"
+    },
+    "original_engine_package/docs/于海桐干嘛.png": {
+      "bytes": 31794,
+      "sha256": "f87f279bad335083853b2b8d88f4c54f63069d297a16e6db3ea2cd78be933174"
+    },
+    "original_engine_package/docs/代码": {
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    "original_engine_package/docs/华圣调研.jpg": {
+      "bytes": 243332,
+      "sha256": "fa3f554dfb1d39385eddcd4b8b0da37b1001e9050e92130c4b371869f5bef441"
+    },
+    "original_engine_package/docs/卢子涵.jpg": {
+      "bytes": 28112,
+      "sha256": "431d3960242356072d7f1b814f053e939cdac4f74b5c8f42c65ccc3330824195"
+    },
+    "original_engine_package/docs/合同.jpg": {
+      "bytes": 165135,
+      "sha256": "42b8236510ef27a7fc436f33933315af29ed099ddd2a89330245bf853bf0b330"
+    },
+    "original_engine_package/docs/合影.jpg": {
+      "bytes": 696045,
+      "sha256": "5e4250f944d36fccadf9e706f7b01cc435b49a0dbec1cdc73881f1ac5ffc4f98"
+    },
+    "original_engine_package/docs/团队成长.jpg": {
+      "bytes": 219706,
+      "sha256": "1c6e45515a40cfcdfd87bc81639608682090d7154e14001ec081d80b493886c7"
+    },
+    "original_engine_package/docs/张宝瑄.jpg": {
+      "bytes": 139675,
+      "sha256": "4908ccd88a2ba99e1066367a15eeae6f75dbf2ac17e88edcfb08a0707d766863"
+    },
+    "original_engine_package/docs/张涵.jpg": {
+      "bytes": 145304,
+      "sha256": "6bc4316904bad058ec33ce89a1bd798ba4fda70117d730208a1a2a52b3d24fda"
+    },
+    "original_engine_package/docs/张芸嘉.jpg": {
+      "bytes": 134327,
+      "sha256": "e27bcc28b63f9baf4df34082bf3b319d1f1068ad1c0248fe4f496953f7d24b14"
+    },
+    "original_engine_package/docs/月姬.jpeg": {
+      "bytes": 72747,
+      "sha256": "caa0e5d18585f93c418290dd4d822979516cca78dbeaff9770533d8446f3a04b"
+    },
+    "original_engine_package/docs/李玥莹.jpg": {
+      "bytes": 38551,
+      "sha256": "996f6d4ea15f5284ec4e7d14a185bbaf3afa91f6a4f86c25c78b019152d20a79"
+    },
+    "original_engine_package/docs/混合检索.pdf": {
+      "bytes": 254184,
+      "sha256": "1c500f544e325a7d2c9de68498201ff1c8c3dbfb6b2f62ab622c0b5d28f6ff6d"
+    },
+    "original_engine_package/docs/祝萌璐.jpg": {
+      "bytes": 63515,
+      "sha256": "6edb332e704e72eaba2581d8b358c2ee1d3233498f6780b984d113302cb5f0ba"
+    },
+    "original_engine_package/docs/自适应.pdf": {
+      "bytes": 261141,
+      "sha256": "198284c28ff7ca6ee2198cd2f4ed8ec7e2e9db9bc39cb7d45d0b0f99e0a950bf"
+    },
+    "original_engine_package/docs/赵梓含.jpg": {
+      "bytes": 288764,
+      "sha256": "ade52703e6102b60eab21cab0986e250973976ba56eec13297e61003c65cacd7"
+    },
+    "original_engine_package/docs/重排序.pdf": {
+      "bytes": 269119,
+      "sha256": "44ff8a9ae78142747ee24dc5a21b1e83b231fa551464d6aec6666d15b41f1f75"
+    },
+    "original_engine_package/docs/陈炎希.jpg": {
+      "bytes": 116215,
+      "sha256": "a82abc35728af0327af3c2d7fd3b48c22a08a18af0b812a4dd7554a330096333"
+    },
+    "original_engine_package/evaluate_metrics.py": {
+      "bytes": 5730,
+      "sha256": "8411e3b3f253e973d196a2c27f0093f86188b7bece04e7af73e426065ee1b4ee"
+    },
+    "original_engine_package/evidence_ingestion.py": {
+      "bytes": 6531,
+      "sha256": "98053ae3e537806762dce0a56e0a34295b40d62e3a548aade0de2d451098e881"
+    },
+    "original_engine_package/examples/run_single_request.py": {
+      "bytes": 723,
+      "sha256": "a12d9ce5a6970a74f88876802c2014f7d2414c42290d1722c8a688c688f6506f"
+    },
+    "original_engine_package/exceptions.py": {
+      "bytes": 1434,
+      "sha256": "682c400d2b8f1df048a1e68aa69b169569826a1cb380cc8be896910e6b0bef81"
+    },
+    "original_engine_package/generate_innovation_report.py": {
+      "bytes": 35934,
+      "sha256": "9574a08afc1d7e1d17a555133b264c0ce52762e9811920b0a8b8fac4a85df1b4"
+    },
+    "original_engine_package/generate_report.py": {
+      "bytes": 18703,
+      "sha256": "27f2a7f927648338653c88b0bbe6448e8f224499ef5955f756a08d51caac7fe6"
+    },
+    "original_engine_package/generate_test_report.py": {
+      "bytes": 28647,
+      "sha256": "47c76fda990d3cc94c30e6cd44f7d0d05e28f2612d4b66d0aeda4f746f8aad80"
+    },
+    "original_engine_package/logging_config.py": {
+      "bytes": 2429,
+      "sha256": "3958d59bc1cfa180629f216d67817f3522efb126d0aa929c5f52ce6296105c77"
+    },
+    "original_engine_package/mapfm_ecosystem_repaired.py": {
+      "bytes": 236989,
+      "sha256": "99a51b18bdb7e1b806e73af0ef7b3252734106e6accfd83b89cdb0043effa529"
+    },
+    "original_engine_package/mapfm_ecosystem_repaired_backup.py": {
+      "bytes": 215217,
+      "sha256": "8fffca94cb9f8997a11a2235d17fc97f11dbbe4633c6b426f1e1007fa386f438"
+    },
+    "original_engine_package/mapfm_utils/__init__.py": {
+      "bytes": 22,
+      "sha256": "bae9a5994c2e740aa888d439b5af349735e7d12790ddb554b3b1815d57d7b96b"
+    },
+    "original_engine_package/mapfm_utils/multimodal_utils.py": {
+      "bytes": 23684,
+      "sha256": "36e6ab0bef79593d8cfa4f281731a313b17c5a78d3af3a3d06251712afdbea02"
+    },
+    "original_engine_package/mapfm_utils/system_monitor.py": {
+      "bytes": 19201,
+      "sha256": "e10e33a2d6d33b152687532fd625ab96c86865968be307e47363b6dcce9545dc"
+    },
+    "original_engine_package/med-ts-llm_source/configs/datasets/bidmc.toml": {
+      "bytes": 1052,
+      "sha256": "bcaf67ff3589db2a3d533083036227ad7933112b04dac7b6caaa71ca48cbdea6"
+    },
+    "original_engine_package/med-ts-llm_source/configs/datasets/ecgmit-anom.toml": {
+      "bytes": 1085,
+      "sha256": "f9f5e7974eb84ff20734843e6c2973f176663ae2c061899bac99704bcc8bff31"
+    },
+    "original_engine_package/med-ts-llm_source/configs/datasets/ecgmit-seg.toml": {
+      "bytes": 1032,
+      "sha256": "f9a3cb22903cb3e33e0478f5976e02a53ba76d8b09e2f8ad39d0e4426ec9bc81"
+    },
+    "original_engine_package/med-ts-llm_source/datasets/__init__.py": {
+      "bytes": 1083,
+      "sha256": "4593ee74d5f990a4b3687cf6f416bda6ec877b2e1566555fe918f427eea47ba3"
+    },
+    "original_engine_package/med-ts-llm_source/datasets/base.py": {
+      "bytes": 10316,
+      "sha256": "8c7394487277d10110599dca534e254cbefb86a9f79ca0f62647daa7ae40f26a"
+    },
+    "original_engine_package/med-ts-llm_source/models/__init__.py": {
+      "bytes": 375,
+      "sha256": "9ee6629cfc371f290061483f5d39e174e7afbf4297bdbf6c09d875e285676cd3"
+    },
+    "original_engine_package/med-ts-llm_source/models/layers/RevIN.py": {
+      "bytes": 2177,
+      "sha256": "55e5bdf814bf951b326540a2f8a7d59bf16451491b8d618be065dc556c6735b8"
+    },
+    "original_engine_package/med-ts-llm_source/models/layers/embed.py": {
+      "bytes": 7364,
+      "sha256": "6db574579ff96f3ad79068f3f427d612872d11da3e75c957cb9190119765826a"
+    },
+    "original_engine_package/med-ts-llm_source/models/medtsllm.py": {
+      "bytes": 24111,
+      "sha256": "065a8a3a56e4000b67f8f18e43db03f8fceaded13852c89924886253233980b1"
+    },
+    "original_engine_package/med-ts-llm_source/recommended.txt": {
+      "bytes": 71,
+      "sha256": "318fa9eff036c5f427b70fed8127ec4ffb6a9ac03a738d552e216e3b4f862cdf"
+    },
+    "original_engine_package/med-ts-llm_source/requirements.txt": {
+      "bytes": 319,
+      "sha256": "fb70c0b4ec8521c714d7ae03f33749b059510f918239b8777f099c0860219e8c"
+    },
+    "original_engine_package/med-ts-llm_source/tasks/__init__.py": {
+      "bytes": 662,
+      "sha256": "852d672140247f85c1b2872e47ea741164c1b2e2268956379f4d4d642f0e727b"
+    },
+    "original_engine_package/med-ts-llm_source/tasks/anomaly_detection.py": {
+      "bytes": 10035,
+      "sha256": "1896b96ae51670074c3925eefb9006ebf7c3ec8cfedc92ce602caa4a4d87246b"
+    },
+    "original_engine_package/med-ts-llm_source/tasks/base.py": {
+      "bytes": 11182,
+      "sha256": "17666e766b4144004a55bac1e6d1c4d95a73f20122d1c13a8fc9d695c2f30939"
+    },
+    "original_engine_package/med-ts-llm_source/tasks/forecasting.py": {
+      "bytes": 4047,
+      "sha256": "8af2bf0b30cfef5802320f699ce2584d4bcb8dfcfe2362304b626d085762d56b"
+    },
+    "original_engine_package/med-ts-llm_source/tasks/pretraining.py": {
+      "bytes": 1277,
+      "sha256": "82e9de355ba1d7abb8e3a8a6f40bffc51015ab368ce49c3b808f2c899998306e"
+    },
+    "original_engine_package/med-ts-llm_source/tasks/reconstruction.py": {
+      "bytes": 4076,
+      "sha256": "d45318d48d652f8ca83d432a512592fc2200cd32505547d1e78b4cd9d68f00a0"
+    },
+    "original_engine_package/med-ts-llm_source/tasks/segmentation.py": {
+      "bytes": 12553,
+      "sha256": "59e6414692889cd781b26ceadb2c205210fc2d31ece9976e1986a885b9b1b56a"
+    },
+    "original_engine_package/med-ts-llm_source/tasks/semantic_segmentation.py": {
+      "bytes": 6162,
+      "sha256": "463e6f3851f9e1b1d7bcc4541329b1e7f47139ea06b0d0d0a0bc5d3d746703d4"
+    },
+    "original_engine_package/med-ts-llm_source/test.py": {
+      "bytes": 1138,
+      "sha256": "9a544e8d42c9504f6c8e7595d6caf0cca48e796469af99eb4237509b32213ab3"
+    },
+    "original_engine_package/med-ts-llm_source/train.py": {
+      "bytes": 664,
+      "sha256": "5668df5360db789bbaab6a4274ee3c4e0d9014f01114597473c67b09d96be079"
+    },
+    "original_engine_package/med-ts-llm_source/utils.py": {
+      "bytes": 2459,
+      "sha256": "eb844d8d42cf0e18f799d0255e0db9276fa81e4fc88a9ede2d89875c94a65362"
+    },
+    "original_engine_package/medNo.22.csv": {
+      "bytes": 1338191,
+      "sha256": "00474d427edd5e93ed96424923ad4e8b66d91bc451ee25e653c1a050bd36384e"
+    },
+    "original_engine_package/medtsllm_adapter.py": {
+      "bytes": 20770,
+      "sha256": "a771ff4cb2dbff1f4180ac642914326cbd3a6844379468c2a592b97944c89899"
+    },
+    "original_engine_package/medtsllm_adapter_backup.py": {
+      "bytes": 18913,
+      "sha256": "492757883065b0f8cef21cdae200d0c695cb1ac3c01d61d3a7bffb622d6fa324"
+    },
+    "original_engine_package/medtsllm_deployment_report.json": {
+      "bytes": 1164,
+      "sha256": "5cd153521f2967c60b0775f9382ee18acd093f8700d9fccc1a259fafc952da35"
+    },
+    "original_engine_package/original/GU YUANJIE.docx": {
+      "bytes": 73220,
+      "sha256": "43c7e5359f206aa2d7cbfbbd3f4ff1e211c4520adbc9a9b1cbc33831c9a8c579"
+    },
+    "original_engine_package/original/GU_YUANJIE_original.py": {
+      "bytes": 116834,
+      "sha256": "a16b7a762e23a6cc9e98cad5103a915e422b65a649762e518946809589539ef3"
+    },
+    "original_engine_package/original/heterogeneous_multi_agent_ecosystem.py": {
+      "bytes": 116834,
+      "sha256": "a16b7a762e23a6cc9e98cad5103a915e422b65a649762e518946809589539ef3"
+    },
+    "original_engine_package/original/prompt5.19.docx": {
+      "bytes": 19118,
+      "sha256": "77b9ae3c1773c1210c17b176edf773894b7f01cf330309c3e4f7df537ea4effc"
+    },
+    "original_engine_package/redis_bus.py": {
+      "bytes": 1285,
+      "sha256": "1382f8cb707c3dde6c9c457282888454dc64a1b02cea167b663676d8894ec3d2"
+    },
+    "original_engine_package/requirements-lora.txt": {
+      "bytes": 149,
+      "sha256": "fcbd881a7e446de9d2a319948b185c4b3fe94fc9b8fb5fdc6d857b4b06fc1870"
+    },
+    "original_engine_package/requirements.txt": {
+      "bytes": 1511,
+      "sha256": "7b825a8268a08206f3d660eed205a74112e7228cf512756ade6be218438d8ed0"
+    },
+    "original_engine_package/tests/ablation_study.py": {
+      "bytes": 8328,
+      "sha256": "49368e753f5deb9db56fbb3bbb1e7989251d804e37e6deb504798d6ed0a9d967"
+    },
+    "original_engine_package/tests/test_competition_evidence.py": {
+      "bytes": 3028,
+      "sha256": "6fe890eddf829337b59506fe8c0afd16245a17b88e958c373bbb5828e9169c02"
+    },
+    "original_engine_package/tests/test_competition_readiness.py": {
+      "bytes": 7584,
+      "sha256": "74e0c0233bf2607b5bd5decebe2ac1cb650fe4bddae3738342e820ae1b98e293"
+    },
+    "original_engine_package/tests/test_dma.py": {
+      "bytes": 685,
+      "sha256": "dc9319a1f2972a33ea73a55a411b199189bc6a5d00737cbccee32ab7c503655b"
+    },
+    "original_engine_package/tests/test_exceptions.py": {
+      "bytes": 168,
+      "sha256": "26f0e1aea17b98905fed13ec59c7284808d03ad2f0a1817d99af99fce86619e6"
+    },
+    "original_engine_package/tests/test_integration.py": {
+      "bytes": 8980,
+      "sha256": "f2959281666665b72e12b5bb603707e1f57751f12db06e0c43860c45be7b6da5"
+    },
+    "original_engine_package/tests/test_regression.py": {
+      "bytes": 8826,
+      "sha256": "efde47c326a9dbef8d98b68659fb99ccc255dfd818e0e6779473d9978ae96368"
+    },
+    "original_engine_package/tests/test_retrieval.py": {
+      "bytes": 602,
+      "sha256": "3ecc6930cd2661f5d0a89053db1858aac28fe836578d6548ca83ab414c902aa1"
+    },
+    "original_engine_package/tests/test_security.py": {
+      "bytes": 9409,
+      "sha256": "a6ed4ae0380e4b592fdcdee2b04f632dd293e5b06b9e55fb5ab82d23051fd399"
+    },
+    "original_engine_package/tests/test_tfa.py": {
+      "bytes": 816,
+      "sha256": "fd56ebf6867aa397cf5ab5313661818fed3c4dffd64ce70bce7736292c104506"
+    },
+    "original_engine_package/tests/test_tfa_connectivity.py": {
+      "bytes": 6575,
+      "sha256": "7438dc5484554688d5a71e9ae7bd3da8a75dfffe3877d8cc8c9995634d73d55e"
+    },
+    "original_engine_package/tests/test_tfa_fallback.py": {
+      "bytes": 6380,
+      "sha256": "1b16a80e8fa64a331e418dcaeb0509c11f57bf61d286a06598730371533b6ba1"
+    },
+    "original_engine_package/tests/test_tfa_medical_check.py": {
+      "bytes": 7448,
+      "sha256": "d171f56ae4e1b417e1a21f33d86af2633ba0a13292920d607ef0505935b1bbe9"
+    },
+    "original_engine_package/tests/test_tfa_multimodal.py": {
+      "bytes": 6717,
+      "sha256": "d87c0b56968f9d445b3c73abbf94cb53fcfd47faa16586b1229f693f8d783eae"
+    },
+    "original_engine_package/tests/test_tfa_performance.py": {
+      "bytes": 6959,
+      "sha256": "4252d1736bad0860420da93a9dac78a20eeff5da4e88e346a6a625857481b24c"
+    },
+    "original_engine_package/tests/test_utils.py": {
+      "bytes": 330,
+      "sha256": "7efc03bd3a74ec7cfe3b3775de89fe7cd7a1a3f39b56a35a3ff53c9e4e90eadb"
+    },
+    "original_engine_package/traceability.py": {
+      "bytes": 638,
+      "sha256": "73a79cc09c32f6f89a6c1bcd67696849ed3a64c60aafd1e32e0c6d4e811df13e"
+    },
+    "original_engine_package/train_lora.py": {
+      "bytes": 5836,
+      "sha256": "53f41a61f96543f823e7b0fe7f4fff06b996e7d30b4dd0d187f2b1506c12e55a"
+    },
+    "original_engine_package/utils/__init__.py": {
+      "bytes": 19030,
+      "sha256": "9d8c0a98dc8b5694c695aedccf173ad9d326a26a0740af520b6dcc463cb7fbf3"
+    },
+    "original_engine_package/utils/format_checker.py": {
+      "bytes": 22046,
+      "sha256": "d32de32fd8a17c9dfd725be1e667e03c4afe0558f57b8b4eabd1e0e67dc317c9"
+    },
+    "package_competition.py": {
+      "bytes": 18020,
+      "sha256": "c0e90d0b26e3936d00a4fe7c309387b78b63951aebf4f577991158748d37deaa"
+    },
+    "prepare_nagala_diabetes.py": {
+      "bytes": 4393,
+      "sha256": "183c2f0e4946bdbdf5f9fd1dc395c2790aa397d83e7386af3553fbaad4f3c676"
+    },
+    "pytest.ini": {
+      "bytes": 87,
+      "sha256": "de747629ffa398211f63ae28c8eb37346355a0b286a443c98694968108119161"
+    },
+    "redis_bus.py": {
+      "bytes": 1285,
+      "sha256": "1382f8cb707c3dde6c9c457282888454dc64a1b02cea167b663676d8894ec3d2"
+    },
+    "requirements-lora.txt": {
+      "bytes": 149,
+      "sha256": "fcbd881a7e446de9d2a319948b185c4b3fe94fc9b8fb5fdc6d857b4b06fc1870"
+    },
+    "requirements.txt": {
+      "bytes": 1528,
+      "sha256": "0418c4692d93f5bc7047a994e57a817efbbab73955693c4178e9b923ef36fbb3"
+    },
+    "start_demo.py": {
+      "bytes": 2458,
+      "sha256": "9f2ba2e793204073ce755b738489468d3e9684d0fea561fea5a7a761ab5ed462"
+    },
+    "tests/ablation_study.py": {
+      "bytes": 8328,
+      "sha256": "49368e753f5deb9db56fbb3bbb1e7989251d804e37e6deb504798d6ed0a9d967"
+    },
+    "tests/test_careguard_cases.py": {
+      "bytes": 1187,
+      "sha256": "ffc9b0ab6d47a7f5ba98990c7eab489998d69b278c2e39a9ba69d8cca9badc32"
+    },
+    "tests/test_careguard_join.py": {
+      "bytes": 5040,
+      "sha256": "9f941cb9b0fca05bc7bb1638baea9bb9df16027fedcbedd63ccf06071e781fa9"
+    },
+    "tests/test_careguard_lab.py": {
+      "bytes": 2782,
+      "sha256": "c8c91e22f328aff252884c05d047b2f22add323a8b8cec32f211ef006c283899"
+    },
+    "tests/test_careguard_presenter.py": {
+      "bytes": 4996,
+      "sha256": "ac71ab3eb197b43c08ae83accdecdadf68a1b9599356cbd94f0ff1c56981acad"
+    },
+    "tests/test_careguard_site.py": {
+      "bytes": 8102,
+      "sha256": "c6fccb055f65bfefd1406110bd27554ea6122ce3fc2a1aa7df6bd30864a56192"
+    },
+    "tests/test_careguard_ui_state.py": {
+      "bytes": 1251,
+      "sha256": "edfc9fc2626e622ff62592b13f4b9749a8bee44f613d2dec54a51a00360b6e60"
+    },
+    "tests/test_chronic_dataset_gate.py": {
+      "bytes": 3749,
+      "sha256": "0405d475c0e75df06703b47a5826f94c3b71cc296280373da7184476e22e5914"
+    },
+    "tests/test_competition_evidence.py": {
+      "bytes": 3028,
+      "sha256": "6fe890eddf829337b59506fe8c0afd16245a17b88e958c373bbb5828e9169c02"
+    },
+    "tests/test_competition_readiness.py": {
+      "bytes": 7584,
+      "sha256": "74e0c0233bf2607b5bd5decebe2ac1cb650fe4bddae3738342e820ae1b98e293"
+    },
+    "tests/test_competition_safety_matrix.py": {
+      "bytes": 2333,
+      "sha256": "d9025793ea2370b1d311ca2c37a11bfcee1573a4fae8523e36ab9b64c41788c1"
+    },
+    "tests/test_diabetes_prospective.py": {
+      "bytes": 1274,
+      "sha256": "27e2712e85d4a223fae7c00f079c15b02108ff339bf695ecac08ca90610fbeed"
+    },
+    "tests/test_diabetes_risk.py": {
+      "bytes": 2646,
+      "sha256": "fdaa096d486ffe24053dce423c0a32a192b3d0aa6e0d8a9382494937737f70f6"
+    },
+    "tests/test_dma.py": {
+      "bytes": 685,
+      "sha256": "dc9319a1f2972a33ea73a55a411b199189bc6a5d00737cbccee32ab7c503655b"
+    },
+    "tests/test_engineering_bridge.py": {
+      "bytes": 3453,
+      "sha256": "9b053f358416d1d546017eaa34e5b7d5db13149d9ab0223b6f5567624235a03a"
+    },
+    "tests/test_exceptions.py": {
+      "bytes": 168,
+      "sha256": "26f0e1aea17b98905fed13ec59c7284808d03ad2f0a1817d99af99fce86619e6"
+    },
+    "tests/test_handover_packet.py": {
+      "bytes": 2735,
+      "sha256": "ba6c8967690c12410908248e004cc4cecc66ec01b6c6a14e3d9fa3a31d56e3bf"
+    },
+    "tests/test_integration.py": {
+      "bytes": 8980,
+      "sha256": "f2959281666665b72e12b5bb603707e1f57751f12db06e0c43860c45be7b6da5"
+    },
+    "tests/test_medical_language.py": {
+      "bytes": 4685,
+      "sha256": "e19573c68b40eea64054650031957dfc69719b2ce03cfa067b83636ca10a887f"
+    },
+    "tests/test_medquad_blind_eval.py": {
+      "bytes": 4235,
+      "sha256": "3726eb085a4792907423b7287d7db2b4a0eca6c1261148dac48ce638c60ab9f3"
+    },
+    "tests/test_medquad_qa.py": {
+      "bytes": 5133,
+      "sha256": "b1ce51816eecb848e85220964ff6bfa3d1d8cf927088a44326d8b2164370c1d3"
+    },
+    "tests/test_package_competition.py": {
+      "bytes": 2096,
+      "sha256": "33a2048e8f71e23f3938c9e33d0986367060d3c2de1032b92ab3e4175fd13118"
+    },
+    "tests/test_regression.py": {
+      "bytes": 8826,
+      "sha256": "efde47c326a9dbef8d98b68659fb99ccc255dfd818e0e6779473d9978ae96368"
+    },
+    "tests/test_retrieval.py": {
+      "bytes": 602,
+      "sha256": "3ecc6930cd2661f5d0a89053db1858aac28fe836578d6548ca83ab414c902aa1"
+    },
+    "tests/test_security.py": {
+      "bytes": 9409,
+      "sha256": "a6ed4ae0380e4b592fdcdee2b04f632dd293e5b06b9e55fb5ab82d23051fd399"
+    },
+    "tests/test_start_guide.py": {
+      "bytes": 846,
+      "sha256": "f2f56efb147f7cefee4ce703284fbf95e689567f479a2125317c8199405a30df"
+    },
+    "tests/test_tfa.py": {
+      "bytes": 816,
+      "sha256": "fd56ebf6867aa397cf5ab5313661818fed3c4dffd64ce70bce7736292c104506"
+    },
+    "tests/test_tfa_connectivity.py": {
+      "bytes": 6575,
+      "sha256": "7438dc5484554688d5a71e9ae7bd3da8a75dfffe3877d8cc8c9995634d73d55e"
+    },
+    "tests/test_tfa_fallback.py": {
+      "bytes": 6380,
+      "sha256": "1b16a80e8fa64a331e418dcaeb0509c11f57bf61d286a06598730371533b6ba1"
+    },
+    "tests/test_tfa_medical_check.py": {
+      "bytes": 7448,
+      "sha256": "d171f56ae4e1b417e1a21f33d86af2633ba0a13292920d607ef0505935b1bbe9"
+    },
+    "tests/test_tfa_multimodal.py": {
+      "bytes": 6717,
+      "sha256": "d87c0b56968f9d445b3c73abbf94cb53fcfd47faa16586b1229f693f8d783eae"
+    },
+    "tests/test_tfa_performance.py": {
+      "bytes": 6959,
+      "sha256": "4252d1736bad0860420da93a9dac78a20eeff5da4e88e346a6a625857481b24c"
+    },
+    "tests/test_utils.py": {
+      "bytes": 330,
+      "sha256": "7efc03bd3a74ec7cfe3b3775de89fe7cd7a1a3f39b56a35a3ff53c9e4e90eadb"
+    },
+    "tools/build_start_guide_docx.py": {
+      "bytes": 7220,
+      "sha256": "2b7672fdbdd4f177ae3dadaee6cc3e8232ae16add7c927420fee06bccb60bbc8"
+    },
+    "tools/medquad_blind_review.html": {
+      "bytes": 11042,
+      "sha256": "23b9e1ba0d04d161900e09eef95e2d336b7ac8345d9deb3bb837b9492318a79c"
+    },
+    "traceability.py": {
+      "bytes": 638,
+      "sha256": "73a79cc09c32f6f89a6c1bcd67696849ed3a64c60aafd1e32e0c6d4e811df13e"
+    },
+    "train_lora.py": {
+      "bytes": 5836,
+      "sha256": "53f41a61f96543f823e7b0fe7f4fff06b996e7d30b4dd0d187f2b1506c12e55a"
+    },
+    "train_mapfm_prospective.py": {
+      "bytes": 11704,
+      "sha256": "a4d8724a93e96e70db040d27738a8353035fbaeafbaa52bd89b074a0efa53dad"
+    },
+    "train_medquad_meqsum_encoder.py": {
+      "bytes": 4666,
+      "sha256": "6af4ac4a643621ae93d691e85fc4559a58fe32df915bda0dfcb49fc2c30dd38b"
+    },
+    "train_medquad_qa.py": {
+      "bytes": 551,
+      "sha256": "c50337e3a9f6d7f932a05339394f50f0ad56a03bd60c9d87298d4f638f46947b"
+    },
+    "train_medquad_rqe_encoder.py": {
+      "bytes": 3596,
+      "sha256": "6bae0fd37c373154dcd40481217924d63e7c6f55224d3301997030096e23b90c"
+    },
+    "utils/__init__.py": {
+      "bytes": 19030,
+      "sha256": "9d8c0a98dc8b5694c695aedccf173ad9d326a26a0740af520b6dcc463cb7fbf3"
+    },
+    "utils/format_checker.py": {
+      "bytes": 22046,
+      "sha256": "d32de32fd8a17c9dfd725be1e667e03c4afe0558f57b8b4eabd1e0e67dc317c9"
+    },
+    "安护智链_CareLink.docx": {
+      "bytes": 113571,
+      "sha256": "8902b6e0c1d3ba70969affeee6c5dfe000c70b007f0a932545208033fb11d429"
+    },
+    "打开网页_新同事先看这个.txt": {
+      "bytes": 3776,
+      "sha256": "4cbdbb6f0e01087a8a8c5b31bca89758ca9ee6e43fae89bb449a2e754ed67b8b"
+    },
+    "新同事_从零打开网页.docx": {
+      "bytes": 40669,
+      "sha256": "22264f1745785343444e05cbf5ae25c4cab8780b90a821362dd3899adec0ac9e"
+    }
+  },
+  "generated_at_utc": "2026-10-14T14:30:20.698414+00:00",
+  "package_root": "CareLink_2026",
+  "schema_version": "careguard.delivery.v1"
+}

@@ -1,0 +1,17 @@
+{
+  "generated_at_utc": "2026-10-10T21:04:40.471999+00:00",
+  "case": "夜间突发胸痛",
+  "request_id": "34c64433",
+  "priority": "P1",
+  "clue": "急性胸痛警示线索",
+  "ollama_model": "llama3:8b",
+  "dma_backend": "ollama_local_http",
+  "ollama_generation_verified": true,
+  "fallback_used": false,
+  "dynamic_evidence_count": 0,
+  "offline_reference_count": 1,
+  "human_review_required": true,
+  "clinical_use_allowed": false,
+  "latency_seconds": 6.27,
+  "audit_contains_input_text": false
+}

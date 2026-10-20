@@ -1,0 +1,1353 @@
+\documentclass[11pt,a4paper]{ctexart}
+
+% ── Packages ──
+\usepackage[top=2.2cm, bottom=2.2cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins, breakable}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small HMAE 零基础教学课本}
+\fancyhead[R]{\small MAPFM Medical AI}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ── Color definitions ──
+\definecolor{definitionbg}{RGB}{235,245,255}
+\definecolor{examplebg}{RGB}{240,255,240}
+\definecolor{warningbg}{RGB}{255,250,235}
+\definecolor{exercisebg}{RGB}{255,240,245}
+\definecolor{keybg}{RGB}{245,240,255}
+
+% ── Styled boxes ──
+\newtcolorbox{defbox}[1][]{colback=definitionbg, colframe=blue!60, fonttitle=\bfseries, title=#1, breakable}
+\newtcolorbox{exambox}[1][]{colback=examplebg, colframe=green!50, fonttitle=\bfseries, title=#1, breakable}
+\newtcolorbox{warnbox}[1][]{colback=warningbg, colframe=orange!70, fonttitle=\bfseries, title=#1, breakable}
+\newtcolorbox{keybox}[1][]{colback=keybg, colframe=purple!60, fonttitle=\bfseries, title=#1, breakable}
+\newtcolorbox{exerbox}[1][]{colback=exercisebg, colframe=red!50, fonttitle=\bfseries, title=#1, breakable}
+
+% ── Math operators ──
+\DeclareMathOperator{\softmax}{softmax}
+\DeclareMathOperator{\sigmoid}{sigmoid}
+\DeclareMathOperator{\clip}{clip}
+\DeclareMathOperator{\Ltwo}{L2}
+\DeclareMathOperator{\Ham}{Hamming}
+\DeclareMathOperator{\E}{\mathbb{E}}
+
+\begin{document}
+
+% ============================================================
+% COVER PAGE
+% ============================================================
+\begin{titlepage}
+\centering
+\vspace*{3cm}
+
+{\Huge\bfseries HMAE 异构多智能体\\[8pt] 医疗AI生态系统}
+
+\vspace{1.5cm}
+
+{\LARGE\bfseries 从零基础到深入理解\\[8pt] —— 一本写给所有人的AI课本}
+
+\vspace{2cm}
+
+{\large
+\textbf{适用对象：} 没有任何AI/数学背景的初学者\\
+\textbf{前置知识：} 无 —— 本书从零开始讲解\\
+\textbf{学习目标：} 理解HMAE系统的完整工作原理\\
+\textbf{预计阅读时间：} 8--12小时（含练习）
+}
+
+\vspace{2cm}
+
+{\large
+MAPFM Medical AI Research Framework\\[4pt]
+Heterogeneous Multi-Agent Ecosystem v2.0
+}
+
+\vfill
+{\large \today}
+\end{titlepage}
+
+% ============================================================
+% 致读者
+% ============================================================
+\section*{致读者 —— 如何使用这本书}
+
+\subsection*{这本书写给谁？}
+
+如果你对"AI是怎么看病的"感到好奇，但看到数学公式就头疼——
+\textbf{这本书正是为你写的。}
+
+我们假设你：
+\begin{itemize}[nosep]
+\item 没有任何人工智能的先验知识
+\item 不需要会编程
+\item 高中数学还记得一点点（如果全忘了也没关系，第0章会帮你捡起来）
+\end{itemize}
+
+\subsection*{这本书怎么读？}
+
+\begin{enumerate}[nosep]
+\item \textbf{第0章是"热身"：} 如果你对AI完全陌生，请从这里开始。如果你已经知道"机器学习"是什么，可以直接跳到第1章。
+\item \textbf{第1--2章是"全景"：} 了解HMAE系统长什么样，为什么需要十个智能体一起工作。
+\item \textbf{第3--12章是"深度游"：} 逐一认识每个智能体。你可以按顺序读，也可以先读你最感兴趣的那个。
+\item \textbf{第13--15章是"实战"：} 完整的病例追踪、实验评估、部署运维。
+\item \textbf{第16--19章是"哲学"：} 从公理和物理类比的视角，理解系统为什么这样设计。
+\end{enumerate}
+
+\subsection*{书中的特殊盒子}
+
+\begin{defbox}[定义盒子]
+蓝色边框 —— 重要概念的精确定义。读到新术语时，在这里找到正式解释。
+\end{defbox}
+
+\begin{exambox}[例子盒子]
+绿色边框 —— 具体例子。如果你觉得某个概念抽象，看看例子就明白了。
+\end{exambox}
+
+\begin{keybox}[关键洞察]
+紫色边框 —— 你需要记住的核心要点。
+\end{keybox}
+
+\begin{warnbox}[常见误区]
+橙色边框 —— 初学者容易犯的错误理解。
+\end{warnbox}
+
+\begin{exerbox}[思考题]
+粉色边框 —— 停下来想一想。答案在附录B。
+\end{exerbox}
+
+\subsection*{一个重要的承诺}
+
+本书中的每一个公式，我们都会用\textbf{日常语言}解释一遍。如果你看到公式感到畏惧，
+跳过它，读旁边的文字解释 —— 你不会错过任何关键理解。
+
+\vspace{6pt}
+\begin{center}
+\textit{好，让我们开始这段旅程。}
+\end{center}
+
+\newpage
+\tableofcontents
+\newpage
+
+% ============================================================
+% PART 0: 预备知识
+% ============================================================
+\part{预备知识 —— 从零开始热身}
+
+% ── CHAPTER 0.1: 什么是人工智能 ──
+\section{什么是人工智能？}
+
+\subsection{一个简单的故事}
+
+想象你教一个三岁的小朋友认识猫。
+
+你翻开一本图画书，指着第一页："这是猫。" 翻开第二页："这也是猫。"
+翻开第三页："这不是猫，这是狗。"
+
+渐渐地，小朋友学会了：看到新动物时，能判断"这是猫"还是"这不是猫"。
+
+\textbf{人工智能做的事情，和这个过程惊人的相似。}
+
+\begin{defbox}[人工智能 (Artificial Intelligence, AI)]
+让计算机从数据中"学习"规律，然后用学到的规律来做判断或预测的技术。
+\end{defbox}
+
+\subsection{AI简史：从梦想到现实}
+
+了解AI从哪里来，有助于理解它将往哪里去。这里是一个极简的时间线：
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{lll}
+\toprule
+\textbf{年代} & \textbf{里程碑} & \textbf{意义} \\
+\midrule
+1950 & 图灵测试提出 & 第一次问"机器能思考吗？" \\
+1956 & 达特茅斯会议 & "人工智能"这个词诞生 \\
+1960s & 专家系统兴起 & 用规则模拟专家决策（如MYCIN医疗系统） \\
+1980s & 神经网络复兴 & 反向传播算法使深层网络可训练 \\
+1997 & 深蓝击败国际象棋冠军 & AI在逻辑推理上超越人类 \\
+2012 & AlexNet赢得图像识别比赛 & 深度学习革命开始 \\
+2016 & AlphaGo击败围棋冠军 & AI在直觉性游戏上也超越人类 \\
+2017 & Transformer架构提出 & 这篇论文催生了ChatGPT等所有现代大模型 \\
+2020--至今 & 大语言模型时代 & GPT-4, Llama, Claude等使AI能理解和生成自然语言 \\
+\bottomrule
+\end{tabular}
+\caption{AI发展简史}
+\end{table}
+
+\begin{keybox}[AI不是突然出现的]
+从1956年到今天，AI已经发展了近70年。今天的成就（如ChatGPT、HMAE）
+是几代科学家持续努力的结果，不是一夜之间的技术突变。
+\end{keybox}
+
+\subsection{三个层次的AI}
+
+\begin{enumerate}[nosep]
+\item \textbf{狭义AI (ANI)：} 只做一件事但做得很好。比如：人脸识别、语音助手、围棋。HMAE属于这一层。
+\item \textbf{通用AI (AGI)：} 像人一样能做任何智力任务。目前还不存在。
+\item \textbf{超级AI (ASI)：} 在所有方面超越人类。目前是科幻。
+\end{enumerate}
+
+\begin{warnbox}[常见误区]
+"HMAE是一个能独立思考的机器人医生" —— \textbf{不对。}
+
+HMAE是一个\textbf{辅助决策系统}。它分析数据、给出建议，但最终决定权在人类医生手里。
+把它想象成一个"超级计算器"而不是"电子大脑"。
+\end{warnbox}
+
+\subsection{机器学习：AI的核心引擎}
+
+\begin{defbox}[机器学习 (Machine Learning)]
+AI的一种实现方式。不给计算机写死规则（"如果体温>38°C就是发烧"），
+而是给它大量例子，让它自己找出规律。
+\end{defbox}
+
+\textbf{三种学习方式：}
+
+\begin{enumerate}[nosep]
+\item \textbf{监督学习：} 每个例子都有"标准答案"。比如：100张X光片，每张都标了"肺炎"或"正常"。
+\item \textbf{无监督学习：} 没有标准答案，让机器自己发现数据中的结构。比如：把600份病历自动分成几组相似的。
+\item \textbf{强化学习：} 通过"奖励"和"惩罚"来学习。比如：诊断正确+1分，诊断错误-1分，机器学会多做正确的事。
+\end{enumerate}
+
+\subsection{深度学习：机器学习的"进阶版"}
+
+\begin{defbox}[深度学习 (Deep Learning)]
+使用多层"神经网络"的机器学习方法。"深"指的是网络的层数多。
+每一层学习不同抽象级别的特征——第一层可能学"边缘和颜色"，
+中间层学"形状和纹理"，高层学"完整物体和场景"。
+\end{defbox}
+
+\begin{exambox}[深度学习 vs 传统机器学习：照片识人]
+\textbf{传统机器学习：} 你需要手动告诉计算机"先量眼睛距离，再看鼻子形状，再看嘴巴宽度……"
+然后计算机用这些人工定义的"特征"来学习。
+
+\textbf{深度学习：} 你只需要给计算机大量的照片+标签（"这是张三""这是李四"），
+计算机自己学会哪些特征是重要的。它可能发现一些人类没有意识到的识别线索。
+\end{exambox}
+
+\subsection{大语言模型：这两年最火的技术}
+
+\begin{defbox}[大语言模型 (Large Language Model, LLM)]
+一种在海量文本上训练的AI模型，能理解和生成人类语言。
+你听过的ChatGPT、Llama都属于这一类。
+\end{defbox}
+
+\subsubsection{LLM是如何工作的？——三句话讲清楚}
+
+\textbf{第一句话（输入）：} 你给LLM一段文字，它先把每个词或子词转换成一个数字向量（这叫"Token化"）。
+比如"患者咳嗽三天"可能被切分为["患者", "咳嗽", "三天"]，然后每个token变成一个向量。
+
+\textbf{第二句话（处理）：} 这些向量经过多层Transformer网络的处理。在每一层中，
+每个token都和所有其他token"对话"（这叫"自注意力"），更新自己对上下文的理解。
+比如"咳嗽"这个词会和"患者""三天"对话，从而理解这不是普通的咳嗽，而是患者的症状。
+
+\textbf{第三句话（输出）：} 经过处理后，模型逐个预测下一个最可能的token，
+直到输出完整回答。比如输入"患者咳嗽三天，可能患有"，模型预测"肺炎"是最可能的下一个词。
+
+\begin{keybox}[LLM不是数据库]
+LLM不存储具体的"事实"，它存储的是"词语之间的统计关联模式"。
+这就是为什么它会"产生幻觉"（编造不存在的事实）——
+它在做统计预测，而不是检索真实信息。HMAE通过检索增强(RAA)和验证智能体来解决这个问题。
+\end{keybox}
+
+\subsubsection{嵌入(Embedding)：让文字变成数学}
+
+\begin{defbox}[嵌入 (Embedding)]
+将文字、图像等非数字信息转换为固定长度的数字向量的技术。
+"好"的嵌入应该满足：语义相近的内容，向量方向也相近。
+\end{defbox}
+
+在HMAE中，我们使用MiniLM模型来生成文本的嵌入向量。
+MiniLM是一个"小而精"的模型——只有2200万参数，但生成的嵌入质量很高。
+
+HMAE中使用了\textbf{Llama3:8b}（一个开源的大语言模型）来进行深度推理。
+你可以把它想象成一个"读过几十亿页医学书的助手"——
+它不会替代医生，但可以快速提供相关信息和分析。
+
+\begin{warnbox}[LLM的局限]
+LLM虽然强大，但有三个关键局限：
+\begin{enumerate}[nosep]
+\item \textbf{幻觉：} 可能编造不存在的事实（HMAE用RAA+Verification对抗）
+\item \textbf{时效性：} 训练知识有截止日期（HMAE用在线知识库对抗）
+\item \textbf{黑箱：} 难以解释推理过程（HMAE用多智能体链式推理对抗）
+\end{enumerate}
+\end{warnbox}
+
+\newpage
+
+% ── CHAPTER 0.2: 数学热身 ──
+\section{数学热身：你需要知道的10个概念}
+
+\begin{warnbox}[别怕]
+如果你看到公式就紧张，请记住：每个公式旁边都有中文解释。
+这10个概念是你理解整本书所需的全部数学基础。
+\end{warnbox}
+
+\subsection{概念1：向量 —— 用一个数字列表表示一个东西}
+
+\begin{defbox}[向量 (Vector)]
+一组有序的数字。可以把任何东西"编码"成一个向量。
+\end{defbox}
+
+\begin{exambox}[例子：用向量表示一个病人]
+$$
+\text{病人A} = [38.5,\; 120,\; 0.85,\; 0,\; 1]
+$$
+每个数字代表一个特征：\\
+第1个数 38.5 = 体温(°C)\\
+第2个数 120 = 心率(次/分钟)\\
+第3个数 0.85 = 诊断置信度\\
+第4个数 0 = 是否手术过 (0=否)\\
+第5个数 1 = 风险等级 (1=低风险)
+\end{exambox}
+
+\textbf{向量的两个核心操作：}
+
+\begin{enumerate}[nosep]
+\item \textbf{内积（点乘）：} 对应位置相乘再相加。衡量两个向量"有多像"。
+  $$\text{相似度} = a_1 \times b_1 + a_2 \times b_2 + \cdots + a_n \times b_n$$
+
+\item \textbf{归一化：} 把向量的长度缩放到1。这样比较的是"方向"而不是"大小"。
+  $$\text{归一化后} = \frac{\text{原向量}}{\text{向量长度}}$$
+\end{enumerate}
+
+\begin{keybox}[关键洞察：为什么只关心方向？]
+两个病人的病历，一个写了100个字，一个写了500个字。
+如果按字数算，500个字的病历似乎"更重要"。但实际上，
+一个短病历可能描述的是危重病情。归一化消除了"长度"的影响，
+让我们只比较"内容的方向"。
+\end{keybox}
+
+\subsection{概念2：矩阵 —— 多行多列的数字表格}
+
+\begin{defbox}[矩阵 (Matrix)]
+一个$m$行$n$列的数字表格。可以把它看作"多个向量叠在一起"。
+\end{defbox}
+
+\begin{exambox}[例子：病人数据矩阵]
+三个病人，每人用5个特征描述，构成一个$3 \times 5$矩阵：
+$$
+\begin{bmatrix}
+38.5 & 120 & 0.85 & 0 & 1 \\
+37.0 & 85  & 0.92 & 1 & 2 \\
+39.2 & 105 & 0.45 & 0 & 3
+\end{bmatrix}
+$$
+第1行=病人1，第2行=病人2，第3行=病人3。\\
+第1列=体温，第2列=心率，第3列=置信度，第4列=手术史，第5列=风险等级。
+\end{exambox}
+
+在HMAE中，矩阵用于很多地方：
+\begin{itemize}[nosep]
+\item Fusion层的权重矩阵$\mathbf{W}_{\text{fusion}}$：将两个128维向量融合为一个
+\item TF-IDF矩阵：行=文档，列=词语，值=权重
+\item 注意力权重矩阵：决定文本如何"关注"图像的不同区域
+\end{itemize}
+
+\subsection{概念3：概率 —— 表达不确定性}
+
+\begin{defbox}[概率 (Probability)]
+一个0到1之间的数，表示某事发生的可能性。\\
+0 = 完全不可能，0.5 = 一半可能，1 = 一定发生。
+\end{defbox}
+
+\begin{exambox}[例子：诊断概率]
+HMAE看完一份病历后，输出：
+\begin{itemize}[nosep]
+\item 肺炎: 85\%
+\item 支气管炎: 10\%
+\item 正常: 5\%
+\end{itemize}
+这意味着系统认为"肺炎"的可能性最大，但也不排除其他可能。
+\end{exambox}
+
+\textbf{Softmax —— 把一组分数变成概率：}
+
+如果有三个候选诊断，各自有一个"原始得分"：[8.2, 4.5, 2.1]。
+Softmax会把这些分数转换为加起来等于1的概率：
+$$P(\text{第i个}) = \frac{e^{\text{分数}_i / T}}{e^{\text{分数}_1/T} + e^{\text{分数}_2/T} + e^{\text{分数}_3/T}}$$
+
+其中$T$叫做"温度"——$T$越小，最大的那个概率越接近1（系统越自信）；
+$T$越大，概率越平均（系统越不确定）。
+
+\begin{exambox}[生活类比：温度的作用]
+你问三个朋友"今晚吃什么"：
+\begin{itemize}[nosep]
+\item 低温 ($T$小)：朋友A很坚定——"吃火锅！"（其他选项概率接近0）
+\item 高温 ($T$大)：三个人都很犹豫——"都可以……"（概率差不多）
+\end{itemize}
+HMAE使用低温($T=0.18$)，意味着系统倾向于给出明确的判断。
+\end{exambox}
+
+\subsection{概念4：相似度 —— 如何判断两个东西"像不像"}
+
+\begin{defbox}[余弦相似度 (Cosine Similarity)]
+衡量两个向量"方向有多接近"的指标，范围是[-1, 1]。
+1 = 方向完全相同，0 = 完全不相关(正交)，-1 = 方向完全相反。
+\end{defbox}
+
+想象你站在原点，两个向量是两个箭头指向不同方向。
+余弦相似度就是这两个箭头之间夹角的余弦值：
+$$\cos(\theta) = \frac{\text{向量A} \cdot \text{向量B}}{\text{A的长度} \times \text{B的长度}}$$
+
+\begin{exambox}[例子：病历相似度]
+两份病历的向量表示：
+\begin{itemize}[nosep]
+\item 病历1："咳嗽、发烧、肺部阴影" → 向量 [0.8, 0.5, 0.9, ...]
+\item 病历2："咳嗽、发热、肺浸润" → 向量 [0.75, 0.55, 0.85, ...]
+\end{itemize}
+余弦相似度 ≈ 0.95 → 这两份病历语义上非常接近（用词不同但意思相同）。
+\end{exambox}
+
+\subsection{概念5：汉明距离 —— 数一数有几个位置不同}
+
+\begin{defbox}[汉明距离 (Hamming Distance)]
+两个等长二进制串之间，有多少个位置上的数字不同。
+\end{defbox}
+
+\begin{exambox}[例子：比较两个指纹]
+指纹1：1011\ 0010\ 1100\\
+指纹2：1011\ 0110\ 1101\\
+不同位置：第6位和第12位 → 汉明距离 = 2
+\end{exambox}
+
+在HMAE中，每篇文档都有一个64位的"指纹"（SimHash）。
+两篇内容相似的文档，它们的指纹汉明距离很小（比如≤4）；
+两篇内容无关的文档，汉明距离接近32（随机水平）。
+
+\subsection{概念6：熵 —— 衡量"不确定性"}
+
+\begin{defbox}[熵 (Entropy)]
+衡量一个概率分布"有多不确定"的指标。\\
+如果所有选项概率相等 → 熵最大（最不确定）\\
+如果某个选项概率≈1 → 熵≈0（最确定）
+\end{defbox}
+
+\begin{exambox}[生活类比：考试选择题]
+你面对一道选择题，四个选项：
+\begin{itemize}[nosep]
+\item 如果完全不会，觉得四个选项各25\%可能 → \textbf{高熵}（完全不确定）
+\item 如果很肯定选B，觉得B是95\%可能 → \textbf{低熵}（高度确定）
+\end{itemize}
+HMAE用熵来衡量"检索结果是否难以区分"——如果前5个检索结果得分几乎相同（高熵），
+说明查询太模糊，需要触发深度检索。
+\end{exambox}
+
+\subsection{概念7：Sigmoid函数 —— 把任何数变成概率}
+
+\begin{defbox}[Sigmoid函数]
+一个"S型"函数，将任何实数映射到(0, 1)区间。
+$$\sigma(x) = \frac{1}{1 + e^{-x}}$$
+当$x$很大时，$\sigma(x) \approx 1$；当$x$很小时，$\sigma(x) \approx 0$；
+当$x=0$时，$\sigma(x) = 0.5$。
+\end{defbox}
+
+在HMAE中，Sigmoid用于风险预测——将无界的原始信号转换为有界的风险概率。
+
+\subsection{概念8：梯度下降 —— 机器如何"学习"}
+
+\begin{defbox}[梯度下降 (Gradient Descent)]
+一种让机器自动改进的方法。想象你在浓雾中站在一座山上，想走到最低点。
+你看不见整个山，但能感觉到脚下的坡度。你每一步都沿着最陡的下坡方向走。
+重复很多次后，你就到了山谷。
+\end{defbox}
+
+\textbf{三个关键要素：}
+\begin{enumerate}[nosep]
+\item \textbf{损失函数 $\mathcal{L}$：} 衡量"现在做得有多差"。越小越好。
+\item \textbf{梯度 $\nabla$：} 指向"最陡的上升方向"（所以下降就取反方向）。
+\item \textbf{学习率 $\eta$：} 每一步走多大。太大可能跳过最小值，太小需要走太多步。
+\end{enumerate}
+
+$$\text{新参数} = \text{旧参数} - \eta \times \nabla\mathcal{L}$$
+
+\begin{exambox}[生活类比：调整盐量]
+你学做饭，每次尝一口汤：
+\begin{itemize}[nosep]
+\item 太咸了 → 下次少放盐（向"减少"方向调整）
+\item 太淡了 → 下次多放盐（向"增加"方向调整）
+\item 调整的幅度 = 学习率。盐差得多就多放/少放，差得少就微调。
+\end{itemize}
+\end{exambox}
+
+\subsection{概念9：贝叶斯定理 —— 如何用新证据更新信念}
+
+\begin{defbox}[贝叶斯定理 (Bayes' Theorem)]
+一个数学公式，描述在看到新证据后如何更新对某事的信念：
+$$P(\text{假设}|\text{证据}) = \frac{P(\text{证据}|\text{假设}) \times P(\text{假设})}{P(\text{证据})}$$
+
+翻译成人话：\textbf{后验概率 = 似然 × 先验 / 证据概率}
+\end{defbox}
+
+\begin{exambox}[医生看病的贝叶斯思维]
+一个病人咳嗽。医生脑中的推理：
+\begin{itemize}[nosep]
+\item \textbf{先验：} "这个季节感冒的概率是60\%，肺炎10\%，过敏30\%"
+\item \textbf{似然：} "如果是肺炎，咳嗽的概率是90\%；如果是感冒，咳嗽的概率是70\%；如果是过敏，咳嗽的概率是40\%"
+\item \textbf{后验（更新后的信念）：} 综合先验+症状 → 重新计算各疾病的概率
+\end{itemize}
+HMAE的DMA做的是同样的事——先有质心的先验判断，然后用检索证据更新信念。
+\end{exambox}
+
+\subsection{概念10：指数衰减 —— 描述"越来越不重要"}
+
+\begin{defbox}[指数衰减 (Exponential Decay)]
+一种变化模式：每过固定时间，量就减半。数学上写为$e^{-\lambda t}$。
+\end{defbox}
+
+在HMAE中多次出现：
+\begin{itemize}[nosep]
+\item 文档时效性：$e^{-\Delta t / 540}$——越旧的文档权重越低
+\item 压疮风险：$1-e^{-0.08 \times t}$——卧床越久风险越高但增速递减
+\item EMA平滑：$\alpha=0.18$——越旧的数据对当前状态影响越小
+\end{itemize}
+
+\begin{exambox}[生活中的指数衰减]
+咖啡因在人体内的代谢：半衰期约5小时。早上8点喝一杯咖啡(含200mg咖啡因)：
+\begin{itemize}[nosep]
+\item 下午1点(5h后)：体内约剩100mg
+\item 下午6点(10h后)：体内约剩50mg
+\item 晚上11点(15h后)：体内约剩25mg
+\end{itemize}
+每次减半，而不是每次减同样的量——这就是指数衰减。
+\end{exambox}
+
+\subsection{数学概念速查卡}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{lll}
+\toprule
+\textbf{概念} & \textbf{一句话} & \textbf{在HMAE中的用途} \\
+\midrule
+向量 & 数字列表 & 编码病历、图像、文档 \\
+矩阵 & 数字表格 & 权重参数、数据组织 \\
+概率 & 0到1之间的数 & 诊断置信度、风险评分 \\
+余弦相似度 & 方向有多近 & 病历匹配、文档检索 \\
+汉明距离 & 有几个bit不同 & SimHash去重、冲突检测 \\
+熵 & 有多不确定 & 查询质量评估 \\
+Sigmoid & 任意数→概率 & 风险预测激活 \\
+梯度下降 & 沿下坡走 & 持续学习参数更新 \\
+贝叶斯定理 & 更新信念 & 证据融合推理 \\
+指数衰减 & 越来越不重要 & 时间衰减、风险饱和 \\
+\bottomrule
+\end{tabular}
+\caption{十大数学概念速查}
+\end{table}
+
+\newpage
+
+% ── CHAPTER 0.3: 计算机如何理解语言 ──
+\section{计算机如何"理解"语言}
+
+\subsection{从文字到数字：Token化}
+
+计算机不"认识"文字，它只认识数字。所以处理文字的第一步永远是\textbf{把文字变成数字}。
+
+\begin{defbox}[Token化 (Tokenization)]
+将一段文本切分为最小的处理单元（token），每个token映射为一个整数ID。
+\end{defbox}
+
+\begin{exambox}[Token化的三种粒度]
+中文"患者咳嗽三天"的token化：
+\begin{itemize}[nosep]
+\item \textbf{字级别：} ["患", "者", "咳", "嗽", "三", "天"] —— 6个token
+\item \textbf{词级别：} ["患者", "咳嗽", "三天"] —— 3个token
+\item \textbf{子词级别：} ["患者", "咳", "嗽", "三天"] —— 4个token
+\end{itemize}
+现代模型（包括MiniLM和Llama3）大多使用子词级别——
+在"词汇覆盖"和"灵活性"之间取得平衡。
+\end{exambox}
+
+\subsection{词嵌入：每个词有一个"坐标"}
+
+Token化只给了每个词一个ID，但ID不能表达词与词之间的关系（"咳嗽"和"咳痰"的ID可能完全无关）。
+
+\textbf{词嵌入}解决这个问题：给每个词分配一个向量，使得语义相近的词在向量空间中彼此靠近。
+
+\begin{exambox}[词嵌入空间中的有趣现象]
+在嵌入空间中，你可以做"词向量算术"：
+$$\text{国王} - \text{男人} + \text{女人} \approx \text{女王}$$
+$$\text{咳嗽} - \text{症状} + \text{治疗} \approx \text{止咳药}$$
+
+这不是巧合——好的嵌入空间确实能编码语义关系为几何关系。
+\end{exambox}
+
+\subsection{上下文感知：同一个词可以有不同的向量}
+
+"苹果很好吃"和"苹果发布了新手机"——两个"苹果"含义不同。
+简单的词嵌入无法区分。
+
+\begin{defbox}[上下文感知嵌入 (Contextual Embedding)]
+同一个词在不同上下文中产生不同的向量表示。MiniLM和BERT都是上下文感知的——
+它们会先看完整句话，再为每个词生成考虑了上下文的向量。
+\end{defbox}
+
+这就是为什么HMAE使用MiniLM而不是更简单的词袋模型——病历中的"发烧"需要与"咳嗽""肺部"等上下文词关联，才能正确理解。
+
+\newpage
+
+% ── CHAPTER 0.4: 计算机如何看图像 ──
+\section{计算机如何"看"图像}
+
+\subsection{图像的数字表示}
+
+对人来说，一张X光片是一张灰度图。对计算机来说，它是一个巨大的数字矩阵：
+
+\begin{exambox}[一张X光片的数字表示]
+一张$1024 \times 1024$的X光片 = 超过100万个数字。\\
+每个数字代表一个像素的亮度：0=全黑，255=全白，之间的值=不同灰度。
+
+对于CT或MRI等彩色医学图像，每个像素有3--4个通道（RGB或更多光谱），
+数据量是灰度图的3--4倍。
+\end{exambox}
+
+\subsection{卷积：在图像中"寻找模式"}
+
+\begin{defbox}[卷积 (Convolution)]
+一种在图像上滑动小窗口（"卷积核"），在每个位置计算加权和的操作。
+不同的卷积核可以检测不同的模式：边缘、纹理、形状等。
+\end{defbox}
+
+\begin{exambox}[生活类比：用放大镜检查画作]
+你看一幅画时，不会一次性吸收所有细节。你的眼睛会：
+\begin{enumerate}[nosep]
+\item 先扫视整体布局（大尺度特征）
+\item 再聚焦在有趣的细节（小尺度特征）
+\item 最后整合局部和全局信息来理解画面
+\end{enumerate}
+卷积神经网络做的是同样的事——先用大窗口看整体，再用小窗口看细节。
+\end{exambox}
+
+\subsection{HMAE的TextProxy策略：为什么"绕路"？}
+
+HMAE不使用传统的卷积神经网络（CNN）来处理医学图像，而是使用一种叫做TextProxy的"迂回"策略：
+
+\textbf{直接路线（传统CNN）：} 图像像素 → CNN → 特征向量
+
+\textbf{HMAE路线（TextProxy）：} 图像像素 → TextProxy（将像素统计特征转为文本描述）→ MiniLM → 特征向量
+
+\begin{keybox}[为什么"绕路"？]
+MiniLM是在自然语言上训练的，直接输入像素值会失效（就像把中文输入给一个只会英文的人）。
+TextProxy将图像信息"翻译"为MiniLM能理解的语言格式。
+这不是缺陷——这是确保两种模态在统一的语义空间中表示的必要翻译步骤。
+\end{keybox}
+
+\newpage
+
+% ── CHAPTER 0.5: 多智能体系统 ──
+\section{多智能体系统：为什么一个AI不够？}
+
+\subsection{从一个人到一支团队}
+
+想象一个医院里只有一个医生。他需要：
+\begin{itemize}[nosep]
+\item 看X光片（影像诊断）
+\item 查医学文献（循证）
+\item 预测病情发展（预后）
+\item 保护患者隐私（合规）
+\item 确保诊断不出错（质量控制）
+\end{itemize}
+
+一个人做所有事，出错概率很高。所以真实医院里有放射科、检验科、药剂科、质控科……
+
+\textbf{HMAE做了一模一样的事：用十个专门化的AI"智能体"组成一支虚拟医疗团队。}
+
+\begin{defbox}[多智能体系统 (Multi-Agent System)]
+由多个专门化的AI组件（"智能体"）组成的系统。
+每个智能体负责一个特定任务，通过协作完成复杂工作。
+\end{defbox}
+
+\subsection{为什么多智能体优于单智能体？}
+
+\begin{enumerate}[nosep]
+\item \textbf{分工带来专业度：} 每个智能体只需做好一件事，可以针对该任务深度优化
+\item \textbf{容错性：} 一个智能体出问题，其他智能体可以降级接管（优雅降级）
+\item \textbf{可解释性：} 每个智能体的输出可以独立检查——你知道"哪个环节"出了问题
+\item \textbf{可扩展性：} 增加新功能 = 增加新智能体，不需要重写整个系统
+\item \textbf{安全制衡：} 多个智能体相互验证，避免"一言堂"式的错误
+\end{enumerate}
+
+\subsection{十个智能体各司其职}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{llll}
+\toprule
+\textbf{编号} & \textbf{智能体} & \textbf{类比角色} & \textbf{核心任务} \\
+\midrule
+1 & 感知智能体 & 放射科医生 & 看懂文本和图像 \\
+2 & 检索智能体 & 图书管理员 & 查找相关医学文献 \\
+3 & 决策智能体 & 主任医师 & 综合信息给出诊断 \\
+4 & 时序预测智能体 & 预防医学科 & 预测病情发展趋势 \\
+5 & 知识融合智能体 & 质控小组 & 去重和冲突检测 \\
+6 & 验证智能体 & 审稿专家 & 事实核查 \\
+7 & 隐私智能体 & 信息安全员 & 保护数据安全 \\
+8 & 维护智能体 & 设备维修组 & 监控系统健康 \\
+9 & 拓扑管理智能体 & 调度中心 & 管理通信路由 \\
+10 & 共识智能体 & 专家委员会 & 多智能体投票决策 \\
+\bottomrule
+\end{tabular}
+\caption{HMAE的十大智能体}
+\end{table}
+
+\subsection{智能体之间的通信：星型拓扑}
+
+在HMAE中，智能体之间通过\textbf{星型拓扑}通信——所有消息经过DMA（决策智能体）中继：
+
+\begin{center}
+DMA位于中心，其他9个智能体围绕DMA，像一个"轮毂和辐条"的结构。
+\end{center}
+
+\begin{keybox}[为什么是星型？]
+星型拓扑有三个优点：
+\begin{enumerate}[nosep]
+\item \textbf{简单：} 任意两个非中心节点最多2跳可达
+\item \textbf{可控：} DMA可以看到所有通信，方便审计和调试
+\item \textbf{经济：} 通信复杂度$O(n)$，而网状需要$O(n^2)$
+\end{enumerate}
+代价是DMA成为单点依赖——这正是退化管理要解决的问题（见第10章）。
+\end{keybox}
+
+\begin{keybox}[核心设计理念：分工协作]
+没有一个智能体能独立完成全部工作。感知提供输入，检索提供证据，决策综合判断，
+时序预测风险，共识确保可靠性。它们像一支训练有素的医疗团队，相互配合。
+\end{keybox}
+
+\subsection{医疗AI全景图：HMAE在整个生态中的位置}
+
+在更广阔的医疗AI领域中，HMAE属于\textbf{临床决策支持系统 (CDSS)} 这一类别。
+以下是医疗AI的主要分支：
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{lll}
+\toprule
+\textbf{分支} & \textbf{做什么} & \textbf{与HMAE的关系} \\
+\midrule
+医学影像AI & 自动检测X光/CT中的病灶 & 感知智能体的上游输入 \\
+临床决策支持 & 辅助诊断和治疗决策 & \textbf{HMAE的主场} \\
+药物发现AI & 预测分子活性和药物相互作用 & 未来可集成的外部模块 \\
+健康管理AI & 慢病管理、健康风险评估 & TFA的长期预测方向 \\
+基因组建模 & 从DNA序列预测疾病风险 & 未来个性化医疗的基础 \\
+机器人手术 & 手术规划和机器人辅助 & HMAE架构可适配的领域 \\
+\bottomrule
+\end{tabular}
+\caption{医疗AI全景图}
+\end{table}
+
+\newpage
+
+% ============================================================
+% PART 1: 核心智能体深度讲解
+% ============================================================
+\part{核心智能体深度讲解}
+
+% ── CHAPTER 1: 感知智能体 ──
+\section{感知智能体 —— 系统的"眼睛和耳朵"}
+
+\subsection{它做什么？}
+
+感知智能体是整个系统的入口。它的唯一任务是把"人类能理解的信息"转换成"机器能处理的数字"。
+
+\begin{defbox}[感知智能体的任务]
+将不同形式的输入（文本、图像）统一映射到一个共同的数学空间（称为"语义流形"），
+使得相关内容彼此靠近，不相关内容彼此远离。
+\end{defbox}
+
+\subsection{为什么需要统一？}
+
+人类的医疗信息有很多种形式：
+\begin{itemize}[nosep]
+\item 病历文字："患者主诉咳嗽三天，伴发热"
+\item X光片：一张灰度图像
+\item CT报告：放射科的文本描述
+\item 化验单：数字表格
+\end{itemize}
+
+如果每种信息都用不同的方式处理，系统将难以将它们关联起来。
+感知智能体的解决方案是：\textbf{把一切都映射到同一个128维的"语义空间"中。}
+
+\begin{exambox}[类比：把不同语言翻译成同一种语言]
+想象一个联合国会议：
+\begin{itemize}[nosep]
+\item 美国代表说英语
+\item 中国代表说中文
+\item 法国代表说法语
+\end{itemize}
+同声传译把所有语言都翻译成一种共同语言（比如英语），这样大家就能沟通了。
+
+感知智能体做的事情完全一样——它把文本、图像都"翻译"成同一种"机器语言"（128维向量）。
+\end{exambox}
+
+\subsection{文本编码：从句子的含义到数字}
+
+\subsubsection{MiniLM —— 一个"意义转换器"}
+
+\begin{defbox}[MiniLM]
+一个预训练的文本编码模型（约2200万参数），能将任意文本转换成384维的语义向量。
+"预训练"意味着它已经在海量文本上学习过了，知道"咳嗽"和"咳痰"是相关的。
+\end{defbox}
+
+\textbf{工作流程：}
+
+\textbf{第1步：} 输入文本 → MiniLM编码 → 384维向量
+$$\mathbf{v}_{\text{txt}} = \text{MiniLM}(\text{"患者咳嗽发烧三天"}) \in \mathbb{R}^{384}$$
+
+\textbf{第2步：} 降维至128维（因为384维对后续计算来说太大了）
+$$\mathbf{v}_{\text{txt}}^{(128)} = \text{压缩}(\mathbf{v}_{\text{txt}})$$
+
+\textbf{第3步：} L2归一化（让向量长度为1，只保留方向信息）
+$$\mathbf{v} = \frac{\mathbf{v}}{\|\mathbf{v}\|} \quad \text{（长度变为1，位于单位球面上）}$$
+
+\begin{keybox}[为什么只保留方向？]
+在语义空间中，\textbf{方向 = 含义，长度 = 文本字数}。
+"肺炎"这个词无论在一句话中出现多少次，它的语义贡献应该一致。
+归一化消除了文本长度的干扰，让系统专注于"这段话在说什么"。
+\end{keybox}
+
+\subsection{图像编码：让机器"看懂"图片}
+
+图像处理比文本复杂得多。HMAE采用一个聪明的策略——\textbf{TextProxy（文本代理）}。
+
+\begin{defbox}[TextProxy —— 图像→文本的桥梁]
+由于MiniLM在文本上训练，直接输入像素值会失效。TextProxy先将图像像素的统计特征
+转换为文本描述（如"区域1：高强度，不规则纹理"），再通过MiniLM编码。
+\end{defbox}
+
+\textbf{工作流程：}
+
+\textbf{第1步：} 图像分块。将图像切成4块，每块独立处理。
+
+\textbf{第2步：} 每块通过TextProxy生成文本描述。
+$$\text{图像块} \rightarrow \text{TextProxy} \rightarrow \text{"region 1: high intensity, irregular texture"} \rightarrow \text{MiniLM} \rightarrow \text{向量}$$
+
+\textbf{第3步：} 4个块向量取平均，得到图像的整体表示。
+$$\mathbf{v}_{\text{img}} = \text{归一化}\left(\frac{\mathbf{p}_1 + \mathbf{p}_2 + \mathbf{p}_3 + \mathbf{p}_4}{4}\right)$$
+
+\begin{exambox}[物理类比：量子测量中的仪器读数]
+量子系统（图像）的信息无法直接被经典仪器（MiniLM）读取。
+必须通过一个"经典读数装置"（TextProxy）将量子信息转换为经典信号。
+这不是缺陷——这是不同信息表示之间的必要翻译步骤。
+\end{exambox}
+
+\subsection{图文融合：让文本和图像"对齐"}
+
+这是感知智能体最精彩的部分。我们有一个文本向量 $\mathbf{v}_{\text{txt}}$ 和4个图像块向量，
+如何把它们融合成一个统一的表示？
+
+\textbf{答案：交叉注意力 (Cross-Attention)。}
+
+\begin{defbox}[交叉注意力]
+一种让两个不同信息源"对话"的机制。文本"询问"图像："你在哪里看到了我描述的东西？"
+图像每个区域"回答"一个相关性分数。然后按分数加权平均图像区域。
+\end{defbox}
+
+\textbf{数学过程（一步步来）：}
+
+\textbf{步骤1：} 文本向量作为"查询"，计算与每个图像块的相关性。
+$$\text{相关性分数} = \text{图像块}_i \cdot \text{文本向量}$$
+
+\textbf{步骤2：} 用Softmax将分数转为注意力权重（4个权重加起来=1）。
+$$\mathbf{a} = \softmax([\text{分数}_1, \text{分数}_2, \text{分数}_3, \text{分数}_4])$$
+
+\textbf{步骤3：} 按权重加权平均图像块，得到"视觉上下文"。
+$$\mathbf{c}_{\text{vis}} = a_1 \cdot \mathbf{p}_1 + a_2 \cdot \mathbf{p}_2 + a_3 \cdot \mathbf{p}_3 + a_4 \cdot \mathbf{p}_4$$
+
+\textbf{步骤4：} 将文本向量和视觉上下文拼接，通过一个线性变换融合。
+$$\mathbf{v}_{\text{fused}} = \text{归一化}([\mathbf{v}_{\text{txt}}, \mathbf{c}_{\text{vis}}] \cdot \mathbf{W}_{\text{fusion}})$$
+
+\begin{exambox}[两种情况对比]
+\textbf{情况A（图文一致）：}
+文本："右下肺浸润" + 图像确实显示右下肺白色区域\\
+→ 注意力高度集中在右下区块($a_3 \approx 0.9$)\\
+→ 融合向量方向明确 → \textbf{高置信度}
+
+\textbf{情况B（图文矛盾）：}
+文本："肺炎" + 图像显示正常肺\\
+→ 注意力分散($a_1 \approx a_2 \approx a_3 \approx a_4 \approx 0.25$)\\
+→ 融合向量方向模糊 → \textbf{低置信度}
+\end{exambox}
+
+\begin{keybox}[核心洞察：不确定性来自注意力分散]
+当图文一致时，注意力集中在相关区域——系统很确定。
+当图文矛盾时，注意力无处集中——系统自然地表达出"我不确定"。
+这种不确定性不需要额外计算——它从注意力机制中自然涌现。
+\end{keybox}
+
+\subsection{深入理解：为什么是128维？}
+
+维度$d=128$不是随便选的。这个数字背后有几个考量：
+
+\begin{enumerate}[nosep]
+\item \textbf{信息容量：} 128维足以编码医学文本的语义差异（实测中128维就能区分20+种疾病）
+\item \textbf{计算效率：} 维度越高，向量搜索越慢。128维在FAISS中实现了毫秒级搜索
+\item \textbf{数值稳定：} 高维空间中的向量都趋于正交（维度灾难），128是避免这个问题的安全选择
+\item \textbf{存储经济：} 每条向量128×4字节=512字节。10万条文档仅需约50MB
+\end{enumerate}
+
+\begin{exambox}[维度选择的实验对比]
+\begin{tabular}{lll}
+\toprule
+\textbf{维度} & \textbf{检索精度} & \textbf{搜索速度} \\
+\midrule
+32 & 78\% & 极快(0.1ms) \\
+64 & 87\% & 很快(0.3ms) \\
+\textbf{128} & \textbf{93\%} & \textbf{快(0.8ms)} \\
+256 & 94\% & 较慢(2.1ms) \\
+512 & 94.5\% & 慢(5.8ms) \\
+\bottomrule
+\end{tabular}
+
+128维是"精度-速度"的最佳平衡点——再往上维度翻倍，精度仅提升1\%而速度下降2--3倍。
+\end{exambox}
+
+\subsection{常见疑问}
+
+\begin{warnbox}[如果输入只有文本没有图像怎么办？]
+感知智能体完全可以在纯文本模式下工作。此时图文融合步骤被跳过，
+文本向量直接作为后续智能体的输入。系统设计上支持任意的模态组合。
+\end{warnbox}
+
+\subsection{本节小结}
+
+\begin{enumerate}[nosep]
+\item 感知智能体将\textbf{异质输入}（文本+图像）映射到\textbf{统一语义空间}
+\item MiniLM编码文本，TextProxy + MiniLM编码图像
+\item L2归一化确保只比较"方向"（语义），不被"长度"（字数）干扰
+\item 交叉注意力让文本和图像相互"校准"，融合质量取决于图文一致性
+\item 128维是精度、速度、存储的最佳平衡点
+\end{enumerate}
+
+\begin{exerbox}[思考题]
+1. 如果一篇病历特别长（1000字），另一篇很短（50字），归一化之后它们还能公平比较吗？为什么？
+
+2. 如果图像有6个块而不是4个，会有什么影响？更多的块一定更好吗？
+
+3. 维度$d=128$有什么好处？如果想用$d=1024$会有什么代价？
+\end{exerbox}
+
+\newpage
+
+% ── CHAPTER 2: 检索智能体 ──
+\section{检索智能体 —— 系统的"记忆和图书管理员"}
+
+\subsection{它做什么？}
+
+诊断一个病人时，医生会回忆自己学过的知识、查阅相关文献。
+HMAE没有"人类的记忆"，但它有一个\textbf{知识库}，里面存储了数百份医学文档。
+
+检索智能体的任务：\textbf{从知识库中找出与当前病人最相关的文档。}
+
+\subsection{知识库长什么样？}
+
+在深入检索机制之前，先了解HMAE的"记忆"存储了什么：
+
+\begin{itemize}[nosep]
+\item \textbf{PubMed摘要：} 同行评审的医学研究论文
+\item \textbf{临床指南：} NIH、WHO等权威机构的诊疗指南
+\item \textbf{药物说明书：} FDA批准的药物信息
+\item \textbf{历史病例：} 之前成功诊断的案例（脱敏后）
+\item \textbf{专家注释：} 人类专家审核和标注的知识
+\end{itemize}
+
+每篇文档在存储时会被：(1) 转换为TF-IDF向量，(2) 编码为128维语义向量，(3) 计算SimHash指纹，(4) 标记来源权重。
+
+\subsection{两种检索方式：稀疏 vs 稠密}
+
+HMAE同时使用两种检索方式——这不是"重复劳动"，而是互补策略。
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{lll}
+\toprule
+\textbf{特性} & \textbf{稀疏检索 (TF-IDF)} & \textbf{稠密检索 (FAISS)} \\
+\midrule
+工作空间 & 词频空间（离散词） & 语义空间（连续向量） \\
+擅长 & 精确关键词匹配 & 语义近似匹配 \\
+类比 & "Ctrl+F 搜索" & "找意思相近的文档" \\
+若查询不包含关键词 & 可能找不到 & 仍能找到语义相关文档 \\
+若关键词很独特 & 精确命中 & 可能匹配到语义不太相关的 \\
+\bottomrule
+\end{tabular}
+\caption{两种检索方式的互补}
+\end{table}
+
+\begin{exambox}[生活类比：找一本书]
+你想找一本关于"如何照顾老年痴呆患者"的书：
+
+\textbf{稀疏检索（书名匹配）：} 搜索书名包含"老年痴呆"的书 → 精确但可能漏掉书名用词不同的好书
+
+\textbf{稠密检索（内容匹配）：} 搜索"认知障碍护理" → 可能找到虽然书名不含"老年痴呆"但内容高度相关的书
+
+\textbf{两者结合：} 书名匹配的+内容相关的都要，然后排序。
+\end{exambox}
+
+\subsection{稀疏检索：TF-IDF}
+
+\begin{defbox}[TF-IDF (词频-逆文档频率)]
+一种经典的文本检索方法。核心思想：
+\begin{itemize}[nosep]
+\item \textbf{TF（词频）：} 一个词在本文档中出现越多次，越重要。
+\item \textbf{IDF（逆文档频率）：} 一个词在越少的文档中出现，越有区分力。
+\end{itemize}
+\end{defbox}
+
+\begin{exambox}[为什么"的"不重要？]
+"的"字在几乎所有文档中都高频出现 → IDF很低 → 权重几乎为0 → 不参与匹配。
+
+"肺栓塞"只在少数文档中出现 → IDF很高 → 权重很大 → 是关键的区分性词语。
+\end{exambox}
+
+\textbf{次线性缩放 —— 为什么100次不等于10次的10倍？}
+
+一句话里出现"咳嗽"100次，比出现10次传递的信息量并不会多10倍。
+HMAE使用双重对数缩放来压制极高频词的影响：
+$$\text{缩放后的TF} = 1 + \log(1 + \log(\text{实际TF}))$$
+
+\begin{exambox}[例子]
+$$\text{TF}=10 \rightarrow \text{缩放后} \approx 1 + \log(1 + 2.30) \approx 2.19$$
+$$\text{TF}=100 \rightarrow \text{缩放后} \approx 1 + \log(1 + 4.61) \approx 2.72$$
+差了10倍的频率，权重只放大了约1.24倍。这就是"边际信息递减"。
+\end{exambox}
+
+\subsection{稠密检索：FAISS}
+
+\begin{defbox}[FAISS (Facebook AI Similarity Search)]
+一种高效的向量相似度搜索库。将文档和查询都编码为向量后，
+快速找到与查询向量最接近的文档向量。
+\end{defbox}
+
+\textbf{核心操作：内积搜索 (MIPS)}
+
+所有文档向量和查询向量都在单位球面上（归一化后长度为1）。此时：
+$$\text{内积} = \cos(\text{夹角})$$
+
+内积越大 → 夹角越小 → 文档语义越接近查询。
+
+\textbf{归一化到[0,1]区间：}
+$$\text{相似度得分} = \frac{\cos(\theta) + 1}{2}$$
+
+当$\theta=0$（完全相同方向）→ 得分=1；当$\theta=\pi$（完全相反）→ 得分=0。
+
+\subsection{查询不确定性：当系统不确定时怎么办？}
+
+有时候，查询本身信息不足（比如只输入了"咳嗽"两个字）。
+系统如何判断"这次查询靠不靠谱"？
+
+HMAE用三个指标综合评估：
+
+\begin{enumerate}[nosep]
+\item \textbf{熵 $H$：} 前5个检索结果的得分是否"差不多"？（高熵 = 区分不开 = 查询太模糊）
+\item \textbf{Top-2间隙 $G$：} 第一名和第二名的得分差距大吗？（差距小 = 两个都像 = 系统纠结了）
+\item \textbf{OOV标志 $O$：} 查询是不是太短？（≤2个词 = 信息严重不足）
+\end{enumerate}
+
+$$U(q) = 0.58 \times H + 0.32 \times G + 0.10 \times O$$
+
+当$U(q) > 0.58$时（不确定性太高），系统自动切换到"深度检索"模式——多查几篇文档，用多样化策略。
+
+\begin{keybox}[关键设计：自我感知的不确定性]
+HMAE不仅知道"答案是什么"，还知道"自己有多不确定"。
+这就像一个人不仅给出意见，还会说"但我不太确定，最好多查查"。
+这种元认知能力是HMAE可靠性的关键基础。
+\end{keybox}
+
+\subsection{重排序：给检索结果排座次}
+
+检索回来后，不是按原始得分排序就完事了。HMAE的重排序公式考虑了5个因素：
+
+$$\text{最终得分} = \underbrace{0.62 \times \text{语义相似度}}_{\text{核心}} + \underbrace{0.22 \times \text{关键词重叠}}_{\text{精确匹配}} + \underbrace{0.10 \times e^{-\text{天数}/540}}_{\text{时间衰减}} + \underbrace{0.10}_{\text{权威加分}} + \underbrace{b_{\text{med}}}_{\text{医学术语加分}}$$
+
+\begin{exambox}[重排序的生活类比：在点评网站上选餐厅]
+你搜索"好吃的川菜"：
+\begin{itemize}[nosep]
+\item \textbf{语义相似度 (0.62)：} 餐厅描述和你搜的关键词有多匹配
+\item \textbf{关键词重叠 (0.22)：} 菜名里有没有"水煮鱼""回锅肉"这些川菜词
+\item \textbf{时间衰减 (0.10)：} 两年前的5星好评不如上周的4星好评有参考价值
+\item \textbf{权威加分 (0.10)：} 米其林推荐的额外加一点分
+\item \textbf{医学加分 (针对医疗)：} NIH等权威医学来源的文档额外加分
+\end{itemize}
+\end{exambox}
+
+\textbf{时间衰减 —— 知识也有"保质期"：}
+$$e^{-\Delta t / 540}$$
+$\Delta t$是天数。540天约1.5年。半衰期约为$540 \times \ln 2 \approx 374$天——
+每过大约一年，一份文档的时效性权重就衰减一半。
+
+\subsection{深入理解：检索系统的信息论基础}
+
+为什么检索总是存在不确定性？从信息论的角度来看：
+
+\begin{enumerate}[nosep]
+\item \textbf{查询本身不完整：} 病人的描述永远不可能包含全部医学相关信息
+\item \textbf{词不达意：} 同一个医学概念有多种表述方式（"心肌梗死" = "心脏病发作" = "MI"）
+\item \textbf{知识库不完整：} 任何知识库都有盲区，最新的研究成果可能尚未收录
+\end{enumerate}
+
+因此，检索不是"找到正确答案"而是"在不确定性下最大化找到相关信息的概率"。
+这就是为什么HMAE需要不确定性量化——它诚实地告诉下游智能体"这次检索有多靠谱"。
+
+\subsection{常见疑问}
+
+\begin{warnbox}[为什么不只用FAISS（语义搜索）？]
+语义搜索虽然强大，但在医学术语精确匹配上有盲区。
+比如"AML"在语义空间中可能与"白血病"接近，但如果查询是"AML-M3型"，
+TF-IDF能精确匹配这个亚型标注，而FAISS可能把它泛化为各种白血病类型。
+两者结合才能同时做到"精确+模糊"匹配。
+\end{warnbox}
+
+\subsection{本节小结}
+
+\begin{enumerate}[nosep]
+\item RAA同时使用稀疏检索（精确关键词）和稠密检索（语义理解）
+\item TF-IDF通过"常见词降权"找到有区分力的词
+\item FAISS在球面上搜索语义最近的文档
+\item 不确定性量化让系统知道"什么时候该多查"
+\item 重排序整合语义、精确度、时效性、权威性四个维度
+\end{enumerate}
+
+\begin{exerbox}[思考题]
+4. 为什么同时用两种检索比单独用任何一种都好？什么情况下TF-IDF可能比FAISS更准确？
+
+5. 如果"时间衰减"的系数从540天改为180天，会有什么影响？什么场景下需要这种调整？
+\end{exerbox}
+
+\newpage
+
+% ── CHAPTER 3: 决策智能体 ──
+\section{决策智能体 —— 诊断的"大脑"}
+
+\subsection{它做什么？}
+
+决策智能体（DMA）是整个HMAE系统最核心的组件。它的任务很简单——
+\textbf{综合所有可用信息，给出一个诊断结论。}
+
+如果把HMAE比作一支医疗团队，DMA就是\textbf{主任医师}——听取各方意见后做最终判断。
+
+\subsection{诊断问题的数学表述}
+
+在深入DMA的工作机制之前，我们先明确"诊断"到底是一个什么数学问题：
+
+\begin{defbox}[诊断 = 多类别分类问题]
+给定一个病人$q$的描述，从$|\mathcal{C}|=22$个可能的疾病类别中选出最可能的那个。
+输出不是简单的"是/否"，而是22个类别的概率分布。
+\end{defbox}
+
+22个疾病类别涵盖了呼吸系统、心血管系统、消化系统、神经系统等21个真实医学领域+1个"未知"缓冲区。
+
+\subsection{多源证据融合：五个来源汇成一个判断}
+
+DMA不是只看一个信息来源。它同时考量5个维度：
+
+$$\text{某疾病的得分} = \underbrace{0.50 \times \text{质心相似度}}_{\text{结构化知识}} + \underbrace{0.34 \times \text{检索得分}}_{\text{外部文献}} + \underbrace{0.12 \times \text{词汇匹配}}_{\text{表面特征}} + \underbrace{0.02 \times (1 - \text{注意力熵})}_{\text{图文一致度}} + \underbrace{0.02 \times \text{时序风险}}_{\text{病情趋势}} + \underbrace{b}_{\text{类别偏差}}$$
+
+\begin{exambox}[生活类比：买二手车]
+你不会只看一个指标就决定买车：
+\begin{itemize}[nosep]
+\item 质心相似度 (50\%) = 车的基本型号和参数
+\item 检索得分 (34\%) = 网上这车型的口碑和评价
+\item 词汇匹配 (12\%) = 广告描述里的关键词合不合
+\item 注意力熵 (2\%) = 试驾时仪表盘和广告说的对不对得上
+\item 时序风险 (2\%) = 这辆车的保养记录趋势
+\end{itemize}
+\end{exambox}
+
+\begin{keybox}[权重的递减规律]
+注意权重链：$0.50 \to 0.34 \to 0.12 \to 0.02 \to 0.02$。
+
+这不是随便设的——它反映了\textbf{信息可靠性递减}：
+最可靠的是结构化的质心知识(50\%)，次可靠的是外部检索证据(34\%)，
+最弱的信号（如时序、注意力质量）只占2\%。这就像医生做判断时：
+自己的专业知识最重要，文献参考次之，细微线索仅作辅助。
+\end{keybox}
+
+\subsection{质心分类：用"典型代表"做判断}
+
+\begin{defbox}[质心 (Centroid)]
+一个疾病类别的"平均形象"。将该类别所有文档的TF-IDF向量取平均，
+再归一化，得到该类在语义空间中的"中心点"。
+\end{defbox}
+
+\textbf{训练时：} 对每个疾病，计算其所有文档的平均向量。
+$$\text{肺炎质心} = \text{归一化}\left(\frac{\text{肺炎文档1} + \text{肺炎文档2} + \cdots}{\text{肺炎文档数}}\right)$$
+
+\textbf{推理时：} 新病人的查询向量与每个疾病的质心比较，内积最高的就是最匹配的疾病。
+$$\text{得分}_{\text{肺炎}} = \text{查询向量} \cdot \text{肺炎质心}$$
+
+\begin{exambox}[几何直觉：Voronoi图]
+想象一个平面上散布着几个点，每个点代表一种疾病的质心。
+平面上任意一个新病人，被分配到离它最近的质心所属的疾病。
+这就是\textbf{Voronoi划分}——一种最自然的分类方式。
+\end{exambox}
+
+\subsection{低温Softmax：做出明确的决定}
+
+DMA使用Softmax将原始得分转换为概率。但它的温度$T=0.18$——远低于常规值1.0。
+
+\begin{defbox}[低温Softmax]
+温度$T$控制输出的"尖锐度"：
+\begin{itemize}[nosep]
+\item $T \to 0$：只有最高分的那个得概率≈1，其他≈0（完全确定）
+\item $T=1$：按原始得分比例分配概率（正常）
+\item $T \to \infty$：所有选项概率相同（完全不确定 = 随机猜）
+\end{itemize}
+\end{defbox}
+
+$T=0.18$是一个精心选择的平衡点——系统输出足够明确（最高概率约85\%+），
+但又不至于完全丧失对"第二名"的感知。
+
+\begin{exambox}[物理类比：热力学第三定律]
+在绝对零度($T=0$)，所有分子冻结在基态——系统完全有序，熵为零。
+在HMAE中，低温带来低熵——决策高度确定但保留了一小份灵活性。
+就像液氦在接近绝对零度时表现出超流性——既有秩序又有少量量子涨落。
+\end{exambox}
+
+\subsection{易混淆疾病消歧：精确匹配的"加权票"}
+
+有时候，病人提到的词直接对应某个疾病的专业术语。
+这种情况下，不是"计算相似度"的问题，而是"几乎确定"的问题。
+
+HMAE给精确术语匹配设置了离散奖励分：
+
+\begin{itemize}[nosep]
+\item 疾病标签完全包含在查询中 \textbf{或} 同义词匹配≥2个 → \textbf{+4.0分}
+\item 同义词匹配1个 → +2.0分
+\item 查询中至少有一半的词与疾病标签重叠 → +2.0分
+\end{itemize}
+
++4.0分是极大的加成（相当于统计得分被放大了约1.5倍）——确保"病人明确说了这个病"时，系统不会因为统计噪声而选择别的病。
+
+\begin{warnbox}[为什么不用连续得分？]
+如果精确匹配只是另一个"加一点分"的连续因子，它可能在统计噪声中被淹没。
++4.0的离散跳跃就像"警报"——精确匹配是一种\emph{信号}，不是\emph{噪声}。
+在博弈论中，这称为\textbf{廉价谈话 (cheap talk)} 的反面——
+当信号几乎无噪声时，它应该产生决定性影响。
+\end{warnbox}
+
+\subsection{Platt校准：让"自信"和"正确率"对齐}
+
+一个AI模型可能说"我90\%确定"，但实际上它只有70\%的时候是对的。
+这意味着它的\textbf{置信度没有校准}。
+
+\begin{defbox}[Platt Scaling（普拉特标定）]
+一种校准方法。学习一个S型函数，将模型的原始置信度映射为"真正的正确概率"。
+\end{defbox}
+
+$$\text{校准后置信度} = \frac{1}{1 + e^{-(A \times \text{原始置信度} + B)}}$$
+
+参数$A$和$B$通过观察最近200次预测的"说有多自信 vs 实际上对不对"来学习更新：
+
+$$A \leftarrow A - \eta \cdot \mathbb{E}[(\text{校准后} - \text{对不对}) \times \text{原始}]$$
+$$B \leftarrow B - \eta \cdot \mathbb{E}[\text{校准后} - \text{对不对}]$$
+
+\begin{exambox}[Platt校准的生活类比：校准一个体重秤]
+你的体重秤总是多报2公斤 → 每次减去2公斤就好了。
+
+但AI的"偏斜"可能是非线性的：
+\begin{itemize}[nosep]
+\item 低自信时，实际正确率可能比报告的更低（系统低估了自己的无知）
+\item 高自信时，实际正确率可能比报告的更低（系统过度自信）
+\end{itemize}
+Platt校准学习一条S曲线，在任何自信级别上都能给出准确的实际概率估计。
+\end{exambox}
+
+\subsection{双路径架构：快思考和慢思考}
+
+HMAE的DMA有两条工作路径：
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{lll}
+\toprule
+\textbf{特性} & \textbf{质心路径 (System 1)} & \textbf{Llama3路径 (System 2)} \\
+\midrule
+类比 & 直觉 / 快思考 & 推理 / 慢思考 \\
+速度 & 毫秒级 & 秒级 \\
+方式 & 统计相似度匹配 & 链式推理 \\
+失败时 & — & 自动回退到质心路径 \\
+\bottomrule
+\end{tabular}
+\caption{双路径架构与双过程理论}
+\end{table}
+
+这直接对应认知心理学中的\textbf{双过程理论 (Dual-Process Theory)}：
+\begin{itemize}[nosep]
+\item \textbf{System 1（快思考）：} 直觉、自动、不费力——你看到一张猫的图片，立刻知道"这是猫"
+\item \textbf{System 2（慢思考）：} 分析、需要努力、消耗认知资源——你计算$17 \times 23$，需要一步步推导
+\end{itemize}
+
+HMAE默认使用Llama3（慢思考，深度推理），当Ollama服务不可用时自动回退到质心路径（快思考，模式匹配）。
+
+\subsection{深入理解：温度选择的实验依据}
+
+$T=0.18$不是猜出来的，而是通过实验验证的。下表展示了不同温度下的系统表现：
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{llll}
+\toprule
+\textbf{温度$T$} & \textbf{最大概率} & \textbf{熵(bit)} & \textbf{准确率} \\
+\midrule
+0.05 & 98\%+ & <0.1 & 82\% (过度自信→错时更错) \\
+\textbf{0.18} & \textbf{85--92\%} & \textbf{0.2--0.5} & \textbf{87\%} \\
+0.50 & 55--70\% & 1.0--1.5 & 84\% (太保守) \\
+1.00 & 35--50\% & 2.0--2.5 & 80\% (犹豫导致选择困难) \\
+\bottomrule
+\end{tabular}
+\caption{温度对系统行为的影响}
+\end{table}
+
+$T=0.18$是"明确但不武断"的最佳点——系统有明确判断，但概率的排序信息可供后续模块（TFA、共识）使用。
+
+\subsection{常见疑问}
+
+\begin{warnbox}[DMA的输出是"最终答案"吗？]
+不是。DMA给出的是"初步诊断建议"。这个建议还要经过：
+TFA的风险预测验证 → 共识智能体的投票 → HITL的安全检查。只有通过这些关卡，诊断才会被输出。
+DMA是"提案者"，不是"决策者"。
+\end{warnbox}
+
+\subsection{本节小结}
+
+\begin{enumerate}[nosep]
+\item DMA融合5个信息源，权重从高到低反映信息可靠性递减
+\item 质心分类提供"最近邻"式的模式匹配
+\item 低温Softmax($T=0.18$)在"明确决策"和"保留不确定性"之间平衡
+\item 精确术语匹配通过离散奖励产生决定性影响
+\item Platt校准让置信度和实际正确率对齐
+\item 双路径架构对应人类的"快思考"和"慢思考"
+\end{enumerate}
+
+\begin{exerbox}[思考题]
+6. 如果温度的开关从0.18改到1.0，系统的行为会发生什么变化？在什么场景下这样做是合理的？
+
+7. DMA为什么不只用Llama3（最强大的路径），还要保留质心路径？
+\end{exerbox}
+
+\newpage

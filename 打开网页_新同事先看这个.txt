@@ -1,0 +1,69 @@
+安护智链 CareLink 新同事打开网页说明（Windows）
+
+如果你正在使用已经启动项目的演示电脑：
+直接在浏览器地址栏输入 http://127.0.0.1:8511/ 。能打开就不用重复安装。
+这个地址只指向当前电脑；换一台电脑必须在那台电脑上重新启动项目。
+
+如果你拿到的是压缩包，请从第 1 步开始：
+
+1. 右键最新“CareLink_2026_完整交付包_*.zip”，选“全部解压”。
+   打开解压后的 CareLink_2026 文件夹。确认里面有 start_demo.py、
+   requirements.txt、careguard_web、medNo.22.csv。
+   不要在压缩包预览窗口运行文件，也不要进入 original_engine_package 启动网页。
+
+2. 新电脑先安装 Python 3.14 系列 64 位版（项目已在 Python 3.14.2 验证）。
+   官方下载地址：https://www.python.org/downloads/windows/
+   安装后重新打开 CareLink_2026 文件夹。
+
+3. 点击这个文件夹顶部的地址栏，输入 powershell，按回车。
+   在新打开的命令窗口中，一行一行输入下面四条命令；每条执行结束再输下一条：
+
+   python --version
+   python -m venv .venv
+   .\.venv\Scripts\python.exe -m pip install -r requirements.txt
+   .\.venv\Scripts\python.exe start_demo.py --check
+
+   安装依赖需要网络，可能下载较大的文件。最后一条应看到
+   “医学问答数据：605 / 605 行”和“Python 依赖：齐全”。
+   如果显示“Ollama 服务：未连接”，网页仍可打开，只是不能说本机模型已运行。
+
+4. 在同一个窗口输入：
+
+   .\.venv\Scripts\python.exe start_demo.py
+
+   看到 Uvicorn running on http://127.0.0.1:8511 后，保持窗口打开。
+   在浏览器地址栏输入 http://127.0.0.1:8511/ 。
+   不要直接双击 careguard_web\index.html；直接打开 HTML 无法连接工程接口。
+
+5. 如果还要让“交互工作台”实际调用本机模型：
+   安装并打开 Ollama：https://ollama.com/download/windows
+   在另一个 PowerShell 窗口依次输入：
+
+   ollama pull llama3:8b
+   ollama pull nomic-embed-text
+   ollama list
+
+   两个模型都出现在列表中后，重新运行第 3 步的检查命令。
+   看到“Ollama 服务：可访问”后，重新启动第 4 步的网页服务。
+   在工作台载入预置合成案例，点击“开始风险筛查”。只有本次界面显示
+   “1 条已解析”“原始包一致”“Ollama 本次已生成”，才能说本次真实调用了本机模型。
+   请不要输入真实患者姓名、电话或护理记录；结果不是诊断结论。
+
+常见问题：
+• python 无法识别：确认已安装 Python，关闭 PowerShell 后重新打开。
+• No module named：回到包含 requirements.txt 的根目录，重做第 3 步依赖安装。
+• 8511 端口已占用：如果网页已能打开就直接用；否则输入
+  .\.venv\Scripts\python.exe start_demo.py --port 8512
+  并把浏览器地址改为 http://127.0.0.1:8512/ 。
+• 网页打不开：启动网页的 PowerShell 窗口必须保持打开；核对网址和端口。
+• 模型显示降级：检查 Ollama 是否运行，以及 ollama list 是否有上述两个模型。
+
+结束演示：回到启动网页的 PowerShell 窗口，按 Ctrl+C。
+需要更详细的操作解释或排查方式，请看同目录的
+START_HERE_新同事打开网页.md。求助时请提供报错截图和 python --version 输出，
+不要发送真实患者信息。
+
+补充：工作台内的“MAPFM 前瞻神经研究推断”可以直接用包内权重计算
+3 年新发糖尿病研究概率，不需要 Ollama。MedQuAD 来源问答也可以直接
+输入英文问题检索原文答案；它不预测疾病。糖尿病足功能已从本版移除。
+这些演示均不得用于临床决策。

@@ -1,0 +1,50 @@
+{
+  "artifacts": {
+    "competition_readiness_latest.json": {
+      "bytes": 5385,
+      "sha256": "1864bbc834fb71dcad354e8c8458105f99173f448d729c98689e9991a5552043"
+    },
+    "live_pipeline_latest.json": {
+      "bytes": 24114,
+      "sha256": "f88a3f3e7c8dbafa2e245f195454b27c4759ca74ad81f8b59a0ad0e00365d63c"
+    },
+    "pytest_full_report.xml": {
+      "bytes": 10155,
+      "sha256": "d9b420863cc5fb1280e01cac693e0aac26a6999c5bd3abc6a865355d4e4b3081"
+    }
+  },
+  "claim_boundary": [
+    "现场报告仅证明本机模型、数据与软件链路可运行。",
+    "内部数据和合成场景不能替代独立外部临床验证。",
+    "模型自报confidence不是临床校准概率。",
+    "合同或感谢材料仅证明合作/使用场景，不证明临床疗效。"
+  ],
+  "generated_at_utc": "2026-09-20T07:53:28.931665+00:00",
+  "live_pipeline_observation": {
+    "clinical_use_allowed": false,
+    "dma_backend": "ollama_local_http",
+    "dma_fallback_used": false,
+    "embedding_backend": "ollama_local_http",
+    "embedding_fallback_used": false,
+    "high_risk": true,
+    "latency_seconds": 15.577103614807129,
+    "request_id": "798b8e09",
+    "temporal_estimate_available": false,
+    "verified_evidence_count": 3
+  },
+  "release_decision": {
+    "clinical_use_ready": false,
+    "competition_demo_ready": true,
+    "tests_failed_or_errored": 0,
+    "tests_passed": 86
+  },
+  "schema_version": "mapfm.competition-release-manifest.v1",
+  "test_summary": {
+    "errors": 0,
+    "failures": 0,
+    "passed": 86,
+    "skipped": 0,
+    "tests": 86,
+    "time_seconds": 145.102
+  }
+}

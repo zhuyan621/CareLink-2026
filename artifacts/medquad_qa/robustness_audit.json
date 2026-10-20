@@ -1,0 +1,38 @@
+{
+  "schema": "careguard.medquad.robustness-audit.v1",
+  "evaluated_date": "2026-10-12",
+  "deployed_source_sha256": "f3b3fa2a17f615b4a41c190003b9b3f91634fb4e19e47bf177078b86efadda3f",
+  "model_sha256": "863f88d54398aabe3494495c0fb2f7ba9610d4969fc02a910ecefd076d30f960",
+  "candidate_decision": "rejected; baseline retained",
+  "candidate_change": "remove the historical answer/source tie-break in ranking",
+  "rejection_reason": "Positive-only exact answer retrieval improved on development but regressed on the predefined sealed split; a generic CrossEncoder and focus/intent bonuses also failed development acceptance.",
+  "data_source": "TREC 2017 LiveQA Medical training questions, public Hugging Face mirror; original dataset CC BY 4.0",
+  "data_source_urls": [
+    "https://huggingface.co/datasets/hyesunyun/liveqa_medical_trec2017/resolve/main/TREC2017-LiveQA-Medical-Train1.jsonl",
+    "https://huggingface.co/datasets/hyesunyun/liveqa_medical_trec2017/resolve/main/TREC2017-LiveQA-Medical-Train2.jsonl"
+  ],
+  "mirror_sha256": [
+    "69118b9dfc070c0c8fe1f51fca4e511891fd7fffa4faa49a71679e6ebcbee608",
+    "b68f232784075f191f8e7b464624f3f890d5abe5fd736fe40582646014814b49"
+  ],
+  "alignment": "First 120 normalized characters of an external reference answer exactly equal the indexed MedQuAD answer prefix; only questions of 5-500 characters, no exact MedQuAD question overlap.",
+  "split": "First byte of SHA-256(question UTF-8) < 128: development; otherwise sealed",
+  "development": {
+    "count": 42,
+    "baseline_known_answer_at_1": 0.3333,
+    "baseline_known_answer_at_3": 0.4524,
+    "rejected_candidate_known_answer_at_3": 0.4762,
+    "baseline_known_source_at_3": 0.6667,
+    "baseline_nonmedical_abstention": 1.0
+  },
+  "sealed": {
+    "count": 38,
+    "baseline_known_answer_at_1": 0.2895,
+    "baseline_known_answer_at_3": 0.4211,
+    "rejected_candidate_known_answer_at_3": 0.3684,
+    "baseline_known_source_at_3": 0.5526,
+    "rejected_candidate_known_source_at_3": 0.5263,
+    "baseline_nonmedical_abstention": 1.0
+  },
+  "scope": "These are known-positive historical answer retrieval rates under incomplete labels, not total answer accuracy or clinical validity. The sealed split has now been used for this one acceptance decision and must not be reused to tune the next version. Raw personal health narratives from the mirror are intentionally excluded from the delivery ZIP."
+}

@@ -1,0 +1,56 @@
+{
+  "schema": "careguard.medquad.generalization-audit.v1",
+  "audit_date": "2026-10-14",
+  "scope": "Medical question retrieval only; no diagnosis, prognosis, or clinical validation",
+  "deployed_model_sha256": "863f88d54398aabe3494495c0fb2f7ba9610d4969fc02a910ecefd076d30f960",
+  "baseline_retained": true,
+  "candidate_count": 3,
+  "candidates_rejected": 3,
+  "source_datasets": {
+    "rqe": {
+      "url": "https://github.com/abachaa/MEDIQA2019/tree/master/MEDIQA_Task2_RQE",
+      "train_sha256": "25d7bf2fcbaef29fb3adab6172ff8a29a1a3897c29b0f2ab1e0312fc046daa4e",
+      "validation_sha256": "7f18815cfdcce499d2ae36f49c02b2e824491b54b3a52608e4c684573f2e3c59",
+      "sealed_test_used": false
+    },
+    "meqsum": {
+      "url": "https://github.com/abachaa/MeQSum",
+      "workbook_sha256": "abedd939d5014306ca576522416bf69103e85dc8fcf1668a4099e8b84a39eeea",
+      "source_pairs": 1000,
+      "train_pairs_after_overlap_exclusion": 755,
+      "development_pairs_after_overlap_exclusion": 172
+    }
+  },
+  "trials": {
+    "rqe_feature_classifier": {
+      "development_pairs": 302,
+      "semantic_baseline_auroc": 0.8931,
+      "candidate_auroc": 0.8579,
+      "semantic_baseline_average_precision": 0.8257,
+      "candidate_average_precision": 0.7558,
+      "decision": "rejected"
+    },
+    "rqe_finetuned_encoder": {
+      "trained_positive_pairs": 3180,
+      "development_pairs": 302,
+      "semantic_baseline_auroc": 0.8931,
+      "candidate_auroc": 0.8904,
+      "semantic_baseline_average_precision": 0.8257,
+      "candidate_average_precision": 0.82,
+      "decision": "rejected"
+    },
+    "meqsum_finetuned_encoder": {
+      "summary_development_pairs": 172,
+      "baseline_summary_recall_at_1": 0.9651,
+      "candidate_summary_recall_at_1": 0.9651,
+      "exposed_liveqa_count": 80,
+      "exposed_liveqa_baseline_known_answer_at_3_hits": 35,
+      "exposed_liveqa_candidate_known_answer_at_3_hits": 34,
+      "exposed_mediqa_count": 52,
+      "exposed_mediqa_baseline_known_answer_at_1_hits": 22,
+      "exposed_mediqa_candidate_known_answer_at_1_hits": 21,
+      "decision": "rejected"
+    }
+  },
+  "interpretation": "No demonstrated improvement in answer retrieval generalization. Exposed QA sets are development checks, not fresh independent confirmation. Candidate weights and raw source workbooks are not deployed or packaged."
+}

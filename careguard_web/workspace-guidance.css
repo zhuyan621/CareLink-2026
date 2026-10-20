@@ -1,0 +1,35 @@
+.workspace-guidance{position:relative;padding:76px 0 80px;color:#1a2923;background:linear-gradient(128deg,#edf0e7 0%,#e2e9df 55%,#eee3d8 100%);scroll-margin-top:84px}
+.workspace-guidance-shell{display:grid;grid-template-columns:minmax(270px,.72fr) minmax(0,1.28fr);gap:clamp(42px,8vw,116px);border-top:1px solid #879f8f;padding-top:27px}
+.workspace-guidance-lead>span{font:800 .76rem ui-monospace,Consolas,monospace;letter-spacing:.13em;color:#6a806d}
+.workspace-guidance h2{margin:26px 0 21px;font-size:clamp(2.7rem,5.2vw,5.3rem);line-height:1.08;letter-spacing:-.075em}
+.workspace-guidance h2 em{font:italic 400 1.04em Georgia,"Noto Serif SC",serif;color:#718d76}
+.workspace-guidance-lead>p{max-width:350px;font-size:1rem;line-height:1.78;color:#46564c}
+.workspace-guidance nav{display:flex;flex-wrap:wrap;gap:9px;margin-top:30px}
+.workspace-guidance nav a{display:inline-block;border:1px solid #92aa98;border-radius:999px;padding:10px 15px;color:#1f3728;text-decoration:none;font-size:.83rem;font-weight:750;background:#ffffff80;transition:background .2s,transform .2s}
+.workspace-guidance nav a:hover{background:#fff;transform:translateY(-2px)}
+.workspace-guidance-body{min-width:0}
+.workspace-guidance-row{display:grid;grid-template-columns:minmax(125px,.32fr) minmax(0,1fr);gap:26px;padding:18px 0 22px;border-bottom:1px solid #9aab9c80}
+.workspace-guidance-row:first-child{padding-top:0}
+.workspace-guidance-row b{font-size:.89rem;line-height:1.6;color:#597461;white-space:nowrap}
+.workspace-guidance-row p{margin:0;font-size:1rem;line-height:1.78;color:#24392c}
+.workspace-guidance-critical{margin:26px 0 0;padding:20px 24px;border-left:3px solid #ae604d;background:#ffffff9c;color:#3e302a;font-size:1rem;line-height:1.75;font-weight:700}
+.workspace-guidance-fab{position:fixed;z-index:35;right:22px;bottom:20px;display:flex;align-items:center;gap:18px;border:1px solid #dbdfcf8c;border-radius:999px;padding:12px 17px;color:#eef1e8;background:#17231eea;box-shadow:0 14px 40px #07110c77;backdrop-filter:blur(16px);font-size:.84rem;font-weight:800;text-decoration:none;transition:transform .2s,background .2s}
+.workspace-guidance-fab:hover{transform:translateY(-3px);background:#273a30}
+.workspace-guidance-fab span{color:#d9b79a;font-size:1rem}
+#workspace-view:has(#workspace-guidance:target) .workspace-guidance-fab{opacity:0;pointer-events:none}
+#workspace-view .workspace-section-head>p,#workspace-view .run-overview-heading small,#workspace-view .side-boundary,#workspace-view .workbench-input>.panel-intro,#workspace-view .workbench-output>.panel-intro,#workspace-view .input-guide small,#workspace-view .field-caption span:last-child,#workspace-view .input-disclaimer,#workspace-view .handover-packet-foot>p,#workspace-view .session-journal-head p,#workspace-view .review-context,#workspace-view .review-desk-heading>p,#workspace-view .review-desk-foot>span,#workspace-view .review-hero-copy>p,#workspace-view .review-hero-foot,#workspace-view .review-panel-top strong,#workspace-view .language-heading>p,#workspace-view .language-grid form .language-panel-top b,#workspace-view .language-submit small,#workspace-view .language-bottom,#workspace-view .medquad-header>p,#workspace-view .medquad-panel-top small,#workspace-view .medquad-form-foot span{display:none}
+#workspace-view .language-submit{justify-content:flex-end}
+#workspace-view .medquad-form-foot{justify-content:flex-end}
+#workspace-view .review-desk-heading{margin-bottom:32px}
+#workspace-view .review-import-grid label,#workspace-view .review-ratings label,#workspace-view .review-answer-ratings label{font-size:.88rem}
+#workspace-view .review-status,#workspace-view .review-answer p,#workspace-view .language-result>p,#workspace-view .language-source-card p,#workspace-view .medquad-results article p{font-size:.88rem;line-height:1.75}
+#workspace-view .language-extracted small,#workspace-view .language-source-card small,#workspace-view .medquad-results article>span{font-size:.74rem}
+#workspace-view .diabetes-head p,#workspace-view .diabetes-panel-top small,#workspace-view .diabetes-unit-note,#workspace-view .diabetes-boundary,#workspace-view .prospective-neural>header p,#workspace-view #prospective-neural-form>p{display:none}
+#workspace-view .prospective-neural footer p,#workspace-view .prospective-neural-validation,#workspace-view .prospective-neural-output p{font-size:.87rem;line-height:1.7}
+#workspace-view .prospective-neural footer small,#workspace-view .diabetes-fields label small{font-size:.75rem}
+.medquad-audit-details{flex:1;min-width:0;border-top:1px solid #cad9c27a;padding-top:16px}
+.medquad-audit-details summary{cursor:pointer;color:#e7eddb;font-size:.88rem;font-weight:750;list-style-position:inside}
+.medquad-audit-details[open] summary{margin-bottom:16px}
+#workspace-view .medquad-audit-details p{max-width:900px;font-size:.87rem;line-height:1.78;color:#cbd5c9}
+@media(max-width:900px){.workspace-guidance-shell{grid-template-columns:1fr;gap:34px}.workspace-guidance-lead>p{max-width:650px}.workspace-guidance-row{grid-template-columns:150px 1fr}.workspace-guidance-fab{right:14px;bottom:14px}}
+@media(max-width:620px){.workspace-guidance{padding:55px 0 64px}.workspace-guidance-shell{gap:32px}.workspace-guidance h2{font-size:3.1rem}.workspace-guidance-row{grid-template-columns:1fr;gap:5px;padding:17px 0 20px}.workspace-guidance-row p,.workspace-guidance-critical{font-size:.94rem}.workspace-guidance nav a{font-size:.78rem;padding:9px 12px}.workspace-guidance-fab{padding:10px 13px;font-size:.78rem}}

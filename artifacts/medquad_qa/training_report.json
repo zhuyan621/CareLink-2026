@@ -1,0 +1,90 @@
+{
+  "schema": "careguard.medquad.qa-retrieval.v1",
+  "method": "full-corpus fitted word-and-character TF-IDF nearest-question retrieval",
+  "neural_weights_trained": false,
+  "prospective_diabetes_training": false,
+  "clinical_use_allowed": false,
+  "source_url": "https://github.com/abachaa/MedQuAD",
+  "source_sha256": "45aeef400844f3551a7862c3378cc9edf72818ef09d6c1d400f227207ee5179d",
+  "source_license": "CC BY 4.0; three MedlinePlus subsets have answers removed by upstream",
+  "xml_documents": 11274,
+  "qa_pairs_total": 47441,
+  "answer_bearing_pairs": 16407,
+  "answerless_pairs": 31034,
+  "questionless_pairs": 0,
+  "parse_errors": 0,
+  "sources": {
+    "ADAM": {
+      "total": 17348,
+      "trainable": 0,
+      "answerless": 17348
+    },
+    "MPlusDrugs": {
+      "total": 12889,
+      "trainable": 0,
+      "answerless": 12889
+    },
+    "MPlusHerbsSupplements": {
+      "total": 792,
+      "trainable": 0,
+      "answerless": 792
+    },
+    "CancerGov": {
+      "total": 729,
+      "trainable": 729,
+      "answerless": 0
+    },
+    "GARD": {
+      "total": 5394,
+      "trainable": 5389,
+      "answerless": 5
+    },
+    "GHR": {
+      "total": 5430,
+      "trainable": 5430,
+      "answerless": 0
+    },
+    "MPlusHealthTopics": {
+      "total": 981,
+      "trainable": 981,
+      "answerless": 0
+    },
+    "NIDDK": {
+      "total": 1192,
+      "trainable": 1192,
+      "answerless": 0
+    },
+    "NINDS": {
+      "total": 1088,
+      "trainable": 1088,
+      "answerless": 0
+    },
+    "unknown": {
+      "total": 0,
+      "trainable": 0,
+      "answerless": 0
+    },
+    "NIHSeniorHealth": {
+      "total": 769,
+      "trainable": 769,
+      "answerless": 0
+    },
+    "NHLBI": {
+      "total": 559,
+      "trainable": 559,
+      "answerless": 0
+    },
+    "CDC": {
+      "total": 270,
+      "trainable": 270,
+      "answerless": 0
+    }
+  },
+  "indexed_pairs": 16407,
+  "vocabulary_fitted_questions": 47441,
+  "word_vocabulary": 23268,
+  "character_vocabulary": 77184,
+  "model_sha256": "863f88d54398aabe3494495c0fb2f7ba9610d4969fc02a910ecefd076d30f960",
+  "records_sha256": "8f97b47a63130cd531fac5c62cea4cb4bf012840c391116705259c7e3c9cff8c",
+  "evaluation": "No independent clinical or answer-quality validation. Exact-corpus retrieval is not generalization."
+}

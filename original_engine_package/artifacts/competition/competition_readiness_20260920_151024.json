@@ -1,0 +1,123 @@
+{
+  "claim_boundary": [
+    "现场报告仅证明本机模型、数据与软件链路可运行。",
+    "内部数据和合成场景不能替代独立外部临床验证。",
+    "模型自报confidence不是临床校准概率。",
+    "合同或感谢材料仅证明合作/使用场景，不证明临床疗效。"
+  ],
+  "competition_positioning": {
+    "group": "信息技术",
+    "prototype_scope": "低投入、本地部署的医学科研决策支持原型",
+    "track": "科技发明制作B类"
+  },
+  "dataset": {
+    "classes": 28,
+    "filename": "medNo.22.csv",
+    "present": true,
+    "rows": 605,
+    "sha256": "00474d427edd5e93ed96424923ad4e8b66d91bc451ee25e653c1a050bd36384e"
+  },
+  "fallback_policy": {
+    "fallback_must_be_disclosed": true,
+    "statistical_dma_fallback_allowed": true,
+    "temporal_heuristic_probability_fallback": false
+  },
+  "generated_at_utc": "2026-09-20T07:10:23.650770+00:00",
+  "ollama": {
+    "base_url": "http://127.0.0.1:11434",
+    "configured_model": "llama3:8b",
+    "configured_model_installed": true,
+    "live_inference": {
+      "attempted": true,
+      "done_reason": "stop",
+      "eval_count": 21,
+      "nonce_verified": true,
+      "passed": true,
+      "response_sha256": "a864b72fda54ca8a9d37dc18725489d76ce188f1e8e94126f4b9413c441d4f7f",
+      "served_model": "llama3:8b",
+      "total_duration_ns": 5643464400,
+      "wall_seconds": 5.646
+    },
+    "models": [
+      {
+        "digest": "365c0bd3c000a25d28ddbf732fe1c6add414de7275464c4e4d1c3b5fcb5d8ad1",
+        "modified_at": "2026-05-19T21:11:08.7484938+08:00",
+        "name": "llama3:8b",
+        "size_bytes": 4661224676
+      },
+      {
+        "digest": "ad11a6250f543902a2b963367aa86bb60982b12129d6943ed8fd4465854e3133",
+        "modified_at": "2025-11-10T14:10:37.4502458+08:00",
+        "name": "meditron:7b",
+        "size_bytes": 3825808317
+      },
+      {
+        "digest": "8dd30f6b0cb19f555f2c7a7ebda861449ea2cc76bf1f44e262931f45fc81d081",
+        "modified_at": "2025-11-10T14:10:27.8978605+08:00",
+        "name": "llava:7b",
+        "size_bytes": 4733363377
+      },
+      {
+        "digest": "6995872bfe4c521a67b32da386cd21d5c6e819b6e0d62f79f64ec83be99f5763",
+        "modified_at": "2025-11-09T12:28:36.6485786+08:00",
+        "name": "deepseek-r1:latest",
+        "size_bytes": 5225376047
+      },
+      {
+        "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+        "modified_at": "2025-10-23T13:46:59.1801444+08:00",
+        "name": "nomic-embed-text:latest",
+        "size_bytes": 274302450
+      },
+      {
+        "digest": "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a",
+        "modified_at": "2025-09-18T23:04:46.1763343+08:00",
+        "name": "gemma3:4b",
+        "size_bytes": 3338801804
+      },
+      {
+        "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+        "modified_at": "2025-09-13T16:39:12.3184041+08:00",
+        "name": "qwen3:8b",
+        "size_bytes": 5225388164
+      }
+    ],
+    "reachable": true,
+    "version": "0.11.10"
+  },
+  "readiness": {
+    "clinical_use_ready": false,
+    "competition_demo_ready": true,
+    "status": "demo_ready_research_only"
+  },
+  "reproducibility": {
+    "code_sha256": {
+      "api.py": "13f5a2b02915bd4fb8d8d022a2ad64d411bc2d5a53e8707bf94dcbb8dd172765",
+      "clinical_validation.py": "10eb3ed5f4c2e3b7b9eb89d6b4c1892ab6d15f9e88570ad59260d2963e060e80",
+      "config.yaml": "fd7f5013ed0393d623ff70a5f23c3554000113e329a33193931e82e03e3e147e",
+      "evidence_ingestion.py": "98053ae3e537806762dce0a56e0a34295b40d62e3a548aade0de2d451098e881",
+      "mapfm_ecosystem_repaired.py": "0d69c861e986f8cd9723a3a032b826cfb019248a665c3630b7ba1541e3cc91eb"
+    },
+    "git": {
+      "changed_path_count": 60,
+      "commit": "a80685b6d36f9cb64b216a1723affc59a76b09cf",
+      "dirty": true,
+      "note": "Uncommitted files must be packaged with the submission.",
+      "repository_detected": true
+    },
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.14.2"
+  },
+  "schema_version": "mapfm.competition-readiness.v1",
+  "validation": {
+    "consensus_forced_research_only_without_validation": true,
+    "external_validation_artifact_valid": false,
+    "temporal_checkpoint": {
+      "configured": false,
+      "metadata_valid": false,
+      "present": false,
+      "ready": false
+    },
+    "temporal_risk_estimation_enabled": false
+  }
+}

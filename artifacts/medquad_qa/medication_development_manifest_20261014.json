@@ -1,0 +1,16 @@
+{
+  "schema": "careguard.medquad.medication-development-manifest.v1",
+  "created_on": "2026-10-14",
+  "state": "awaiting_two_medical_reviewers",
+  "clinical_use_allowed": false,
+  "source_sha256": "4f13d0e3b195bd6a5d72a1872f9118cb5f69fd02c370001695330cfc9e3b5832",
+  "deployed_model_sha256": "863f88d54398aabe3494495c0fb2f7ba9610d4969fc02a910ecefd076d30f960",
+  "linked_locked_packet_id": "a1f6f17d0940aa8d526bfc18",
+  "sampling_rule": "same hash order, rows 251-350 after leakage screening",
+  "development_question_count": 100,
+  "development_selection_sha256": "8211a018d5776848c4f1c797c54698005ba2bee0048b764a450b8cc2f7fe45ba",
+  "packet_id": "11eb45c858facfbad1785f1a",
+  "packet_sha256": "08782299e24b3850abfb79943cb7bf1a19060a194132e313c4bb5675ab22af60",
+  "labels_complete": false,
+  "performance_estimate_available": false
+}

@@ -1,0 +1,11 @@
+{
+  "task": "diabetes_onset",
+  "source_uri": "https://doi.org/10.5061/dryad.8q0p192",
+  "download_mirror_uri": "https://zenodo.org/records/4996032",
+  "source_filename": "Data set Int J Obesity.xlsx",
+  "source_md5": "47edfb147078657a0eecfff7f9364532",
+  "license_or_dua": "Dryad CC0-1.0; no DUA required for public reuse; scholarly citation retained",
+  "approval_reference": "Original NAGALA cohort ethics reported as IRB 2018-09-01; this secondary software experiment does not claim separate institutional ethics approval",
+  "research_use_authorized": true,
+  "clinical_use_allowed": false
+}

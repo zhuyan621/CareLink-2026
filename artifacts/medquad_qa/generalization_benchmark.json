@@ -1,0 +1,183 @@
+{
+  "schema": "careguard.medquad.partial-liveqa-benchmark.v1",
+  "test_source": "https://github.com/abachaa/LiveQA_MedicalTask_TREC2017",
+  "test_sha256": "f6384fcf03e9b1bd0d9a15f6ea1a1aafc9491082e63fef0922ae2d6bc451805b",
+  "medquad_source_sha256": "45aeef400844f3551a7862c3378cc9edf72818ef09d6c1d400f227207ee5179d",
+  "scope": "Independent questions; exact-aligned subset of partial judgments. Scores are known-positive retrieval rates, not accuracy or clinical safety.",
+  "exact_query_duplicates_excluded": 1,
+  "official_test_questions": 104,
+  "official_judged_answers": 2479,
+  "exactly_aligned_answer_rows": 565,
+  "queries_with_aligned_relevant_answer": 38,
+  "alignment_rule": "same normalized question, exact source URL, and normalized answer prefix",
+  "results": {
+    "lexical": {
+      "evaluated_query_variants": 75,
+      "answer_rate": 1.0,
+      "known_relevant_at_1": 0.3333,
+      "known_relevant_at_3": 0.4933,
+      "known_relevant_at_10": 0.6667,
+      "known_relevant_mrr_at_10": 0.4361,
+      "original": {
+        "count": 38,
+        "known_relevant_at_3": 0.4211
+      },
+      "summary": {
+        "count": 37,
+        "known_relevant_at_3": 0.5676
+      },
+      "odd_qid": {
+        "count": 51,
+        "known_relevant_at_3": 0.5098
+      },
+      "even_qid": {
+        "count": 24,
+        "known_relevant_at_3": 0.4583
+      }
+    },
+    "lexical_gated": {
+      "evaluated_query_variants": 75,
+      "answer_rate": 0.6,
+      "known_relevant_at_1": 0.28,
+      "known_relevant_at_3": 0.3867,
+      "known_relevant_at_10": 0.4533,
+      "known_relevant_mrr_at_10": 0.3339,
+      "original": {
+        "count": 38,
+        "known_relevant_at_3": 0.2368
+      },
+      "summary": {
+        "count": 37,
+        "known_relevant_at_3": 0.5405
+      },
+      "odd_qid": {
+        "count": 51,
+        "known_relevant_at_3": 0.3725
+      },
+      "even_qid": {
+        "count": 24,
+        "known_relevant_at_3": 0.4167
+      }
+    },
+    "semantic": {
+      "evaluated_query_variants": 75,
+      "answer_rate": 1.0,
+      "known_relevant_at_1": 0.4133,
+      "known_relevant_at_3": 0.6267,
+      "known_relevant_at_10": 0.76,
+      "known_relevant_mrr_at_10": 0.537,
+      "original": {
+        "count": 38,
+        "known_relevant_at_3": 0.6053
+      },
+      "summary": {
+        "count": 37,
+        "known_relevant_at_3": 0.6486
+      },
+      "odd_qid": {
+        "count": 51,
+        "known_relevant_at_3": 0.6078
+      },
+      "even_qid": {
+        "count": 24,
+        "known_relevant_at_3": 0.6667
+      }
+    },
+    "hybrid_75_25": {
+      "evaluated_query_variants": 75,
+      "answer_rate": 1.0,
+      "known_relevant_at_1": 0.44,
+      "known_relevant_at_3": 0.6,
+      "known_relevant_at_10": 0.7467,
+      "known_relevant_mrr_at_10": 0.5312,
+      "original": {
+        "count": 38,
+        "known_relevant_at_3": 0.5263
+      },
+      "summary": {
+        "count": 37,
+        "known_relevant_at_3": 0.6757
+      },
+      "odd_qid": {
+        "count": 51,
+        "known_relevant_at_3": 0.5882
+      },
+      "even_qid": {
+        "count": 24,
+        "known_relevant_at_3": 0.625
+      }
+    },
+    "hybrid_50_50": {
+      "evaluated_query_variants": 75,
+      "answer_rate": 1.0,
+      "known_relevant_at_1": 0.3867,
+      "known_relevant_at_3": 0.64,
+      "known_relevant_at_10": 0.7867,
+      "known_relevant_mrr_at_10": 0.5224,
+      "original": {
+        "count": 38,
+        "known_relevant_at_3": 0.5789
+      },
+      "summary": {
+        "count": 37,
+        "known_relevant_at_3": 0.7027
+      },
+      "odd_qid": {
+        "count": 51,
+        "known_relevant_at_3": 0.6275
+      },
+      "even_qid": {
+        "count": 24,
+        "known_relevant_at_3": 0.6667
+      }
+    },
+    "hybrid_25_75": {
+      "evaluated_query_variants": 75,
+      "answer_rate": 1.0,
+      "known_relevant_at_1": 0.4267,
+      "known_relevant_at_3": 0.64,
+      "known_relevant_at_10": 0.7733,
+      "known_relevant_mrr_at_10": 0.543,
+      "original": {
+        "count": 38,
+        "known_relevant_at_3": 0.6579
+      },
+      "summary": {
+        "count": 37,
+        "known_relevant_at_3": 0.6216
+      },
+      "odd_qid": {
+        "count": 51,
+        "known_relevant_at_3": 0.6078
+      },
+      "even_qid": {
+        "count": 24,
+        "known_relevant_at_3": 0.7083
+      }
+    },
+    "hybrid_50_50_gated": {
+      "evaluated_query_variants": 75,
+      "answer_rate": 0.88,
+      "known_relevant_at_1": 0.3867,
+      "known_relevant_at_3": 0.6,
+      "known_relevant_at_10": 0.68,
+      "known_relevant_mrr_at_10": 0.4947,
+      "original": {
+        "count": 38,
+        "known_relevant_at_3": 0.5263
+      },
+      "summary": {
+        "count": 37,
+        "known_relevant_at_3": 0.6757
+      },
+      "odd_qid": {
+        "count": 51,
+        "known_relevant_at_3": 0.6078
+      },
+      "even_qid": {
+        "count": 24,
+        "known_relevant_at_3": 0.5833
+      }
+    }
+  }
+}

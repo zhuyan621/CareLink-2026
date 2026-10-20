@@ -1,0 +1,19 @@
+{
+  "dataset": "REPLACE_WITH_LOCKED_EXTERNAL_COHORT_AND_VERSION",
+  "intended_use": "REPLACE_WITH_ONE_PRECISE_POPULATION_AND_OUTCOME",
+  "external_validation": false,
+  "calibration": {
+    "method": "REPLACE",
+    "brier_score": null,
+    "calibration_intercept": null,
+    "calibration_slope": null
+  },
+  "approved_by": [
+    "REQUIRES_NAMED_CLINICAL_REVIEWER",
+    "REQUIRES_NAMED_GOVERNANCE_REVIEWER"
+  ],
+  "protocol_sha256": "REPLACE_WITH_64_HEX_CHARACTERS",
+  "result_report_sha256": "REPLACE_WITH_64_HEX_CHARACTERS",
+  "signature": "HMAC_SHA256_OVER_CANONICAL_ARTIFACT_WITHOUT_THIS_FIELD",
+  "warning": "Do not set external_validation=true until the signed protocol and immutable result report exist."
+}

@@ -1,0 +1,26 @@
+{
+  "schema": "careguard.medquad.semantic-index.v1",
+  "encoder": "sentence-transformers/all-MiniLM-L6-v2",
+  "encoder_license": "Apache-2.0",
+  "encoder_url": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2",
+  "pretrained_encoder_not_finetuned": true,
+  "source_sha256": "45aeef400844f3551a7862c3378cc9edf72818ef09d6c1d400f227207ee5179d",
+  "records_sha256": "8f97b47a63130cd531fac5c62cea4cb4bf012840c391116705259c7e3c9cff8c",
+  "index_rows": 16407,
+  "embedding_dimensions": 384,
+  "embeddings_sha256": "dec02591444c064dda7dafbdbf3704010951569faa59afe50184e77787bf43d7",
+  "encoder_file_sha256": {
+    "encoder/config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+    "encoder/config_sentence_transformers.json": "061ca9d39661d6c6d6de5ba27f79a1cd5770ea247f8d46412a68a498dc5ac9f3",
+    "encoder/model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+    "encoder/modules.json": "84e40c8e006c9b1d6c122e02cba9b02458120b5fb0c87b746c41e0207cf642cf",
+    "encoder/README.md": "7dfc82496ec33f906b5b0d6750c1e2397da6530c74d1ae3568c55bc2739125e7",
+    "encoder/sentence_bert_config.json": "fc1993fde0a95c24ec6c022539d41cf6e2f7c9721e5415d6fb6897472a9cd4b7",
+    "encoder/special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+    "encoder/tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+    "encoder/tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+    "encoder/vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+    "encoder/1_Pooling/config.json": "4be450dde3b0273bb9787637cfbd28fe04a7ba6ab9d36ac48e92b11e350ffc23"
+  },
+  "clinical_use_allowed": false
+}

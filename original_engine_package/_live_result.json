@@ -1,0 +1,429 @@
+{
+  "query": "持续三天高热，干咳，乏力，轻微胸痛，呼吸有些急促",
+  "true_label": null,
+  "perception": {
+    "context_norm": 1.0,
+    "metadata": {
+      "attention_weights": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "patch_count": 4,
+      "fusion_norm": 1.0
+    }
+  },
+  "retrieval": {
+    "equilibrium_strategy": "mixed",
+    "equilibrium_decision_mode": "fast",
+    "nash_equilibrium_reached": true,
+    "nash_rounds": 2,
+    "metadata": {
+      "strategy": "Mixed-RAG",
+      "uncertainty": 0.9999731219748454,
+      "deep_retrieval": true,
+      "result_count": 5,
+      "avg_relevance": 0.7754152476787567,
+      "latency_seconds": 0.0028183460235595703
+    },
+    "extra_meta": {
+      "mixed": {
+        "strategy": "Mixed-RAG",
+        "uncertainty": 0.9999731219748454,
+        "deep_retrieval": true,
+        "result_count": 5,
+        "avg_relevance": 0.7754152476787567,
+        "latency_seconds": 0.0022161006927490234
+      },
+      "rerank": {
+        "strategy": "Rerank-RAG",
+        "uncertainty": 0.9999731219748454,
+        "deep_retrieval": true,
+        "result_count": 5,
+        "avg_relevance": 0.5807574535608291,
+        "latency_seconds": 0.006832122802734375
+      },
+      "adaptive": {
+        "strategy": "Adaptive-RAG",
+        "uncertainty": 0.9999731219748454,
+        "deep_retrieval": true,
+        "result_count": 10,
+        "avg_relevance": 0.7538241982460022,
+        "latency_seconds": 0.010476112365722656
+      }
+    },
+    "top_docs": [
+      {
+        "doc_id": 8254,
+        "question": "What are the treatments for Heart Attack ?",
+        "answer": "Early treatment for a heart attack can prevent or limit damage to the heart muscle. Acting fast, by calling 911 at the first symptoms of a heart attack, can save your life. Medical personnel can begin diagnosis and treatment even before you get to the hospital.\n                \nImmediate Treatment\n                \nCertain treatments usually are started right away if a heart attack is suspected, even before the diagnosis is confirmed. These include:\n                \nAspirin to prevent further blood clotting\n                \nNitroglycerin to reduce your hearts workload and improve blood flow through the coronary arteries\n                \nOxygen therapy\n                \nTreatment for chest pain\n                \nOnce the diagnosis of a heart attack is confirmed or strongly suspected, doctors start treatments promptly to try to restore blood flow through the blood vessels supplying the heart. The two main treatments are clot-busting medicines and percutaneous coronary intervention, also known as coronary angioplasty, a procedure used to open blocked coronary arteries.\n                \n\n                \nClot-Busting Medicines\n                \nThrombolytic medicines, also called clot busters, are used to dissolve blood clots that are blocking the coronary arteries. To work best, these medicines must be given within several hours of the start of heart attack symptoms. Ideally, the medicine should be given as soon as possible.\n                \n\n                \nPercutaneous Coronary Intervention\n                \nPercutaneous coronary intervention is a nonsurgical procedure that opens blocked or narrowed coronary arteries. A thin, flexible tube (catheter) with a balloon or other device on the end is threaded through a blood vessel, usually in the groin (upper thigh), to the narrowed or blocked coronary artery. Once in place, the balloon located at the tip of the catheter is inflated to compress the plaque and related clot against the wall of the artery. This restores blood flow through the artery. During the procedure, the doctor may put a small mesh tube called a stent in the artery. The stent helps to keep the blood vessel open to prevent blockages in the artery in the months or years after the procedure.\n                \nOther Treatments for Heart Attack\n                \nOther treatments for heart attack include:\n                \nMedicines\n                \nMedical procedures\n                \nHeart-healthy lifestyle changes\n                \nCardiac rehabilitation\n                \n\n                \nMedicines\n                \nYour doctor may prescribe one or more of the following medicines.\n                \nACE inhibitors. ACE inhibitors lower blood pressure and reduce strain on your heart. They also help slow down further weakening of the heart muscle.\n                \nAnticlotting medicines. Anticlotting medicines stop platelets from clumping together and forming unwanted blood clots. Examples of anticlotting medicines include aspirin and clopidogrel.\n                \nAnticoagulants. Anticoagulants, or blood thinners, prevent blood clots from forming in your arteries. These medicines also keep existing clots from getting larger.\n                \nBeta blockers. Beta blockers decrease your hearts workload. These medicines also are used to relieve chest pain and discomfort and to help prevent another heart attack. Beta blockers also are used to treat arrhythmias (irregular heartbeats).\n                \nStatin medicines. Statins control or lower your blood cholesterol. By lowering your blood cholesterol level, you can decrease your chance of having another heart attack orstroke.\n                \nYou also may be given medicines to relieve pain and anxiety, and treat arrhythmias.Take all medicines regularly, as your doctor prescribes. Dont change the amount of your medicine or skip a dose unless your doctor tells you to.\n                \n\n                \nMedical Procedures\n                \nCoronary artery bypass grafting also may be used to treat a heart attack. During coronary artery bypass grafting, a surgeon removes a healthy artery or vein from your body. The artery or vein is then connected, or grafted, to bypass the blocked section of the coronary artery. The grafted artery or vein bypasses (that is, goes around) the blocked portion of the coronary artery. This provides a new route for blood to flow to the heart muscle.\n                \n\n                \nHeart-Healthy Lifestyle Changes\n                \nTreatment for a heart attack usually includes making heart-healthy lifestyle changes. Your doctor also may recommend:\n                \nHeart-healthy eating\n                \nMaintaining a healthy weight\n                \nManaging stress\n                \nPhysical activity\n                \nQuitting smoking\n                \nTaking these steps can lower your chances of having another heart attack.\n                \n\n                \nHeart-Healthy Eating\n                \nYour doctor may recommend a heart-healthy eating plan, which should include:\n                \nFat-free or low-fat dairy products, such as skim milk\n                \nFish high in omega-3 fatty acids, such as salmon, tuna, and trout, about twice a week\n                \nFruits, such as apples, bananas, oranges, pears, and prunes\n                \nLegumes, such as kidney beans, lentils, chickpeas, black-eyed peas, and lima beans\n                \nVegetables, such as broccoli, cabbage, and carrots\n                \nWhole grains, such as oatmeal, brown rice, and corn tortillas\n                \nWhen following a heart-healthy diet, you should avoid eating:\n                \nA lot of red meat\n                \nPalm and coconut oils\n                \nSugary foods and beverages\n                \nTwo nutrients in your diet make blood cholesterol levels rise:\n                \nSaturated fatfound mostly in foods that come from animals\n                \nTrans fat (trans fatty acids)found in foods made with hydrogenated oils and fats, such as stick margarine; baked goods, such as cookies, cakes, and pies; crackers; frostings; and coffee creamers. Some trans fats also occur naturally in animal fats andmeats.\n                \nSaturated fat raises your blood cholesterol more than anything else in your diet. When you follow a heart-healthy eating plan, only 5 percent to 6 percent of your daily calories should come from saturated fat. Food labels list the amounts of saturated fat. To help you stay on track, here are some examples:\n                \nIf you eat:\n                \nTry to eat no more than:\n                \n1,200 calories a day               \n                \n8 grams of saturated fat a day      \n                \n1,500 calories a day\n                \n10 grams of saturated fat a day\n                \n1,800 calories a day\n                \n12 grams of saturated fat a day\n                \n2,000 calories a day\n                \n13 grams of saturated fat a day\n                \n2,500 calories a day\n                \n17 grams of saturated fat a day\n                \nNot all fats are bad. Monounsaturated and polyunsaturated fats actually help lower blood cholesterol levels.\n                \nSome sources of monounsaturated and polyunsaturated fats are:\n                \nAvocados\n                \nCorn, sunflower, and soybean oils\n                \nNuts and seeds, such as walnuts\n                \nOlive, canola, peanut, safflower, and sesame oils\n                \nPeanut butter\n                \nSalmon and trout\n                \nTofu\n                \nYou should try to limit the amount of sodium that you eat. This means choosing and preparing foods that are lower in salt and sodium. Try to use low-sodium and no added salt foods and seasonings at the table or while cooking. Food labels tell you what you need to know about choosing foods that are lower in sodium. Try to eat no more than 2,300 milligrams of sodium a day. If you have high blood pressure, you may need to restrict your sodium intake even more.\n                \nYour doctor may recommend the Dietary Approaches to Stop Hypertension (DASH) eating plan if you have high blood pressure. The DASH eating plan focuses on fruits, vegetables, whole grains, and other foods that are heart healthy and low in fat, cholesterol, and sodium and salt.\n                \nThe DASH eating plan is a good heart-healthy eating plan, even for those who dont have high blood pressure. Read more about DASH.\n                \nTry to limit alcohol intake. Too much alcohol can raise your blood pressure and triglyceride levels, a type of fat found in the blood. Alcohol also adds extra calories, which may cause weight gain.\n                \nMen should have no more than two drinks containing alcohol a day. Women should have no more than one drink containing alcohol a day. One drink is:\n                \n12 ounces of beer\n                \n5 ounces of wine\n                \n1 ounces of liquor\n                \n\n                \nMaintaining a Healthy Weight\n                \nMaintaining a healthy weight is important for overall health and can lower your risk for coronary heart disease and heart attack. Aim for a Healthy Weight by following a heart-healthy eating plan and keeping physically active.\n                \nKnowing your body mass index (BMI) helps you find out if youre a healthy weight in relation to your height and gives an estimate of your total body fat. To figure out your BMI, check out the National Heart, Lung, and Blood Institutes (NHLBI) online BMI calculator or talk to your doctor. A BMI:\n                \nBelow 18.5 is a sign that you are underweight.\n                \nBetween 18.5 and 24.9 is in the normal range.\n                \nBetween 25 and 29.9 is considered overweight.\n                \nOf 30 or more is considered obese.\n                \nA general goal to aim for is a BMI of less than 25. Your doctor or health care provider can help you set an appropriate BMI goal.\n                \nMeasuring waist circumference helps screen for possible health risks. If most of your fat is around your waist rather than at your hips, youre at a higher risk for heart disease and type 2 diabetes. This risk may be high with a waist size that is greater than 35 inches for women or greater than 40 inches for men. To learn how to measure your waist, visit Assessing Your Weight and Health Risk.\n                \n\n                \nManaging Stress\n                \nResearch shows that the most commonly reported trigger for a heart attack is an emotionally upsetting eventparticularly one involving anger. Also, some of the ways people cope with stresssuch as drinking, smoking, or overeatingarent healthy.\n                \nLearning how to manage stress, relax, and cope with problems can improve your emotional and physical health. Consider healthy stress-reducing activities, such as:\n                \nA stress management program\n                \nMeditation\n                \nPhysical activity\n                \nRelaxation therapy\n                \nTalking things out with friends or family\n                \n\n                \nPhysical Activity\n                \nRoutine physical activity can lower many risk factors for coronary heart disease, including LDL (bad) cholesterol, high blood pressure, and excess weight. Physical activity also can lower your risk for diabetes and raise your HDL cholesterol level. HDL is the good cholesterol that helps prevent another heart attack.\n                \nEveryone should try to participate in moderate-intensity aerobic exercise at least 2hours and 30minutes per week, or vigorous aerobic exercise for 1hour and 15minutes per week. Aerobic exercise, such as brisk walking, is any exercise in which your heart beats faster and you use more oxygen than usual. The more active you are, the more you will benefit. Participate in aerobic exercise for at least 10minutes at a time spread throughout the week.\n                \nRead more about physical activity at:\n                \nPhysical Activity and Your Heart\n                \nU.S. Department of Health and Human Services 2008 Physical Activity Guidelines for Americans\n                \nTalk with your doctor before you start a new exercise plan. Ask your doctor how much and what kinds of physical activity are safe for you.\n                \n\n                \nQuitting Smoking\n                \nIf you smoke, quit. Smoking can raise your risk for coronary heart disease and heart attack and worsen other coronary heart disease risk factors. Talk with your doctor about programs and products that can help you quit smoking. Also, try to avoid secondhandsmoke.\n                \nIf you have trouble quitting smoking on your own, consider joining a support group. Many hospitals, workplaces, and community groups offer classes to help people quit smoking.\n                \nRead more about quitting smoking at Smoking and Your Heart.\n                \n\n                \nCardiac Rehabilitation\n                \nYour doctor may recommend cardiac rehabilitation (cardiac rehab) to help you recover from a heart attack and to help prevent another heart attack. Nearly everyone who has had a heart attack can benefit from rehab. Cardiac rehab is a medically supervised program that may help improve the health and well-being of people who have heart problems.\n                \nThe cardiac rehab team may include doctors, nurses, exercise specialists, physical and occupational therapists, dietitians or nutritionists, and psychologists or other mental health specialists.\n                \nRehab has two parts:\n                \nEducation, counseling, and training. This part of rehab helps you understand your heart condition and find ways to reduce your risk for future heart problems. The rehab team will help you learn how to cope with the stress of adjusting to a new lifestyle and how to deal with your fears about the future.\n                \nExercise training. This part helps you learn how to exercise safely, strengthen your muscles, and improve your stamina. Your exercise plan will be based on your personal abilities, needs, and interests.",
+        "area": "Myocardial Infarction",
+        "source": "NHLBI",
+        "last_updated": "2026-08-21",
+        "similarity": 0.6351604640483857,
+        "method": "Mixed-RAG",
+        "doc_weight": 1.0,
+        "rerank_score": 0.0,
+        "fact_score": 0.9299999999999999,
+        "verification_passed": true,
+        "metadata": {
+          "area_id": 9,
+          "tri_source": "retrieval"
+        }
+      },
+      {
+        "doc_id": 568,
+        "question": "What is (are) High Blood Cholesterol ?",
+        "answer": "If TLC (Therapeutic Lifestyle Changes) cannot lower your LDL cholesterol level enough by itself, your doctor may prescribe cholesterol-lowering medicines. The following medicines are used together with TLC to help lower your LDL (bad) cholesterol level. - statins  - ezetimibe  - bile acid sequestrants  - nicotinic acid  - fibrates. statins ezetimibe bile acid sequestrants nicotinic acid fibrates. Statins  - are very effective in lowering LDL (bad) cholesterol levels   - are safe for most people  - have side effects that are infrequent, but potentially serious such as liver and muscle problems. are very effective in lowering LDL (bad) cholesterol levels are safe for most people have side effects that are infrequent, but potentially serious such as liver and muscle problems. Ezetimibe - lowers LDL (bad) cholesterol   - may be used with statins or alone  -  acts within the intestine to block absorption of cholesterol. lowers LDL (bad) cholesterol may be used with statins or alone acts within the intestine to block absorption of cholesterol. Bile acid sequestrants - lower LDL (bad) cholesterol levels  - are sometimes prescribed with statins  - are not usually prescribed alone to lower cholesterol. lower LDL (bad) cholesterol levels are sometimes prescribed with statins are not usually prescribed alone to lower cholesterol. Nicotinic acid - lowers LDL (bad) cholesterol and triglycerides, and raises HDL (good) cholesterol  - should be used only under a doctor's supervision. lowers LDL (bad) cholesterol and triglycerides, and raises HDL (good) cholesterol should be used only under a doctor's supervision. Fibrates - mainly lower triglycerides  - may increase HDL (good) cholesterol levels  - may increase the risk of muscle problems when used with a statin. mainly lower triglycerides may increase HDL (good) cholesterol levels may increase the risk of muscle problems when used with a statin.",
+        "area": "High Blood Cholesterol",
+        "source": "NIHSeniorHealth",
+        "last_updated": "2026-08-21",
+        "similarity": 0.6351569101214409,
+        "method": "Mixed-RAG",
+        "doc_weight": 1.0,
+        "rerank_score": 0.0,
+        "fact_score": 0.82,
+        "verification_passed": true,
+        "metadata": {
+          "area_id": 8,
+          "tri_source": "retrieval"
+        }
+      },
+      {
+        "doc_id": 8508,
+        "question": "What are the treatments for High Blood Cholesterol ?",
+        "answer": "High blood cholesterol is treated with lifestyle changes and medicines. The main goal of treatment is to lower your low-density lipoprotein (LDL) cholesterol level enough to reduce your risk for coronary heart disease, heart attack, and other related health problems.\n                \nYour risk for heart disease and heart attack goes up as your LDL cholesterol level rises and your number of heart disease risk factors increases.\n                \nSome people are at high risk for heart attacks because they already have heart disease. Other people are at high risk for heart disease because they have diabetes or more than one heart disease risk factor.\n                \nTalk with your doctor about lowering your cholesterol and your risk for heart disease. Also, check the list to find out whether you have risk factors that affect your LDL cholesterol goal:\n                \nCigarette smoking\n                \nHigh blood pressure (140/90 mmHg or higher), or youre on medicine to treat high blood pressure\n                \nLow high-density lipoprotein (HDL) cholesterol (less than 40 mg/dL)\n                \nFamily history of early heart disease (heart disease in father or brother before age 55; heart disease in mother or sister before age 65)\n                \nAge (men 45 years or older; women 55 years or older)\n                \nYou can use the NHLBI 10-Year Risk Calculator to find your risk score. The score, given as a percentage, refers to your chance of having a heart attack in the next 10years.\n                \nBased on your medical history, number of risk factors, and risk score, figure out your risk of getting heart disease or having a heart attack using the table below.\n                \n* Some people in this category are at very high risk because theyve just had a heart attack or they have diabetes and heart disease, severe risk factors, or metabolic syndrome. If youre at very high risk, your doctor may set your LDL goal even lower, to less than 70 mg/dL. Your doctor also may set your LDL goal at this lower level if you have heart disease alone.\n                \nAfter following the above steps, you should have an idea about your risk for heart disease and heart attack. The two main ways to lower your cholesterol (and, thus, your heart disease risk) include:\n                \nTherapeutic Lifestyle Changes (TLC). TLC is a three-part program that includes a healthy diet, weight management, and physical activity. TLC is for anyone whose LDL cholesterol level is above goal.\n                \nMedicines. If cholesterol-lowering medicines are needed, theyre used with the TLC program to help lower your LDL cholesterol level.\n                \nYour doctor will set your LDL goal. The higher your risk for heart disease, the lower he or she will set your LDL goal. Using the following guide, you and your doctor can create a plan for treating your high blood cholesterol.\n                \nCategory I, high risk, your LDL goal is less than 100 mg/dL.*\n                \n* Your LDL goal may be set even lower, to less than 70 mg/dL, if youre at very high risk or if you have heart disease. If you have this lower goal and your LDL is 70 mg/dL or higher, youll need to begin the TLC diet and take medicines as prescribed.\n                \nCategory II, moderately high risk, your LDL goal is less than 130 mg/dL\n                \nCategory III, moderate risk, your LDL goal is less than 130 mg/dL.\n                \nCategory IV, low to moderate risk, your LDL goal is less than 160 mg/dL.\n                \n\n                \nLowering Cholesterol Using Therapeutic Lifestyle Changes\n                \n\n                \nTLC is a set of lifestyle changes that can help you lower your LDL cholesterol. The main parts of the TLC program are a healthy diet, weight management, and physical activity.\n                \nThe TLC Diet\n                \nWith the TLC diet, less than 7 percent of your daily calories should come from saturated fat. This kind of fat is found in some meats, dairy products, chocolate, baked goods, and deep-fried and processed foods.\n                \nNo more than 25 to 35 percent of your daily calories should come from all fats, including saturated, trans, monounsaturated, and polyunsaturated fats.\n                \nYou also should have less than 200 mg a day of cholesterol. The amounts of cholesterol and the types of fat in prepared foods can be found on the foods' Nutrition Facts labels.\n                \nFoods high in soluble fiber also are part of the TLC diet. They help prevent the digestive tract from absorbing cholesterol. These foods include:\n                \nWhole-grain cereals such as oatmeal and oat bran\n                \nFruits such as apples, bananas, oranges, pears, and prunes\n                \nLegumes such as kidney beans, lentils, chick peas, black-eyed peas, and lima beans\n                \nA diet rich in fruits and vegetables can increase important cholesterol-lowering compounds in your diet. These compounds, called plant stanols or sterols, work like soluble fiber.\n                \nA healthy diet also includes some types of fish, such as salmon, tuna (canned or fresh), and mackerel. These fish are a good source of omega-3 fatty acids. These acids may help protect the heart from blood clots and inflammation and reduce the risk of heart attack. Try to have about two fish meals every week.\n                \nYou also should try to limit the amount of sodium (salt) that you eat. This means choosing low-salt and \"no added salt\" foods and seasonings at the table or while cooking. The Nutrition Facts label on food packaging shows the amount of sodium in the item.\n                \nTry to limit drinks with alcohol. Too much alcohol will raise your blood pressure and triglyceride level. (Triglycerides are a type of fat found in the blood.) Alcohol also adds extra calories, which will cause weight gain.\n                \nMen should have no more than two drinks containing alcohol a day. Women should have no more than one drink containing alcohol a day. One drink is a glass of wine, beer, or a small amount of hard liquor.\n                \nFor more information about TLC, go to the National Heart, Lung, and Blood Institutes (NHLBIs) \"Your Guide to Lowering Your Cholesterol With TLC.\"\n                \nWeight Management\n                \nIf youre overweight or obese, losing weight can help lower LDL cholesterol. Maintaining a healthy weight is especially important if you have a condition called metabolic syndrome.\n                \nMetabolic syndrome is the name for a group of risk factors that raise your risk for heart disease and other health problems, such as diabetes and stroke.\n                \nThe five metabolic risk factors are a large waistline (abdominal obesity), a high triglyceride level, a low HDL cholesterol level, high blood pressure, and high blood sugar. Metabolic syndrome is diagnosed if you have at least three of these metabolic risk factors.\n                \nPhysical Activity\n                \nRoutine physical activity can lower LDL cholesterol and triglycerides and raise your HDL cholesterol level.\n                \nPeople gain health benefits from as little as 60 minutes of moderate-intensity aerobic activity per week. The more active you are, the more you will benefit.\n                \nFor more information about physical activity, go to the U.S. Department of Health and Human Services' \"2008 Physical Activity Guidelines for Americans,\" the Health Topics Physical Activity and Your Heart article, and the NHLBI's \"Your Guide to Physical Activity and Your Heart.\"\n                \nCholesterol-Lowering Medicines\n                \nIn addition to lifestyle changes, your doctor may prescribe medicines to help lower your cholesterol. Even with medicines, you should continue the TLC program.\n                \nMedicines can help control high blood cholesterol, but they dont cure it. Thus, you must continue taking your medicine to keep your cholesterol level in the recommended range.\n                \nThe five major types of cholesterol-lowering medicines are statins, bile acid sequestrants (seh-KWES-trants), nicotinic (nick-o-TIN-ick) acid, fibrates, and ezetimibe.\n                \nStatins work well at lowering LDL cholesterol. These medicines are safe for most people. Rare side effects include muscle and liver problems.\n                \nBile acid sequestrants also help lower LDL cholesterol. These medicines usually arent prescribed as the only medicine to lower cholesterol. Sometimes theyre prescribed with statins.\n                \nNicotinic acid lowers LDL cholesterol and triglycerides and raises HDL cholesterol. You should only use this type of medicine with a doctors supervision.\n                \nFibrates lower triglycerides, and they may raise HDL cholesterol. When used with statins, fibrates may increase the risk of muscle problems.\n                \nEzetimibe lowers LDL cholesterol. This medicine works by blocking the intestine from absorbing cholesterol.\n                \nWhile youre being treated for high blood cholesterol, youll need ongoing care. Your doctor will want to make sure your cholesterol levels are controlled. He or she also will want to check for other health problems.\n                \nIf needed, your doctor may prescribe medicines for other health problems. Take all medicines exactly as your doctor prescribes. The combination of medicines may lower your risk for heart disease and heart attack.\n                \nWhile trying to manage your cholesterol, take steps to manage other heart disease risk factors too. For example, if you have high blood pressure, work with your doctor to lower it.\n                \nIf you smoke, quit. Talk with your doctor about programs and products that can help you quit smoking. Also, try to avoid secondhand smoke. If youre overweight or obese, try to lose weight. Your doctor can help you create a reasonable weight-loss plan.",
+        "area": "High Blood Cholesterol",
+        "source": "NHLBI",
+        "last_updated": "2026-08-21",
+        "similarity": 0.6310676142573357,
+        "method": "Mixed-RAG",
+        "doc_weight": 1.0,
+        "rerank_score": 0.0,
+        "fact_score": 0.8999999999999999,
+        "verification_passed": true,
+        "metadata": {
+          "area_id": 8,
+          "tri_source": "retrieval"
+        }
+      },
+      {
+        "doc_id": 556,
+        "question": "What is (are) High Blood Cholesterol ?",
+        "answer": "You can control - what you eat.  Foods containing saturated fats, trans fats, and cholesterol raise your cholesterol. what you eat.  Foods containing saturated fats, trans fats, and cholesterol raise your cholesterol. -  your weight.  Being overweight tends to increase your LDL level, reduce your HDL level, and increase your total cholesterol level.  your weight.  Being overweight tends to increase your LDL level, reduce your HDL level, and increase your total cholesterol level. - your activity level.  If you don't exercise regularly, you may gain weight. This could increase your LDL level. Regular exercise can help you lose weight and lower your LDL level. It can also help you increase your HDL level. your activity level.  If you don't exercise regularly, you may gain weight. This could increase your LDL level. Regular exercise can help you lose weight and lower your LDL level. It can also help you increase your HDL level.",
+        "area": "High Blood Cholesterol",
+        "source": "NIHSeniorHealth",
+        "last_updated": "2026-08-21",
+        "similarity": 0.6289614319801331,
+        "method": "Mixed-RAG",
+        "doc_weight": 1.0,
+        "rerank_score": 0.0,
+        "fact_score": 0.7799999999999999,
+        "verification_passed": true,
+        "metadata": {
+          "area_id": 8,
+          "tri_source": "retrieval"
+        }
+      },
+      {
+        "doc_id": 8505,
+        "question": "What causes High Blood Cholesterol ?",
+        "answer": "Many factors can affect the cholesterol levels in your blood. You can control some factors, but not others.\n                \nFactors You Can Control\n                \nDiet\n                \nCholesterol is found in foods that come from animal sources, such as egg yolks, meat, and cheese. Some foods have fats that raise your cholesterol level.\n                \nFor example, saturated fat raises your low-density lipoprotein (LDL) cholesterol level more than anything else in your diet. Saturated fat is found in some meats, dairy products, chocolate, baked goods, and deep-fried and processed foods.\n                \nTrans fatty acids (trans fats) raise your LDL cholesterol and lower your high-density lipoprotein (HDL) cholesterol. Trans fats are made when hydrogen is added to vegetable oil to harden it. Trans fats are found in some fried and processed foods.\n                \nLimiting foods with cholesterol, saturated fat, and trans fats can help you control your cholesterol levels.\n                \nPhysical Activity and Weight\n                \nLack of physical activity can lead to weight gain. Being overweight tends to raise your LDL level, lower your HDL level, and increase your total cholesterol level. (Total cholesterol is a measure of the total amount of cholesterol in your blood, including LDL and HDL.)\n                \nRoutine physical activity can help you lose weight and lower your LDL cholesterol. Being physically active also can help you raise your HDL cholesterol level.\n                \nFactors You Cant Control\n                \nHeredity\n                \nHigh blood cholesterol can run in families. An inherited condition called familial hypercholesterolemia causes very high LDL cholesterol. (Inherited means the condition is passed from parents to children through genes.) This condition begins at birth, and it may cause a heart attack at an early age.\n                \nAge and Sex\n                \nStarting at puberty, men often have lower levels of HDL cholesterol than women. As women and men age, their LDL cholesterol levels often rise. Before age 55, women usually have lower LDL cholesterol levels than men. However, afterage 55, women can have higher LDL levels than men.",
+        "area": "High Blood Cholesterol",
+        "source": "NHLBI",
+        "last_updated": "2026-08-21",
+        "similarity": 0.6199802786111832,
+        "method": "Adaptive-RAG:Deep Retrieval",
+        "doc_weight": 1.0,
+        "rerank_score": 0.0,
+        "fact_score": 0.7799999999999999,
+        "verification_passed": true,
+        "metadata": {
+          "area_id": 8,
+          "tri_source": "retrieval"
+        }
+      }
+    ],
+    "avg_verified_relevance": 0.6207659110426904
+  },
+  "fusion": {
+    "input_docs": 20,
+    "deduplicated_docs": 15,
+    "dedup_removed": 5,
+    "conflict_count": 6,
+    "conflicts": [
+      {
+        "left_doc_id": 8254,
+        "right_doc_id": 568,
+        "left_area": "Myocardial Infarction",
+        "right_area": "High Blood Cholesterol",
+        "simhash_distance": 35
+      },
+      {
+        "left_doc_id": 568,
+        "right_doc_id": 228,
+        "left_area": "High Blood Cholesterol",
+        "right_area": "Osteoporosis",
+        "simhash_distance": 37
+      },
+      {
+        "left_doc_id": 568,
+        "right_doc_id": 29,
+        "left_area": "High Blood Cholesterol",
+        "right_area": "Hypertension",
+        "simhash_distance": 33
+      },
+      {
+        "left_doc_id": 556,
+        "right_doc_id": 228,
+        "left_area": "High Blood Cholesterol",
+        "right_area": "Osteoporosis",
+        "simhash_distance": 33
+      },
+      {
+        "left_doc_id": 556,
+        "right_doc_id": 29,
+        "left_area": "High Blood Cholesterol",
+        "right_area": "Hypertension",
+        "simhash_distance": 31
+      }
+    ],
+    "area_consensus": {
+      "Myocardial Infarction": 0.6351604640483857,
+      "High Blood Cholesterol": 0.6242646232247352,
+      "Osteoporosis": 0.6204565383493901,
+      "Hypertension": 0.6175195753574372,
+      "Heart Failure": 0.6157801628112793
+    }
+  },
+  "verification": {
+    "accepted_docs": 15,
+    "rejected_docs": 0,
+    "verification_ratio": 1.0,
+    "verification_status": "passed_with_warnings",
+    "fusion_conflicts_considered": 6,
+    "conflict_docs_scrutinized": 5,
+    "warning_docs": [],
+    "rejected_examples": [],
+    "tfa_verification": {
+      "valid": true,
+      "warnings": [],
+      "serious_conflicts": 0,
+      "tfa_verified": true,
+      "message": "TFA risk report verified"
+    },
+    "serious_conflicts": 0
+  },
+  "distillation": {
+    "selected_doc_ids": [
+      8254,
+      568,
+      8508,
+      556,
+      8505,
+      549
+    ],
+    "selected_areas": [
+      "Myocardial Infarction",
+      "High Blood Cholesterol",
+      "High Blood Cholesterol",
+      "High Blood Cholesterol",
+      "High Blood Cholesterol",
+      "High Blood Cholesterol"
+    ],
+    "distilled_text_excerpt": "[Myocardial Infarction|NHLBI|0.64] Early treatment for a heart attack can prevent or limit damage to the heart muscle. Acting fast, by calling 911 at the f [High Blood Cholesterol|NIHSeniorHealth|0.64] If TLC (Therapeuti"
+  },
+  "tfa": {
+    "has_voting_right": false,
+    "engine": "MedTsLLM",
+    "short_term": {
+      "window": "24h",
+      "risk_probability": 0.5128952264785767
+    },
+    "mid_term": {
+      "window": "30d",
+      "risk_probability": 0.4339418560266495
+    },
+    "long_term": {
+      "window": "12m",
+      "risk_probability": 0.3865686267614365
+    },
+    "conditional_probability_distribution": {
+      "deterioration": 0.5698835849761963,
+      "stable": 0.4301164150238037
+    },
+    "contribution_factors": {
+      "TCN": -0.00610392249148825,
+      "LSTM": 1.9333027820620273e-08,
+      "Transformer": -1.0,
+      "authority_bias": 0.0,
+      "acute_multiplier": 1.0,
+      "chronic_multiplier": 1.0,
+      "pressure_growth": 0.0,
+      "fall_feature": 0.0,
+      "posture_instability": 0.0,
+      "activity_reduction": 0.0,
+      "bedrest_hours": 0.0
+    },
+    "calibration_mode": "slight_discount",
+    "calibration_factor": 0.9,
+    "dma_confidence_input": 0.85,
+    "risk_level": "medium",
+    "risk_label": "中风险",
+    "risk_score": 0.5128952264785767,
+    "primary_risk_factors": [
+      "短期内病情恶化风险较高"
+    ],
+    "reasoning": "TFA多尺度时序分析完成，风险等级：medium。主要发现：短期内病情恶化风险较高。",
+    "recommendations": [
+      "建议密切观察病情变化，增加监测频率",
+      "考虑定期复查相关指标（每1-3个月）",
+      "评估是否需要调整现有治疗方案"
+    ],
+    "conflict_with_diagnosis": 0
+  },
+  "dma": {
+    "prediction": "Common Cold",
+    "confidence": 0.85,
+    "probabilities": {
+      "Age-related Macular Degeneration": 0.0,
+      "Allergic Rhinitis": 0.0,
+      "Alzheimer's Disease": 0.0,
+      "Anemia": 0.0,
+      "Anxiety Disorder": 0.0,
+      "Asthma": 0.0,
+      "Autoimmune Disorders": 0.0,
+      "Breast Cancer": 0.0,
+      "Causes of Diabetes": 0.0,
+      "Chronic Kidney Disease": 0.0,
+      "Colorectal Cancer": 0.0,
+      "Common Cold": 1.0,
+      "Depression": 0.0,
+      "Diabetes": 0.0,
+      "Gastroenteritis": 0.0,
+      "Heart Failure": 0.0,
+      "Hemochromatosis": 0.0,
+      "High Blood Cholesterol": 0.0,
+      "Hypertension": 0.0,
+      "Hypothyroidism": 0.0,
+      "Influenza": 0.0,
+      "Leukemia": 0.0,
+      "Lung Cancer": 0.0,
+      "Migraine": 0.0,
+      "Myocardial Infarction": 0.0,
+      "Osteoarthritis": 0.0,
+      "Osteoporosis": 0.0,
+      "Parkinson's Disease": 0.0,
+      "Pneumonia": 0.0,
+      "Polycythemia Vera": 0.0,
+      "Prostate Cancer": 0.0,
+      "Shingles": 0.0,
+      "Skin Cancer": 0.0,
+      "Stroke": 0.0,
+      "Type 2 Diabetes": 0.0,
+      "Urinary Tract Infection": 0.0,
+      "Wilson Disease": 0.0
+    },
+    "diagnosis_confidence": 0.85,
+    "disease_severity": "mild",
+    "decision_mode": "fast",
+    "base_model": "llama3:8b",
+    "raw_scores": {},
+    "dma_backend": "ollama_llama3_8b",
+    "intent": "general_inquiry",
+    "hitl_status": "auto_verified",
+    "review_required": false,
+    "status": "final"
+  },
+  "high_risk": false,
+  "hitl": {
+    "triggered": false,
+    "reason": "",
+    "final_prediction": "Common Cold",
+    "final_confidence": 0.85,
+    "corrected_label": "Common Cold",
+    "feedback_record": null,
+    "intervention_layer": "autonomous_execution",
+    "tfa_intervention": {
+      "triggered": false,
+      "intervention_type": "none"
+    }
+  },
+  "parameter_update": null,
+  "consensus": {
+    "approved": true,
+    "tier": "auto_pass",
+    "votes": {
+      "DMA": true,
+      "TFA": true,
+      "Verification": true
+    },
+    "vote_weights": {
+      "DMA": 2,
+      "TFA": 1,
+      "Verification": 1
+    },
+    "weighted_approvals": 4,
+    "total_weight": 4,
+    "required_approvals": 3,
+    "escalate_to_human": false,
+    "risk_level": "medium",
+    "risk_label": "中风险",
+    "reason": "DMA confidence 0.850 >= 0.8, TFA risk level medium, verification passed_with_warnings"
+  },
+  "comprehensive_answer": {
+    "diagnosis": {
+      "prediction": "Common Cold",
+      "confidence": 0.85,
+      "severity": "mild",
+      "intent": "general_inquiry",
+      "status": "final"
+    },
+    "risk_assessment": {
+      "risk_level": "medium",
+      "risk_label": "中风险",
+      "risk_score": 0.5128952264785767,
+      "short_term_risk": 0.5128952264785767,
+      "mid_term_risk": 0.4339418560266495,
+      "long_term_risk": 0.3865686267614365,
+      "primary_risk_factors": [
+        "短期内病情恶化风险较高"
+      ],
+      "reasoning": "TFA多尺度时序分析完成，风险等级：medium。主要发现：短期内病情恶化风险较高。",
+      "calibration_mode": "slight_discount",
+      "degradation_notice": ""
+    },
+    "recommendations": [
+      "建议密切观察病情变化，增加监测频率",
+      "考虑定期复查相关指标（每1-3个月）",
+      "评估是否需要调整现有治疗方案"
+    ],
+    "disclaimer": "本系统输出为AI辅助决策参考，不构成医疗建议。所有诊断和治疗决策必须由具备资质的医疗专业人员确认。如有疑问，请咨询您的医生或拨打急救电话。",
+    "risk_knowledge_cross_ref": {
+      "guidelines_matched": false,
+      "tfa_raa_consistency": "unknown",
+      "confidence_adjustment": 0.0
+    }
+  },
+  "risk_knowledge": {
+    "risk_level": "medium",
+    "guidelines_matched": false,
+    "conflicts_found": false,
+    "confidence_adjustment": 0.0,
+    "risk_specific_docs": []
+  },
+  "latency_seconds": 11.890494585037231,
+  "request_id": "fe9e0b56",
+  "degradation": {
+    "degradation_level": 0,
+    "component_states": {
+      "Perception": "healthy",
+      "GameTheory": "healthy",
+      "DMA": "healthy",
+      "TFA": "healthy"
+    },
+    "fallback_counts": {}
+  },
+  "trace_path": "logs\\traces\\decision_trace_20260821_141850_142964.json"
+}

@@ -1,0 +1,546 @@
+{
+  "evidence_type": "synthetic_case_live_pipeline_proof",
+  "generated_at_utc": "2026-09-20T07:22:50.122433+00:00",
+  "no_real_patient_data": true,
+  "pubmed_refresh": {
+    "attempted": true,
+    "added": 3,
+    "error": null
+  },
+  "result": {
+    "query": "竞赛合成演示案例（synthetic demo）：three days of high fever, dry cough, fatigue, mild chest pain and shortness of breath; no real patient identity.",
+    "model_input_modalities": {
+      "clinical_text": false,
+      "lab_results": 0,
+      "images": 0,
+      "time_series": 0
+    },
+    "true_label": null,
+    "perception": {
+      "context_norm": 1.0,
+      "metadata": {
+        "ready": true,
+        "implementation": "deterministic_actual-input_encoder",
+        "clinical_text_consumed": false,
+        "lab_results_consumed": 0,
+        "images_consumed": 0,
+        "image_sources": [],
+        "image_interpretation_validated": false,
+        "limitation": "Pixel descriptors are not a diagnostic imaging model."
+      }
+    },
+    "retrieval": {
+      "equilibrium_strategy": "rerank",
+      "equilibrium_decision_mode": "fast",
+      "nash_equilibrium_reached": true,
+      "nash_rounds": 2,
+      "metadata": {
+        "strategy": "Rerank-RAG",
+        "uncertainty": 0.8983356924547103,
+        "deep_retrieval": true,
+        "result_count": 5,
+        "avg_relevance": 0.7582595263719558,
+        "latency_seconds": 0.016889572143554688
+      },
+      "extra_meta": {
+        "mixed": {
+          "strategy": "Mixed-RAG",
+          "uncertainty": 0.8983356924547103,
+          "deep_retrieval": true,
+          "result_count": 5,
+          "avg_relevance": 0.694294410943985,
+          "latency_seconds": 0.007216691970825195
+        },
+        "rerank": {
+          "strategy": "Rerank-RAG",
+          "uncertainty": 0.8983356924547103,
+          "deep_retrieval": true,
+          "result_count": 5,
+          "avg_relevance": 0.7582595263719558,
+          "latency_seconds": 0.016938209533691406
+        },
+        "adaptive": {
+          "strategy": "Adaptive-RAG",
+          "uncertainty": 0.8983356924547103,
+          "deep_retrieval": true,
+          "result_count": 10,
+          "avg_relevance": 0.747852393704653,
+          "latency_seconds": 0.02621603012084961
+        }
+      },
+      "top_docs": [
+        {
+          "doc_id": 15590,
+          "question": "Teclistamab-associated adverse events: a disproportionality analysis of the FDA adverse event reporting system.",
+          "answer": "Teclistamab, a B-cell maturation antigen (BCMA) × CD3 bispecific antibody, is effective in relapsed/refractory multiple myeloma, but its real-world post-marketing safety profile remains incompletely characterized. To evaluate adverse event (AE) signals, temporal patterns, and clinical priorities associated with teclistamab using the FDA Adverse Event Reporting System (FAERS). We retrospectively analyzed FAERS reports from 2022 to 2025 using four disproportionality methods: reporting odds ratio, proportional reporting ratio, Bayesian confidence propagation neural network, and multi-item gamma Poisson shrinker. Time-to-onset, Weibull, Kaplan-Meier, and semi-quantitative clinical prioritization analyses were also performed. Among 2,631 reports, 85.2% involved serious outcomes and 21.7% fatal outcomes. The most frequently reported system organ class was infections and infestations. Seventy significant preferred-term signals were identified, including 52 previously documented and 18 novel signals. Cytokine release syndrome, immune effector cell-associated neurotoxicity syndrome, infection, pneumonia, pyrexia, and neutropenia were most frequently reported. Sepsis was the sole high-priority signal, with fatal outcomes in 58.57% of sepsis-related reports. Immune-related and neurological events occurred earlier, whereas infectious complications tended to occur later. Safety profiles were generally consistent across sex and age groups, although septic shock was less frequently reported in females. The safety profile broadly aligned with clinical trial data, but novel signals and sepsis-related fatality highlighted clinically important risks. These findings support targeted risk mitigation and continued monitoring, particularly for severe infections and immune-related toxicities.",
+          "area": "Pneumonia",
+          "source": "PubMed",
+          "last_updated": "2026-09-15",
+          "similarity": 0.5,
+          "method": "authoritative_feed",
+          "doc_weight": 1.0,
+          "rerank_score": 0.0,
+          "fact_score": 0.8800000000000001,
+          "verification_passed": true,
+          "metadata": {
+            "pmid": "42742109",
+            "doi": "10.1080/16078454.2026.2730041",
+            "journal": "Hematology (Amsterdam, Netherlands)",
+            "source_url": "https://pubmed.ncbi.nlm.nih.gov/42742109/",
+            "retrieved_at": "2026-09-20T07:22:15.006117+00:00",
+            "retrieval_query": "\"pneumonia\"[Title/Abstract] AND humans[MeSH Terms]",
+            "provenance_verified": true,
+            "content_type": "title_and_abstract",
+            "tri_source": "authoritative"
+          }
+        },
+        {
+          "doc_id": 15591,
+          "question": "Interferon regulatory factor 1 mediates ROS-dependent release of NETs in LPS-induced mouse pneumonia by interacting with matrix metalloproteinase 9.",
+          "answer": "While interferon regulatory factor 1 (IRF1) has been implicated in reactive oxygen species (ROS)-dependent neutrophil extracellular trap (NET) release during acute lung injury, its regulatory role in mitochondrial dysfunction-driven NETosis specific to pediatric pneumonia remains unexplored. Neutrophils were isolated from the bronchoalveolar lavage fluid (BALF) of pediatric pneumonia patients and the bone marrow of mice. IRF1 expression was quantified via qRT-PCR and Western blotting. Mitochondrial ROS (mtROS) and total ROS were measured by flow cytometry. Mitochondrial dysfunction was assessed by ATP quantification. NETosis was evaluated through immunofluorescence staining and ELISA quantification of neutrophil elastase (NE), myeloperoxidase-DNA (MPO-DNA), and citrullinated histone H3 (Cit-H3) levels. For in vivo studies, pneumonia-related lung injury was induced by intratracheal LPS instillation in mice, with pathological severity graded by H&E staining, pulmonary edema quantified via the wet/dry weight ratio, and inflammation assessed by the BALF protein concentration. Mechanistically, the IRF1/MMP9 interaction was predicted by bioinformatics (STRING database) and validated by co-immunoprecipitation (Co-IP) and immunofluorescence staining, while MMP9 overexpression was achieved via lentivirus transduction to delineate pathway regulation. IRF1 was significantly upregulated in BALF neutrophils from patients and correlated with elevated ROS production and mitochondrial dysfunction, as well as NETs release. IRF1 knockdown attenuated ROS-driven NETosis in vitro. Matrix metalloproteinase 9 (MMP9) was predicted to interact with IRF1, and MMP9 overexpression effectively reversed the beneficial effects of IRF1 deficiency on ROS release, mitochondrial dysfunction, neutrophil apoptosis, and NETosis. Consistently, in mouse models, MMP9 overexpression abolished the protective effects of IRF1 deficiency, exacerbating acute lung injury and restoring NETs levels in BALF.",
+          "area": "Pneumonia",
+          "source": "PubMed",
+          "last_updated": "2026-07-16",
+          "similarity": 0.5,
+          "method": "authoritative_feed",
+          "doc_weight": 1.0,
+          "rerank_score": 0.0,
+          "fact_score": 0.8800000000000001,
+          "verification_passed": true,
+          "metadata": {
+            "pmid": "42461411",
+            "doi": "10.1080/08916934.2026.2701075",
+            "journal": "Autoimmunity",
+            "source_url": "https://pubmed.ncbi.nlm.nih.gov/42461411/",
+            "retrieved_at": "2026-09-20T07:22:15.006117+00:00",
+            "retrieval_query": "\"pneumonia\"[Title/Abstract] AND humans[MeSH Terms]",
+            "provenance_verified": true,
+            "content_type": "title_and_abstract",
+            "tri_source": "authoritative"
+          }
+        },
+        {
+          "doc_id": 15592,
+          "question": "Targeting a conserved flagellin D1 epitope with 16G10 confers cross-serotype protection in murine Pseudomonas aeruginosa infection models.",
+          "answer": "Escalating resistance in Pseudomonas aeruginosa (PA) underscores the need for resistance-agnostic immunotherapies. In this study, we generated a panel of 20 monoclonal antibodies against the flagellin protein FliC and identified 16G10 as a high-affinity lead. Epitope mapping revealed a conserved linear site within the D1 domain (Gly71-Ile88), a region essential for filament assembly. In vitro, 16G10 induced bacterial aggregation, suppressed swimming motility, and significantly reduced adhesion to and invasion of A549 cells, while limiting biofilm biomass by SEM and confocal 3D imaging. In vivo, in murine pneumonia, where 16G10 administered either after pre-incubation with imipenem-resistant PA strain or as post-infection therapy, it improved survival, lowered lung bacterial loads, reduced IL-6 and TNF-α concentrations, and attenuated histologic inflammation. Protection extended across serotype A and B flagellated strains, indicating broad coverage. These data nominate 16G10 as a promising candidate for immunotherapy of drug-resistant PA lung infections and establish a druggable flagellin epitope for future vaccine and antibody designs.",
+          "area": "Pneumonia",
+          "source": "PubMed",
+          "last_updated": "2026-06-25",
+          "similarity": 0.5,
+          "method": "authoritative_feed",
+          "doc_weight": 1.0,
+          "rerank_score": 0.0,
+          "fact_score": 0.8800000000000001,
+          "verification_passed": true,
+          "metadata": {
+            "pmid": "42348853",
+            "doi": "10.1080/21645515.2026.2689214",
+            "journal": "Human vaccines & immunotherapeutics",
+            "source_url": "https://pubmed.ncbi.nlm.nih.gov/42348853/",
+            "retrieved_at": "2026-09-20T07:22:15.006117+00:00",
+            "retrieval_query": "\"pneumonia\"[Title/Abstract] AND humans[MeSH Terms]",
+            "provenance_verified": true,
+            "content_type": "title_and_abstract",
+            "tri_source": "authoritative"
+          }
+        }
+      ],
+      "avg_verified_relevance": 0.5
+    },
+    "fusion": {
+      "input_docs": 23,
+      "deduplicated_docs": 14,
+      "dedup_removed": 9,
+      "conflict_count": 0,
+      "conflicts": [],
+      "area_consensus": {
+        "Shingles": 0.6548786192387342,
+        "Leukemia": 0.6266938854306937,
+        "Wilson Disease": 0.6135313337296249,
+        "Parkinson's Disease": 0.5904597131013871,
+        "Polycythemia Vera": 0.5604037672281266
+      }
+    },
+    "verification": {
+      "accepted_docs": 3,
+      "rejected_docs": 11,
+      "verification_ratio": 0.21428571428571427,
+      "verification_status": "failed",
+      "fusion_conflicts_considered": 0,
+      "conflict_docs_scrutinized": 0,
+      "warning_docs": [],
+      "rejected_examples": [
+        {
+          "doc_id": 627,
+          "area": "Shingles",
+          "age_days": 20716,
+          "fact_score": 0.05,
+          "in_fusion_conflict": false,
+          "reason": "stale"
+        },
+        {
+          "doc_id": 624,
+          "area": "Shingles",
+          "age_days": 20716,
+          "fact_score": 0.05,
+          "in_fusion_conflict": false,
+          "reason": "stale"
+        },
+        {
+          "doc_id": 629,
+          "area": "Shingles",
+          "age_days": 20716,
+          "fact_score": 0.05,
+          "in_fusion_conflict": false,
+          "reason": "stale"
+        },
+        {
+          "doc_id": 453,
+          "area": "Leukemia",
+          "age_days": 20716,
+          "fact_score": 0.05,
+          "in_fusion_conflict": false,
+          "reason": "stale"
+        },
+        {
+          "doc_id": 463,
+          "area": "Leukemia",
+          "age_days": 20716,
+          "fact_score": 0.05,
+          "in_fusion_conflict": false,
+          "reason": "stale"
+        }
+      ],
+      "verification_scope": "provenance_freshness_and_safety_signals_not_claim_truth",
+      "tfa_verification": {
+        "valid": false,
+        "warnings": [
+          "No task-matched trained and validated temporal checkpoint was configured."
+        ],
+        "serious_conflicts": 0,
+        "tfa_verified": false,
+        "message": "TFA produced no clinical probability"
+      },
+      "serious_conflicts": 0
+    },
+    "distillation": {
+      "selected_doc_ids": [
+        15590,
+        15591,
+        15592
+      ],
+      "selected_areas": [
+        "Pneumonia",
+        "Pneumonia",
+        "Pneumonia"
+      ],
+      "distilled_text_excerpt": "[Pneumonia|PubMed|0.50] Teclistamab, a B-cell maturation antigen (BCMA) × CD3 bispecific antibody, is effective in relapsed/refractory multiple  [Pneumonia|PubMed|0.50] While interferon regulatory factor 1 (IRF1) has bee"
+    },
+    "tfa": {
+      "has_voting_right": false,
+      "available": false,
+      "validated": false,
+      "engine": "descriptive_signal_audit",
+      "blocked_reason": "No task-matched trained and validated temporal checkpoint was configured.",
+      "short_term": {
+        "window": "24h",
+        "risk_probability": 0.0,
+        "estimate_available": false
+      },
+      "mid_term": {
+        "window": "30d",
+        "risk_probability": 0.0,
+        "estimate_available": false
+      },
+      "long_term": {
+        "window": "12m",
+        "risk_probability": 0.0,
+        "estimate_available": false
+      },
+      "conditional_probability_distribution": {
+        "available": false
+      },
+      "signal_summary": {
+        "observations": 0,
+        "mean": null,
+        "standard_deviation": null,
+        "last_step_change": null
+      },
+      "contribution_factors": {},
+      "risk_level": "unknown",
+      "risk_label": "不可用",
+      "risk_score": 0.0,
+      "primary_risk_factors": [],
+      "reasoning": "仅完成输入时序质量检查；未生成临床恶化概率。",
+      "recommendations": [
+        "当前未配置与任务匹配且完成验证的时序检查点，风险估计已关闭。",
+        "请由临床人员结合原始生命体征评估；不得把0.0解释为低风险。"
+      ],
+      "calibration_mode": "unavailable_no_validated_checkpoint",
+      "dma_confidence_input": 0.5,
+      "conflict_with_diagnosis": 0
+    },
+    "dma": {
+      "prediction": "Unknown",
+      "confidence": 0.5,
+      "probabilities": {},
+      "probabilities_source": "not_provided",
+      "generation_provenance": {
+        "requested_model": "llama3:8b",
+        "served_model": "llama3:8b",
+        "created_at": "2026-09-20T07:22:50.041878Z",
+        "done": true,
+        "done_reason": "stop",
+        "total_duration_ns": 1022921200,
+        "load_duration_ns": 188388300,
+        "prompt_eval_count": 533,
+        "eval_count": 15,
+        "response_sha256": "bab7239ec3cb6dbf8821b8683c409d5c8a4dae5a863ed2ff844f3322e8236c79"
+      },
+      "diagnosis_confidence": 0.5,
+      "disease_severity": "severe",
+      "decision_mode": "fast",
+      "base_model": "llama3:8b",
+      "raw_scores": {},
+      "dma_backend": "ollama_local_http",
+      "fallback_used": false,
+      "backend_verified": true,
+      "confidence_interpretation": "uncalibrated_model_self_report",
+      "intent": "symptom_inquiry",
+      "hitl_status": "human_review_required",
+      "review_required": true,
+      "status": "candidate_research_output"
+    },
+    "high_risk": false,
+    "hitl": {
+      "triggered": true,
+      "reason": "DMA low confidence (0.500) | Verification flagged TFA: TFA produced no clinical probability",
+      "final_prediction": "Unknown",
+      "final_confidence": 0.44,
+      "corrected_label": "Unknown",
+      "feedback_record": null,
+      "intervention_layer": "needs_human_review",
+      "error_type": "unreviewed",
+      "detail": "Awaiting an independent human decision",
+      "human_review": {
+        "action": "pending",
+        "corrected_label": "Unknown",
+        "reviewer_notes": "awaiting-external-human-review",
+        "interactive": false
+      },
+      "tfa_intervention": {
+        "triggered": true,
+        "intervention_type": "tfa_risk_review",
+        "record": {
+          "timestamp": "2026-09-20T15:22:50.082525",
+          "query": "竞赛合成演示案例（synthetic demo）：three days of high fever, dry cough, fatigue, mild chest pain and shortness of breath; no real patient identity.",
+          "original_risk_level": "unknown",
+          "original_risk_score": 0.0,
+          "human_approved": false,
+          "corrections_applied": false,
+          "corrected_risk_level": "unknown",
+          "corrected_risk_score": 0.0,
+          "added_factors": [],
+          "removed_factors": [],
+          "modified_recommendations": [],
+          "reviewer_notes": ""
+        },
+        "priority": 1
+      }
+    },
+    "parameter_update": {
+      "updated": false,
+      "reason": "human_review_pending"
+    },
+    "consensus": {
+      "approved": false,
+      "tier": "clinical_validation_gate",
+      "votes": {
+        "DMA": false,
+        "TFA": false,
+        "Verification": false
+      },
+      "vote_weights": {
+        "DMA": 2,
+        "TFA": 1,
+        "Verification": 1
+      },
+      "weighted_approvals": 0,
+      "total_weight": 4,
+      "required_approvals": 3,
+      "escalate_to_human": true,
+      "risk_level": "unknown",
+      "risk_label": "unknown",
+      "reason": "Clinical use blocked: 缺少包含外部验证与校准结果的临床验证工件; 时序模型没有与当前结局定义匹配的已验证检查点",
+      "algorithmic_approval_before_validation_gate": false
+    },
+    "clinical_readiness": {
+      "clinical_use_allowed": false,
+      "status": "research_only",
+      "checks": {
+        "zero_group_overlap": true,
+        "external_validation_artifact": false,
+        "temporal_model_validated": false,
+        "evidence_scope_declared": true
+      },
+      "blockers": [
+        "缺少包含外部验证与校准结果的临床验证工件",
+        "时序模型没有与当前结局定义匹配的已验证检查点"
+      ],
+      "warnings": [
+        "本系统用于科研与竞赛演示，不替代医生判断。"
+      ]
+    },
+    "execution_integrity": {
+      "configured_ollama_model": "llama3:8b",
+      "dma_backend": "ollama_local_http",
+      "dma_fallback_used": false,
+      "ollama_generation_verified": true,
+      "temporal_estimate_available": false,
+      "verified_evidence_count": 3,
+      "evidence_verification_scope": "provenance_freshness_and_safety_signals_not_claim_truth",
+      "clinical_use_allowed": false
+    },
+    "dataset_split_audit": {
+      "passed": true,
+      "strategy": "normalized_question",
+      "train_rows": 475,
+      "test_rows": 116,
+      "train_unique_groups": 149,
+      "test_unique_groups": 38,
+      "overlapping_question_groups": 0,
+      "overlap_examples": [],
+      "overlapping_patient_groups": 0,
+      "patient_overlap_examples": [],
+      "test_exact_label_mention_rows": 109,
+      "test_exact_label_mention_rate": 0.9396551724137931,
+      "warning": "Label mentions must be reported separately; masking them is a stress test, not a substitute for external validation."
+    },
+    "training_label_mentions_masked": true,
+    "intended_use": "research_and_competition_decision_support_only",
+    "comprehensive_answer": {
+      "diagnosis": {
+        "prediction": "Unknown",
+        "confidence": 0.5,
+        "severity": "severe",
+        "intent": "symptom_inquiry",
+        "status": "candidate_research_output"
+      },
+      "risk_assessment": {
+        "available": false,
+        "validated": false,
+        "blocked_reason": "No task-matched trained and validated temporal checkpoint was configured.",
+        "risk_level": "unknown",
+        "risk_label": "不可用",
+        "risk_score": 0.0,
+        "short_term_risk": 0.0,
+        "mid_term_risk": 0.0,
+        "long_term_risk": 0.0,
+        "primary_risk_factors": [],
+        "reasoning": "仅完成输入时序质量检查；未生成临床恶化概率。",
+        "calibration_mode": "unavailable_no_validated_checkpoint",
+        "degradation_notice": ""
+      },
+      "recommendations": [
+        "当前未配置与任务匹配且完成验证的时序检查点，风险估计已关闭。",
+        "请由临床人员结合原始生命体征评估；不得把0.0解释为低风险。"
+      ],
+      "disclaimer": "本系统输出为AI辅助决策参考，不构成医疗建议。所有诊断和治疗决策必须由具备资质的医疗专业人员确认。如有疑问，请咨询您的医生或拨打急救电话。",
+      "risk_knowledge_cross_ref": {
+        "guidelines_matched": false,
+        "tfa_raa_consistency": "unknown",
+        "confidence_adjustment": 0.0
+      }
+    },
+    "risk_knowledge": {
+      "risk_level": "unknown",
+      "guidelines_matched": false,
+      "conflicts_found": false,
+      "confidence_adjustment": 0.0,
+      "risk_specific_docs": []
+    },
+    "communication": {
+      "name": "Topology",
+      "status": "healthy",
+      "last_heartbeat": "2026-09-20T15:22:50.083354",
+      "total_calls": 7,
+      "failures": 0,
+      "last_runtime_seconds": 0.0,
+      "total_runtime_seconds": 0.0,
+      "topology_type": "star",
+      "nodes": [
+        "Consensus",
+        "DMA",
+        "Fusion",
+        "HITL",
+        "Maintenance",
+        "Perception",
+        "Privacy",
+        "RAA",
+        "TFA",
+        "Topology",
+        "Verification"
+      ],
+      "links": {
+        "Verification": [
+          "DMA"
+        ],
+        "DMA": [
+          "Consensus",
+          "Fusion",
+          "HITL",
+          "Maintenance",
+          "Perception",
+          "Privacy",
+          "RAA",
+          "TFA",
+          "Topology",
+          "Verification"
+        ],
+        "RAA": [
+          "DMA"
+        ],
+        "HITL": [
+          "DMA"
+        ],
+        "Fusion": [
+          "DMA"
+        ],
+        "Consensus": [
+          "DMA"
+        ],
+        "Perception": [
+          "DMA"
+        ],
+        "TFA": [
+          "DMA"
+        ],
+        "Privacy": [
+          "DMA"
+        ],
+        "Topology": [
+          "DMA"
+        ],
+        "Maintenance": [
+          "DMA"
+        ]
+      },
+      "routed_messages": 7,
+      "delivery_failures": 0,
+      "retry_queue_size": 0
+    },
+    "latency_seconds": 15.387844800949097,
+    "request_id": "841cf215",
+    "degradation": {
+      "degradation_level": 0,
+      "component_states": {
+        "Perception": "healthy",
+        "GameTheory": "healthy",
+        "DMA": "healthy",
+        "TFA": "healthy"
+      },
+      "fallback_counts": {}
+    },
+    "trace_path": "logs\\traces\\decision_trace_20260920_152250_116910.json"
+  }
+}

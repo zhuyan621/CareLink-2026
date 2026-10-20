@@ -1,0 +1,93 @@
+{
+  "schema": "careguard.mapfm.prospective-neural.v2",
+  "created_at_utc": "2026-10-12T03:42:40.714809+00:00",
+  "checkpoint_sha256": "f923f5d17d27afd6f47b6e628309dd876091a932fbbb00d39af5b4c7a0c0468e",
+  "architecture": "MAPFM TFA extension: baseline-feature MLP with task-specific adapters and heads",
+  "epochs_completed": 22,
+  "patient_disjoint_internal_split": true,
+  "external_validation_completed": false,
+  "clinical_use_allowed": false,
+  "tasks": {
+    "diabetes_onset": {
+      "trained": true,
+      "horizon_days": 1095,
+      "features": [
+        "age_years",
+        "bmi",
+        "fasting_glucose_mmol_l",
+        "systolic_bp_mmhg",
+        "triglyceride_mmol_l"
+      ],
+      "source_sha256": "30e4821e38c105d8f61f6642082ec276d1b13e08af78b740ca7c5dac462df74d",
+      "source_uri": "https://doi.org/10.5061/dryad.8q0p192",
+      "license_or_dua": "Dryad CC0-1.0; no DUA required for public reuse; scholarly citation retained",
+      "approval_reference": "Original NAGALA cohort ethics reported as IRB 2018-09-01; this secondary software experiment does not claim separate institutional ethics approval",
+      "eligible_rows": 11113,
+      "excluded_early_censor": 4351,
+      "split": {
+        "train": {
+          "rows": 7779,
+          "events": 71
+        },
+        "validation": {
+          "rows": 1667,
+          "events": 15
+        },
+        "test": {
+          "rows": 1667,
+          "events": 15
+        }
+      },
+      "test_auroc": 0.9333333333333335,
+      "test_average_precision": 0.10328633091345037,
+      "test_brier": 0.008534785020993526,
+      "test_event_rate": 0.008998200359928014,
+      "train_feature_mean": [
+        43.41175079345703,
+        22.159122467041016,
+        5.148702144622803,
+        114.52847290039062,
+        0.9229909181594849
+      ],
+      "train_feature_scale": [
+        8.46882152557373,
+        3.127605438232422,
+        0.41467055678367615,
+        14.981199264526367,
+        0.6530669927597046
+      ],
+      "train_feature_min": [
+        18.0,
+        13.766202926635742,
+        2.831010103225708,
+        71.0,
+        0.07902999967336655
+      ],
+      "train_feature_max": [
+        79.0,
+        49.92313003540039,
+        6.0505900382995605,
+        251.0,
+        10.273900032043457
+      ],
+      "test_bootstrap_95ci": {
+        "auroc": [
+          0.8902770421318295,
+          0.9647486696997385
+        ],
+        "average_precision": [
+          0.0485171037444898,
+          0.25188360298134804
+        ],
+        "brier": [
+          0.004661906614081979,
+          0.012967716049175418
+        ]
+      },
+      "test_bootstrap_draws": 1000,
+      "platt_coef": 0.9797183834799107,
+      "platt_intercept": -2.686580101515511
+    }
+  },
+  "limitations": "Retrospective internal holdout only; not external or prospective clinical validation."
+}

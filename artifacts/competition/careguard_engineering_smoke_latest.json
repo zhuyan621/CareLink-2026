@@ -1,0 +1,24 @@
+{
+  "generated_at_utc": "2026-10-11T03:09:40.137055+00:00",
+  "transport": "live_loopback_http",
+  "request_id": "2e83a886",
+  "original_core_source_match": true,
+  "core_sha256": "99a51b18bdb7e1b806e73af0ef7b3252734106e6accfd83b89cdb0043effa529",
+  "preprocessor_sha256": "36e6ab0bef79593d8cfa4f281731a313b17c5a78d3af3a3d06251712afdbea02",
+  "parsed_observation_count": 1,
+  "active_model_input": "clinical_text_from_parsed_single_observation",
+  "model_input_modalities": {
+    "clinical_text": true,
+    "lab_results": 0,
+    "images": 0,
+    "time_series": 0
+  },
+  "dma_backend": "ollama_local_http",
+  "ollama_generation_verified": true,
+  "priority": "P1",
+  "dynamic_evidence_count": 0,
+  "human_review_required": true,
+  "temporal_prediction_used": false,
+  "clinical_use_allowed": false,
+  "runtime_seconds": 4.69
+}

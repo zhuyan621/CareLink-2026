@@ -1,0 +1,495 @@
+{
+  "evidence_type": "synthetic_case_live_pipeline_proof",
+  "generated_at_utc": "2026-09-20T07:13:42.116092+00:00",
+  "no_real_patient_data": true,
+  "result": {
+    "query": "竞赛合成演示案例：持续三天高热、干咳、乏力、轻微胸痛并伴呼吸急促；不含真实患者身份信息。",
+    "model_input_modalities": {
+      "clinical_text": false,
+      "lab_results": 0,
+      "images": 0,
+      "time_series": 0
+    },
+    "true_label": null,
+    "perception": {
+      "context_norm": 1.0,
+      "metadata": {
+        "ready": true,
+        "implementation": "deterministic_actual-input_encoder",
+        "clinical_text_consumed": false,
+        "lab_results_consumed": 0,
+        "images_consumed": 0,
+        "image_sources": [],
+        "image_interpretation_validated": false,
+        "limitation": "Pixel descriptors are not a diagnostic imaging model."
+      }
+    },
+    "retrieval": {
+      "equilibrium_strategy": "adaptive",
+      "equilibrium_decision_mode": "fast",
+      "nash_equilibrium_reached": true,
+      "nash_rounds": 2,
+      "metadata": {
+        "strategy": "Adaptive-RAG",
+        "uncertainty": 0.9970441519620183,
+        "deep_retrieval": true,
+        "result_count": 10,
+        "avg_relevance": 0.6190826225727797,
+        "latency_seconds": 0.022797346115112305
+      },
+      "extra_meta": {
+        "mixed": {
+          "strategy": "Mixed-RAG",
+          "uncertainty": 0.9970441519620183,
+          "deep_retrieval": true,
+          "result_count": 5,
+          "avg_relevance": 0.6479940801858902,
+          "latency_seconds": 0.013519048690795898
+        },
+        "rerank": {
+          "strategy": "Rerank-RAG",
+          "uncertainty": 0.9970441519620183,
+          "deep_retrieval": true,
+          "result_count": 5,
+          "avg_relevance": 0.501756329715252,
+          "latency_seconds": 0.01578664779663086
+        },
+        "adaptive": {
+          "strategy": "Adaptive-RAG",
+          "uncertainty": 0.9970441519620183,
+          "deep_retrieval": true,
+          "result_count": 10,
+          "avg_relevance": 0.6190826225727797,
+          "latency_seconds": 0.023854970932006836
+        }
+      },
+      "top_docs": [],
+      "avg_verified_relevance": 0.0
+    },
+    "fusion": {
+      "input_docs": 25,
+      "deduplicated_docs": 10,
+      "dedup_removed": 15,
+      "conflict_count": 11,
+      "conflicts": [
+        {
+          "left_doc_id": 769,
+          "right_doc_id": 8316,
+          "left_area": "Heart Failure",
+          "right_area": "Polycythemia Vera",
+          "simhash_distance": 32
+        },
+        {
+          "left_doc_id": 769,
+          "right_doc_id": 674,
+          "left_area": "Heart Failure",
+          "right_area": "Skin Cancer",
+          "simhash_distance": 27
+        },
+        {
+          "left_doc_id": 769,
+          "right_doc_id": 462,
+          "left_area": "Heart Failure",
+          "right_area": "Leukemia",
+          "simhash_distance": 27
+        },
+        {
+          "left_doc_id": 769,
+          "right_doc_id": 11486,
+          "left_area": "Heart Failure",
+          "right_area": "Polycythemia Vera",
+          "simhash_distance": 27
+        },
+        {
+          "left_doc_id": 8316,
+          "right_doc_id": 674,
+          "left_area": "Polycythemia Vera",
+          "right_area": "Skin Cancer",
+          "simhash_distance": 27
+        }
+      ],
+      "area_consensus": {
+        "Heart Failure": 0.5196828874573112,
+        "Polycythemia Vera": 0.5143574301153422,
+        "Skin Cancer": 0.5138261529058219,
+        "Leukemia": 0.5109597474336625,
+        "Stroke": 0.5094943900406361
+      }
+    },
+    "verification": {
+      "accepted_docs": 0,
+      "rejected_docs": 10,
+      "verification_ratio": 0.0,
+      "verification_status": "failed",
+      "fusion_conflicts_considered": 11,
+      "conflict_docs_scrutinized": 5,
+      "warning_docs": [],
+      "rejected_examples": [
+        {
+          "doc_id": 769,
+          "area": "Heart Failure",
+          "age_days": 0,
+          "fact_score": 0.05,
+          "in_fusion_conflict": true,
+          "reason": "fact_score_low"
+        },
+        {
+          "doc_id": 8360,
+          "area": "Heart Failure",
+          "age_days": 0,
+          "fact_score": 0.05,
+          "in_fusion_conflict": false,
+          "reason": "fact_score_low"
+        },
+        {
+          "doc_id": 758,
+          "area": "Heart Failure",
+          "age_days": 0,
+          "fact_score": 0.05,
+          "in_fusion_conflict": false,
+          "reason": "fact_score_low"
+        },
+        {
+          "doc_id": 8316,
+          "area": "Polycythemia Vera",
+          "age_days": 0,
+          "fact_score": 0.05,
+          "in_fusion_conflict": true,
+          "reason": "fact_score_low"
+        },
+        {
+          "doc_id": 11486,
+          "area": "Polycythemia Vera",
+          "age_days": 0,
+          "fact_score": 0.05,
+          "in_fusion_conflict": true,
+          "reason": "fact_score_low"
+        }
+      ],
+      "verification_scope": "provenance_freshness_and_safety_signals_not_claim_truth",
+      "evidence_unavailable": true,
+      "warning": "No traceable evidence passed provenance verification; unverified rows were not promoted.",
+      "tfa_verification": {
+        "valid": false,
+        "warnings": [
+          "No task-matched trained and validated temporal checkpoint was configured."
+        ],
+        "serious_conflicts": 0,
+        "tfa_verified": false,
+        "message": "TFA produced no clinical probability"
+      },
+      "serious_conflicts": 0
+    },
+    "distillation": {
+      "selected_doc_ids": [],
+      "selected_areas": [],
+      "distilled_text_excerpt": ""
+    },
+    "tfa": {
+      "has_voting_right": false,
+      "available": false,
+      "validated": false,
+      "engine": "descriptive_signal_audit",
+      "blocked_reason": "No task-matched trained and validated temporal checkpoint was configured.",
+      "short_term": {
+        "window": "24h",
+        "risk_probability": 0.0,
+        "estimate_available": false
+      },
+      "mid_term": {
+        "window": "30d",
+        "risk_probability": 0.0,
+        "estimate_available": false
+      },
+      "long_term": {
+        "window": "12m",
+        "risk_probability": 0.0,
+        "estimate_available": false
+      },
+      "conditional_probability_distribution": {
+        "available": false
+      },
+      "signal_summary": {
+        "observations": 0,
+        "mean": null,
+        "standard_deviation": null,
+        "last_step_change": null
+      },
+      "contribution_factors": {},
+      "risk_level": "unknown",
+      "risk_label": "不可用",
+      "risk_score": 0.0,
+      "primary_risk_factors": [],
+      "reasoning": "仅完成输入时序质量检查；未生成临床恶化概率。",
+      "recommendations": [
+        "当前未配置与任务匹配且完成验证的时序检查点，风险估计已关闭。",
+        "请由临床人员结合原始生命体征评估；不得把0.0解释为低风险。"
+      ],
+      "calibration_mode": "unavailable_no_validated_checkpoint",
+      "dma_confidence_input": 0.85,
+      "conflict_with_diagnosis": 0
+    },
+    "dma": {
+      "prediction": "Pneumonia",
+      "confidence": 0.85,
+      "probabilities": {},
+      "probabilities_source": "not_provided",
+      "generation_provenance": {
+        "requested_model": "llama3:8b",
+        "served_model": "llama3:8b",
+        "created_at": "2026-09-20T07:13:42.0749203Z",
+        "done": true,
+        "done_reason": "stop",
+        "total_duration_ns": 636583100,
+        "load_duration_ns": 133990400,
+        "prompt_eval_count": 419,
+        "eval_count": 15,
+        "response_sha256": "95d2d87b8853d63ae0775b41ce28bae40123d57882d33bb5b5ff2ca4de6a9325"
+      },
+      "diagnosis_confidence": 0.85,
+      "disease_severity": "severe",
+      "decision_mode": "fast",
+      "base_model": "llama3:8b",
+      "raw_scores": {},
+      "dma_backend": "ollama_local_http",
+      "fallback_used": false,
+      "backend_verified": true,
+      "confidence_interpretation": "uncalibrated_model_self_report",
+      "intent": "general_inquiry",
+      "hitl_status": "algorithmic_screen_passed",
+      "review_required": false,
+      "status": "candidate_research_output"
+    },
+    "high_risk": false,
+    "hitl": {
+      "triggered": true,
+      "reason": "RAA low relevance (0.000) | Verification flagged TFA: TFA produced no clinical probability",
+      "final_prediction": "Pneumonia",
+      "final_confidence": 0.85,
+      "corrected_label": "Pneumonia",
+      "feedback_record": null,
+      "intervention_layer": "needs_human_review",
+      "error_type": "unreviewed",
+      "detail": "Awaiting an independent human decision",
+      "human_review": {
+        "action": "pending",
+        "corrected_label": "Pneumonia",
+        "reviewer_notes": "awaiting-external-human-review",
+        "interactive": false
+      },
+      "tfa_intervention": {
+        "triggered": true,
+        "intervention_type": "tfa_risk_review",
+        "record": {
+          "timestamp": "2026-09-20T15:13:42.102159",
+          "query": "竞赛合成演示案例：持续三天高热、干咳、乏力、轻微胸痛并伴呼吸急促；不含真实患者身份信息。",
+          "original_risk_level": "unknown",
+          "original_risk_score": 0.0,
+          "human_approved": false,
+          "corrections_applied": false,
+          "corrected_risk_level": "unknown",
+          "corrected_risk_score": 0.0,
+          "added_factors": [],
+          "removed_factors": [],
+          "modified_recommendations": [],
+          "reviewer_notes": ""
+        },
+        "priority": 1
+      }
+    },
+    "parameter_update": {
+      "updated": false,
+      "reason": "human_review_pending"
+    },
+    "consensus": {
+      "approved": false,
+      "tier": "clinical_validation_gate",
+      "votes": {
+        "DMA": true,
+        "TFA": false,
+        "Verification": false
+      },
+      "vote_weights": {
+        "DMA": 2,
+        "TFA": 1,
+        "Verification": 1
+      },
+      "weighted_approvals": 0,
+      "total_weight": 4,
+      "required_approvals": 3,
+      "escalate_to_human": true,
+      "risk_level": "unknown",
+      "risk_label": "unknown",
+      "reason": "Clinical use blocked: 缺少包含外部验证与校准结果的临床验证工件; 时序模型没有与当前结局定义匹配的已验证检查点",
+      "algorithmic_approval_before_validation_gate": false
+    },
+    "clinical_readiness": {
+      "clinical_use_allowed": false,
+      "status": "research_only",
+      "checks": {
+        "zero_group_overlap": true,
+        "external_validation_artifact": false,
+        "temporal_model_validated": false,
+        "evidence_scope_declared": true
+      },
+      "blockers": [
+        "缺少包含外部验证与校准结果的临床验证工件",
+        "时序模型没有与当前结局定义匹配的已验证检查点"
+      ],
+      "warnings": [
+        "本系统用于科研与竞赛演示，不替代医生判断。"
+      ]
+    },
+    "execution_integrity": {
+      "configured_ollama_model": "llama3:8b",
+      "dma_backend": "ollama_local_http",
+      "dma_fallback_used": false,
+      "ollama_generation_verified": true,
+      "temporal_estimate_available": false,
+      "verified_evidence_count": 0,
+      "evidence_verification_scope": "provenance_freshness_and_safety_signals_not_claim_truth",
+      "clinical_use_allowed": false
+    },
+    "dataset_split_audit": {
+      "passed": true,
+      "strategy": "normalized_question",
+      "train_rows": 581,
+      "test_rows": 146,
+      "train_unique_groups": 229,
+      "test_unique_groups": 58,
+      "overlapping_question_groups": 0,
+      "overlap_examples": [],
+      "overlapping_patient_groups": 0,
+      "patient_overlap_examples": [],
+      "test_exact_label_mention_rows": 135,
+      "test_exact_label_mention_rate": 0.9246575342465754,
+      "warning": "Label mentions must be reported separately; masking them is a stress test, not a substitute for external validation."
+    },
+    "training_label_mentions_masked": true,
+    "intended_use": "research_and_competition_decision_support_only",
+    "comprehensive_answer": {
+      "diagnosis": {
+        "prediction": "Pneumonia",
+        "confidence": 0.85,
+        "severity": "severe",
+        "intent": "general_inquiry",
+        "status": "candidate_research_output"
+      },
+      "risk_assessment": {
+        "available": false,
+        "validated": false,
+        "blocked_reason": "No task-matched trained and validated temporal checkpoint was configured.",
+        "risk_level": "unknown",
+        "risk_label": "不可用",
+        "risk_score": 0.0,
+        "short_term_risk": 0.0,
+        "mid_term_risk": 0.0,
+        "long_term_risk": 0.0,
+        "primary_risk_factors": [],
+        "reasoning": "仅完成输入时序质量检查；未生成临床恶化概率。",
+        "calibration_mode": "unavailable_no_validated_checkpoint",
+        "degradation_notice": ""
+      },
+      "recommendations": [
+        "当前未配置与任务匹配且完成验证的时序检查点，风险估计已关闭。",
+        "请由临床人员结合原始生命体征评估；不得把0.0解释为低风险。"
+      ],
+      "disclaimer": "本系统输出为AI辅助决策参考，不构成医疗建议。所有诊断和治疗决策必须由具备资质的医疗专业人员确认。如有疑问，请咨询您的医生或拨打急救电话。",
+      "risk_knowledge_cross_ref": {
+        "guidelines_matched": false,
+        "tfa_raa_consistency": "unknown",
+        "confidence_adjustment": 0.0
+      }
+    },
+    "risk_knowledge": {
+      "risk_level": "unknown",
+      "guidelines_matched": false,
+      "conflicts_found": false,
+      "confidence_adjustment": 0.0,
+      "risk_specific_docs": []
+    },
+    "communication": {
+      "name": "Topology",
+      "status": "healthy",
+      "last_heartbeat": "2026-09-20T15:13:42.102369",
+      "total_calls": 7,
+      "failures": 0,
+      "last_runtime_seconds": 0.0,
+      "total_runtime_seconds": 0.0,
+      "topology_type": "star",
+      "nodes": [
+        "Consensus",
+        "DMA",
+        "Fusion",
+        "HITL",
+        "Maintenance",
+        "Perception",
+        "Privacy",
+        "RAA",
+        "TFA",
+        "Topology",
+        "Verification"
+      ],
+      "links": {
+        "Verification": [
+          "DMA"
+        ],
+        "DMA": [
+          "Consensus",
+          "Fusion",
+          "HITL",
+          "Maintenance",
+          "Perception",
+          "Privacy",
+          "RAA",
+          "TFA",
+          "Topology",
+          "Verification"
+        ],
+        "HITL": [
+          "DMA"
+        ],
+        "Privacy": [
+          "DMA"
+        ],
+        "Maintenance": [
+          "DMA"
+        ],
+        "Perception": [
+          "DMA"
+        ],
+        "Consensus": [
+          "DMA"
+        ],
+        "RAA": [
+          "DMA"
+        ],
+        "Topology": [
+          "DMA"
+        ],
+        "TFA": [
+          "DMA"
+        ],
+        "Fusion": [
+          "DMA"
+        ]
+      },
+      "routed_messages": 7,
+      "delivery_failures": 0,
+      "retry_queue_size": 0
+    },
+    "latency_seconds": 9.753486394882202,
+    "request_id": "5eba049d",
+    "degradation": {
+      "degradation_level": 0,
+      "component_states": {
+        "Perception": "healthy",
+        "GameTheory": "healthy",
+        "DMA": "healthy",
+        "TFA": "healthy"
+      },
+      "fallback_counts": {}
+    },
+    "trace_path": "logs\\traces\\decision_trace_20260920_151342_110273.json"
+  }
+}
