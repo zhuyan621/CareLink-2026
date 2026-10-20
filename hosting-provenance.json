@@ -1,0 +1,10 @@
+{
+  "source_repository": "https://github.com/zhuyan621/CareLink-2026",
+  "source_commit": "314953090d14bf261aa5d299224e00fda67191e4",
+  "original_content_preserved": true,
+  "adaptations": [
+    "GitHub Pages project base path",
+    "Direct API connection"
+  ],
+  "api_requires_local_computer_online": true
+}
