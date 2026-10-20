@@ -12,6 +12,7 @@ def test_package_has_complete_runnable_core_without_runtime_secrets():
     assert ".env" not in paths
     assert "artifacts/competition/live_pipeline_latest.json" not in paths
     assert "artifacts/medquad_qa/robustness_audit.json" in paths
+    assert "PACKAGE_MANIFEST.json" not in paths
     assert "docs/MEDQUAD_ROBUSTNESS.md" in paths
     assert "docs/MEDQUAD_MEDIQA2019.md" in paths
     assert "artifacts/medquad_qa/mediqa2019_audit.json" in paths

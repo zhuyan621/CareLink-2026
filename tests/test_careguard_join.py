@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+from html.parser import HTMLParser
 
 from fastapi.testclient import TestClient
 
@@ -27,7 +28,7 @@ def test_join_page_and_photos_are_served():
     assert 'class="join-process"' in html
     assert 'id="join-track-preview"' in html
     assert 'id="join-message-count"' in html
-    assert "06 / SYNTHETIC CASES" in html
+    assert "04 / ONE CASE, END TO END" in html
     assert "yuanjiegu52@gmail.com" in html
     assert '<img src="/assets/archive/field-pharmacy.jpg" alt="项目团队在机构药房区域开展现场调研的照片">' in html
     assert client.get("/assets/archive/field-pharmacy.jpg").status_code == 200
@@ -38,15 +39,52 @@ def test_join_page_and_photos_are_served():
 def test_join_project_journey_is_chronological_and_source_bound():
     html = client.get("/?view=join").text
     journey = html.split('id="join-journey"', 1)[1].split('class="join-editorial"', 1)[0]
-    assert journey.index('datetime="2025-11"') < journey.index('datetime="2026-02"')
-    assert journey.index('datetime="2026-02"') < journey.index('datetime="2026-07"')
-    assert journey.index('datetime="2026-07"') < journey.index('datetime="2026-09"')
-    assert journey.index('datetime="2026-09"') < journey.index('class="is-current"')
-    for text in ("智医算", "校级铜奖", "MAPFM", "论文发布", "SmartNursing", "全国三等奖",
-                 "智弈护晓", "DawnGuard", "省级铜奖", "安护智链", "CareLink"):
+    assert journey.index('datetime="2026-02"') < journey.index('class="is-current"')
+    assert 'RESEARCH TO PRACTICE / 02 CHAPTERS' in journey
+    for text in ("MAPFM", "论文发布", "安护智链", "CareLink"):
         assert text in journey
+    for text in ("智医算", "SmartNursing", "智弈护晓", "DawnGuard"):
+        assert text not in journey
+    for text in ("获奖", "铜奖", "三等奖", "旧奖项", "历史奖项"):
+        assert text not in html
     assert 'href="/assets/research/mapfm-paper-first-page.png"' in journey
     assert client.get("/assets/research/mapfm-paper-first-page.png").status_code == 200
+
+
+def test_join_story_links_assets_and_controls_are_grounded():
+    class Elements(HTMLParser):
+        def __init__(self):
+            super().__init__()
+            self.items = []
+
+        def handle_starttag(self, tag, attrs):
+            self.items.append((tag, dict(attrs)))
+
+    html = client.get("/?view=join").text
+    page = Elements()
+    page.feed(html)
+    ids = [attrs["id"] for _, attrs in page.items if "id" in attrs]
+    for name in ("join-fieldwork", "join-build", "join-case-story", "join-agent-story", "join-contribute"):
+        assert ids.count(name) == 1
+    tabs = [attrs for _, attrs in page.items if "data-join-case" in attrs]
+    assert len(tabs) == 5
+    assert sum(tab["aria-selected"] == "true" for tab in tabs) == 1
+    for tab in tabs:
+        assert ids.count(tab["aria-controls"]) == 1
+        assert tab["type"] == "button"
+    roles = [attrs for _, attrs in page.items if "data-join-track" in attrs]
+    assert len(roles) == 6
+    assert all(role["data-join-track"] in careguard_join.TRACKS for role in roles)
+    assert all(role["type"] == "button" for role in roles)
+    for path in ("/join-story.css", "/join-story.js", "/assets/archive/field-group.jpg",
+                 "/assets/archive/field-pharmacy.jpg", "/assets/archive/team-work.jpg"):
+        assert client.get(path).status_code == 200
+    for path in ("/?view=workspace&case=chest#input-title", "/?view=workspace&case=draft#input-title",
+                 "/?view=home#architecture-handbook", "/?view=workspace#review-desk"):
+        assert any(tag == "a" and attrs.get("href") == path for tag, attrs in page.items)
+    assert "不代表十个独立训练的大模型" in html
+    assert "流程导览不是实时运行回执" in html
+    assert "不等同于正式访谈结论" in html
 
 
 def test_join_is_clearly_unavailable_without_mail_configuration(monkeypatch):

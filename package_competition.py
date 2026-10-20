@@ -46,7 +46,7 @@ PROSPECTIVE_MODEL_FILES = {
     "artifacts/prospective_neural/training_report.json",
 }
 SKIP_DIRS = {".git", ".pytest_cache", "__pycache__", ".venv", "venv", "logs", "releases", "node_modules", "foot_ulcer_fuseg2021"}
-SKIP_NAMES = {".env", ".env.local", ".env.production", "Thumbs.db", ".DS_Store"}
+SKIP_NAMES = {".env", ".env.local", ".env.production", "Thumbs.db", ".DS_Store", "PACKAGE_MANIFEST.json"}
 SKIP_SUFFIXES = {".pyc", ".pyo", ".tmp", ".log", ".key", ".pem"}
 REQUIRED = {
     "README.md", "SUBMISSION_PACKAGE_OVERVIEW.md", "DEMO_3_MIN.md", "ORIGINAL_PACKAGE_SNAPSHOT.md", "pytest.ini",
@@ -102,6 +102,8 @@ REQUIRED = {
     "careguard_web/workspace-guidance.css",
     "careguard_web/architecture.js", "careguard_web/architecture.css",
     "careguard_web/architecture-details.js",
+    "careguard_web/join-story.css", "careguard_web/join-story.js",
+    "tests/test_join_story_controls.cjs",
     "tests/test_medical_language.py",
     "docs/MEDICAL_LANGUAGE_WORKSPACE.md",
     "docs/MEDQUAD_QA.md", "tests/test_medquad_qa.py",

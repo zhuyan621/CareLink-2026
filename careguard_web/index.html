@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="/medical-language.css?v=20261014a">
   <link rel="stylesheet" href="/workspace-guidance.css?v=20261014b">
   <link rel="stylesheet" href="/architecture.css?v=20261014c">
+  <link rel="stylesheet" href="/join-story.css?v=20261020a">
   <script src="/particles.js?v=20261011c" defer></script>
   <script src="/handoff.js?v=20261014carelink" defer></script>
   <script src="/site.js?v=20261014carelink" defer></script>
@@ -31,6 +32,7 @@
   <script src="/medical-language.js?v=20261014b" defer></script>
   <script src="/architecture-details.js?v=20261014carelink" defer></script>
   <script src="/architecture.js?v=20261014c" defer></script>
+  <script src="/join-story.js?v=20261020a" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">跳转到正文</a>
@@ -270,7 +272,7 @@
           </div><aside class="claim-inspector" id="claim-inspector" aria-live="polite" aria-label="主张核验档案"><div class="claim-inspector-top"><span>CLAIM FILE / <b id="claim-file-number">01</b></span><span id="claim-file-status">已实现</span></div><h3 id="claim-file-title">本地多智能体筛查流程</h3><p id="claim-file-summary"></p><div class="claim-inspector-section"><span>WHAT CAN BE CHECKED / 可核查</span><p id="claim-file-check"></p></div><div class="claim-inspector-section"><span>BOUNDARY / 不可据此推断</span><p id="claim-file-boundary"></p></div><div class="claim-inspector-section"><span>VERIFICATION PATH / 核验路径</span><div id="claim-file-paths" class="claim-paths"></div></div><div class="claim-inspector-foot"><span>代码与本地快照不是临床有效性证据。</span><button type="button" data-nav="workspace">现场运行 ↗</button></div></aside></div>
           <div class="evidence-method"><div><div class="section-index index-lime">03 / HOW TO VERIFY</div><h2>评审现场，<br>按这条路径核对。</h2><p>先看可运行链路，再看来源与审计，最后看明确没有完成的验证。</p></div><div class="method-steps"><div><span>01</span><div><strong>复现本机测试</strong><p>运行自动化测试，并保留带结果的 XML 报告。</p><code>python -m pytest -q --junitxml=artifacts/competition/careguard_pytest_latest.xml</code></div></div><div><span>02</span><div><strong>执行合成案例自检</strong><p>要求本地 Ollama 生成；失败或降级不得记为验证成功。</p><code>python careguard_smoke.py --require-ollama</code></div></div><div><span>03</span><div><strong>现场运行与人工接管</strong><p>在工作台查看本次线索、动态/离线来源状态，并导出人工复核摘要。</p><button type="button" class="text-link" data-nav="workspace">打开交互工作台 <span>↗</span></button></div></div></div></div>
           <div class="evidence-boundary"><span>THE NON-NEGOTIABLE BOUNDARY</span><div><strong>本机可运行</strong><b>≠</b><strong>临床有效</strong></div><div><strong>来源可追踪</strong><b>≠</b><strong>医学结论已证明</strong></div><div><strong>自检曾通过</strong><b>≠</b><strong>服务持续在线</strong></div></div>
-          <section class="competition-delta" aria-labelledby="competition-delta-title"><div class="competition-delta-intro"><span>2026 EDITION / ORIGINAL CONTRIBUTION</span><h2 id="competition-delta-title">把延续与新增，<br><em>分开讲清楚。</em></h2><p>历史论文与获奖经历是研究脉络，不自动证明本届成果的原创增量。当前版本能现场操作什么、还需团队比对什么，都应可查。</p></div><div class="competition-delta-grid"><div><b>01 / HISTORY</b><strong>历史材料</strong><p>MAPFM 论文、走访影像与既有项目经历展示问题来源；不能把旧奖项或旧界面算作本版验证结果。</p></div><div><b>02 / THIS BUILD</b><strong>当前可运行版本</strong><p>交接输入、本机筛查、来源状态、人工复核、交接摘要与审计导出构成可操作的软件链路。</p></div><div><b>03 / TO VERIFY</b><strong>正式申报前</strong><p>团队还需对照历次参赛原始提交包，核验实质差异、学生贡献、素材授权与 AI 工具使用说明。</p></div></div></section>
+          <section class="competition-delta" aria-labelledby="competition-delta-title"><div class="competition-delta-intro"><span>2026 EDITION / ORIGINAL CONTRIBUTION</span><h2 id="competition-delta-title">把延续与新增，<br><em>分开讲清楚。</em></h2><p>论文与现场调研记录构成研究脉络，不自动证明当前版本的有效性。当前版本能现场操作什么、还需团队验证什么，都应可查。</p></div><div class="competition-delta-grid"><div><b>01 / HISTORY</b><strong>研究来源</strong><p>MAPFM 论文与走访影像展示方法和问题来源；不能把历史材料或旧界面算作本版验证结果。</p></div><div><b>02 / THIS BUILD</b><strong>当前可运行版本</strong><p>交接输入、本机筛查、来源状态、人工复核、交接摘要与审计导出构成可操作的软件链路。</p></div><div><b>03 / TO VERIFY</b><strong>正式申报前</strong><p>团队还需对照原始工程与当前版本，核验实质差异、学生贡献、素材授权与 AI 工具使用说明。</p></div></div></section>
           <section class="evidence-faq" aria-labelledby="evidence-faq-title"><div class="evidence-faq-intro"><div><div class="section-index">04 / REVIEWER QUESTIONS</div><h2 id="evidence-faq-title">评审可能追问，<br><span>我们先回答。</span></h2></div><p>把最容易被漂亮界面掩盖的限制放到明处。这里的回答是原型边界说明，不是医学建议。</p></div><div class="faq-list"><details><summary><span>01</span><strong>这能直接用于真实临床诊断或分诊吗？</strong><b aria-hidden="true">+</b></summary><p>不能。项目目前是科研与竞赛演示原型，没有独立外部临床验证，也没有医疗使用资格。优先级仅为演示线索，最终判断由具备资质的专业人员承担。</p></details><details><summary><span>02</span><strong>动态证据为 0，为什么还能显示离线信息卡？</strong><b aria-hidden="true">+</b></summary><p>两者来源不同。动态检索只有通过来源核验才计入动态证据；离线公共信息卡由人工整理并独立标记，不能冒充本次实时检索结果。</p></details><details><summary><span>03</span><strong>“Ollama 最近自检成功”意味着现在在线吗？</strong><b aria-hidden="true">+</b></summary><p>不意味着。证据板读取的是带时间戳的历史快照；当前服务状态必须以工作台本次实际运行的结果为准。</p></details><details><summary><span>04</span><strong>案例与页面数据是否来自真实患者？</strong><b aria-hidden="true">+</b></summary><p>工作台六个案例均为合成演示，其中三组单次体征取自演示样本表；另有 605 条问答索引仅供资料核对，不是患者记录。请勿在演示中输入姓名、联系方式、病历号或其他可识别个人信息。</p></details></div></section>
         </section>
       </div>
@@ -329,61 +331,106 @@
               <canvas id="join-pixel-title" class="join-pixel-title" aria-hidden="true"></canvas>
               <p class="join-statement">让真实需求、可靠技术与负责任的设计彼此靠近。</p>
               <p class="join-subcopy">我们欢迎对照护场景、交互设计、软件工程与研究验证感兴趣的伙伴留下合作意向。这里是项目联系入口，不是职位录用承诺。</p>
-              <a class="join-scroll" href="#join-journey">了解我们的历程 <span aria-hidden="true">↘</span></a>
+              <a class="join-scroll" href="#join-fieldwork">从现场，认识我们 <span aria-hidden="true">↘</span></a>
               <div class="join-medical-cue"><div><span>CARE / RESEARCH / HUMAN REVIEW</span><small>合成节律图形 · 非设备数据</small></div><canvas id="join-medical-wave" class="medical-wave" data-medical-rate="72" aria-hidden="true"></canvas></div>
             </div>
             <div class="join-edge-note" aria-hidden="true">CARELINK / A MORE HUMAN SYSTEM / 2026</div>
           </div>
           <div class="join-hero-foot wrap"><span>PAST MATERIAL / PRESENT INVITATION</span><span>01 — 03 / REAL PROJECT ARCHIVE</span><span>SCROLL TO CONNECT ↓</span></div>
         </section>
+        <section class="join-fieldwork join-story-section" id="join-fieldwork" aria-labelledby="join-fieldwork-title">
+          <div class="wrap">
+            <div class="join-story-heading"><div><span class="join-overline">01 / FROM THE FIELD</span><h2 id="join-fieldwork-title">问题，<br>是在<em>现场</em>开始的。</h2></div><p>走进照护环境，回到桌前讨论，再把问题拆成可以设计、实现和检查的任务。我们希望展示这条过程，而不只展示一个结果。</p></div>
+            <div class="join-fieldwork-spread">
+              <figure class="join-fieldwork-main"><img src="/assets/archive/field-group.jpg" alt="项目团队持旗在机构外的历史合影" loading="lazy" width="2034" height="1280"><figcaption><span>FIELD ARCHIVE / 01</span>机构走访 · 项目历史照片</figcaption></figure>
+              <div class="join-fieldwork-observation"><span class="join-story-label">从场景出发 / 设计问题</span><h3>一次交接，<br>哪些信息不能丢？</h3><p>围绕记录完整性、信息来源和人工责任组织产品任务，让观察、变化和已采取的行动可以被分别核对。</p><a href="/?view=workspace#input-title">查看交接输入设计 <span aria-hidden="true">↗</span></a></div>
+              <figure class="join-fieldwork-detail"><img src="/assets/archive/field-pharmacy.jpg" alt="项目历史照片中，团队在机构药房区域开展现场走访" loading="lazy" width="1280" height="1707"><figcaption><span>FIELD ARCHIVE / 02</span>药房区域 · 场景记录</figcaption></figure>
+              <figure class="join-fieldwork-team"><img src="/assets/archive/team-work.jpg" alt="项目团队围坐桌前使用电脑讨论的历史照片" loading="lazy" width="1706" height="1279"><figcaption><span>STUDIO ARCHIVE / 03</span>回到桌前 · 协作讨论</figcaption></figure>
+            </div>
+            <ol class="join-insight-map" aria-label="设计问题与产品功能对应关系">
+              <li><span>01 / INPUT</span><h3>把记录拆清楚</h3><p>观察记录、状态变化、已采取措施分开输入，减少把缺失信息当成已知条件。</p><a href="/?view=workspace#input-title">对应：交接编辑区 ↗</a></li>
+              <li><span>02 / TRACE</span><h3>让来源可追问</h3><p>展示执行状态、来源信息和失败原因，区分模型回答、离线材料与真实运行结果。</p><a href="/?view=evidence">对应：证据与边界 ↗</a></li>
+              <li><span>03 / REVIEW</span><h3>把决定交给人</h3><p>自动流程之后保留人工复核与记录导出，让接管责任有明确位置。</p><a href="/?view=workspace&case=chest#input-title">对应：运行与人工复核 ↗</a></li>
+            </ol>
+          </div>
+        </section>
         <section class="join-journey" id="join-journey" aria-labelledby="join-journey-title">
           <div class="wrap join-journey-grid">
             <div class="join-journey-intro">
-              <span class="join-overline">01 / THE ROAD HERE</span>
+              <span class="join-overline">02 / THE ROAD HERE</span>
               <h2 id="join-journey-title">从一次尝试，<br><em>走到现在。</em></h2>
-              <p>这条时间线记录团队提供的项目经历。三次竞赛获奖与一篇论文，构成了走向安护智链 CareLink 的研究和实践脉络；现在这一站仍在继续。</p>
-              <div class="join-journey-span" aria-hidden="true"><span>2025.11</span><i></i><span>NOW</span></div>
-              <small>PROJECT JOURNEY / 05 MILESTONES</small>
+              <p>从 MAPFM 方法研究到 CareLink 交互原型，保留能够回看的研究材料，也呈现正在推进的工程实践。现在这一站仍在继续。</p>
+              <div class="join-journey-span" aria-hidden="true"><span>2026.02</span><i></i><span>NOW</span></div>
+              <small>RESEARCH TO PRACTICE / 02 CHAPTERS</small>
             </div>
             <ol class="join-journey-list" aria-label="按时间顺序排列的项目经历">
-              <li>
-                <div class="join-journey-date"><time datetime="2025-11">2025.11</time><span>01 / START</span></div>
-                <div class="join-journey-content"><span class="join-journey-type">竞赛实践 · 挑战杯</span><h3>智医算</h3><p>以“智医算”参加挑战杯，留下这条项目历程的第一站。</p><strong class="join-journey-award">校级铜奖</strong></div>
-              </li>
               <li class="join-journey-research">
-                <div class="join-journey-date"><time datetime="2026-02">2026.2</time><span>02 / PAPER</span></div>
+                <div class="join-journey-date"><time datetime="2026-02">2026.2</time><span>01 / RESEARCH</span></div>
                 <div class="join-journey-content"><span class="join-journey-type">研究成果 · 论文发布</span><h3>MAPFM <i>论文发布</i></h3><p>研究路径由论文材料留下可回看的记录；它说明方法探索，不等同于当前原型的临床有效性。</p><a class="join-journey-paper" href="/assets/research/mapfm-paper-first-page.png" target="_blank" rel="noopener noreferrer"><img src="/assets/research/mapfm-paper-first-page.png" alt="MAPFM 论文首页扫描件" loading="lazy"><span>查看论文首页 <b aria-hidden="true">↗</b></span></a></div>
               </li>
-              <li>
-                <div class="join-journey-date"><time datetime="2026-07">2026.7</time><span>03 / SERVICE</span></div>
-                <div class="join-journey-content"><span class="join-journey-type">竞赛实践 · 服创</span><h3>SmartNursing</h3><p>以 SmartNursing 继续参赛，在服务创新赛道推进团队实践。</p><strong class="join-journey-award">国三 · 全国三等奖</strong></div>
-              </li>
-              <li>
-                <div class="join-journey-date"><time datetime="2026-09">2026.9</time><span>04 / DAWN</span></div>
-                <div class="join-journey-content"><span class="join-journey-type">竞赛实践 · 互联网+</span><h3>智弈护晓<span>DawnGuard</span></h3><p>以智弈护晓 DawnGuard 参加互联网+，让照护议题在项目迭代中继续展开。</p><strong class="join-journey-award">省铜 · 省级铜奖</strong></div>
-              </li>
               <li class="is-current">
-                <div class="join-journey-date"><span class="join-journey-now">NOW</span><span>05 / NEXT</span></div>
-                <div class="join-journey-content"><span class="join-journey-type">当前阶段 · 持续迭代</span><h3>安护智链<span>CareLink</span></h3><p>把交接输入、本机筛查、证据边界与人工复核做成可操作的演示原型。现在仍是研究与竞赛阶段，不把历史奖项写作本版验证结果。</p><a class="join-journey-cta" href="#join-form-section">下一段，与你一起 <b aria-hidden="true">↗</b></a></div>
+                <div class="join-journey-date"><span class="join-journey-now">NOW</span><span>02 / PRACTICE</span></div>
+                <div class="join-journey-content"><span class="join-journey-type">当前阶段 · 持续迭代</span><h3>安护智链<span>CareLink</span></h3><p>把交接输入、本机筛查、证据边界与人工复核做成可操作的演示原型。当前仍处于研究与工程验证阶段，持续完善真实输入、计算链路和可追溯结果。</p><a class="join-journey-cta" href="#join-form-section">下一段，与你一起 <b aria-hidden="true">↗</b></a></div>
               </li>
             </ol>
           </div>
         </section>
         <section class="join-editorial" aria-labelledby="join-editorial-title">
-          <div class="wrap join-editorial-grid">
-            <div class="join-editorial-heading"><span class="join-overline">02 / WHAT WE ARE BUILDING</span><h2 id="join-editorial-title">不只展示技术，<br><em>也交代它的边界。</em></h2><p>CareLink 当前是可运行的竞赛演示原型。我们把照护交接中的线索组织、来源核验和人工接管做成能够被检查的流程，而不是把一张漂亮的界面当作临床证明。</p><div class="join-editorial-stamp">BUILT TO BE QUESTIONED <span>↗</span></div></div>
-            <div class="join-editorial-list">
-              <article><span>01 / SCENE</span><div><h3>把照护问题画清楚。</h3><p>从六个合成案例进入工作台，检查输入、执行轨迹、降级状态与人工复核。场景研究可以帮助我们提问，但不能替代真实世界验证。</p><button type="button" data-nav="workspace">探索交互工作台 ↗</button></div></article>
-              <article><span>02 / SYSTEM</span><div><h3>让数据能够被追问。</h3><p>研究图谱里的 81 个合成输入变体、80 个规则状态与 12 个来源节点，都能旋转、筛选、选点和导出；粒子只负责视觉表达。</p><button type="button" data-nav="lab">操作三维研究图谱 ↗</button></div></article>
-              <article><span>03 / BOUNDARY</span><div><h3>把未知写在台面上。</h3><p>当前软件行为、历史材料与未完成的外部临床验证被明确分层。加入合作，也意味着接受并维护这条边界。</p><button type="button" data-nav="evidence">阅读证据与边界 ↗</button></div></article>
+          <div class="wrap join-build" id="join-build">
+            <div class="join-story-heading"><div><span class="join-overline">03 / BUILD, CHECK, ITERATE</span><h2 id="join-editorial-title">每一次迭代，<br>都要<em>有据可查。</em></h2></div><p>按工程演进的逻辑展开，而不是补写未经核实的版本日期。点开每一步，看问题、实现和需要继续检查的地方。</p></div>
+            <div class="join-build-list">
+              <details open><summary><span>01 / ENGINE</span><h3>从方法研究，到工程连接</h3><b aria-hidden="true">＋</b></summary><div class="join-build-body"><p><strong>问题</strong>页面展示与原始工程不能脱节。</p><p><strong>实现</strong>保留原始 MAPFM 工程快照，网页通过同源接口接入原始协作引擎，并显式显示执行或降级状态。</p><p><strong>继续检查</strong>本机模型服务是否可用、接口是否真实返回、失败时是否如实提示。</p><div><code>api.py · /screening/engineering</code><a href="/?view=workspace#input-title">去工作台核查 ↗</a></div></div></details>
+              <details><summary><span>02 / INPUT</span><h3>从预设案例，到可编辑交接</h3><b aria-hidden="true">＋</b></summary><div class="join-build-body"><p><strong>问题</strong>只有固定案例，无法检查用户自己的输入。</p><p><strong>实现</strong>支持填写合成或脱敏交接记录及体征，经筛查和人工复核后选择保存；案例库最多保留 10 条，包含 6 个预设案例。</p><p><strong>继续检查</strong>输入缺口、隐私提示、复核条件，以及新增案例是否可以重新载入。</p><div><code>site.js · handoff.js · 本机案例库</code><a href="/?view=workspace&case=draft#input-title">打开新建案例 ↗</a></div></div></details>
+              <details><summary><span>03 / EVIDENCE</span><h3>从一个回答，到来源与独立核查</h3><b aria-hidden="true">＋</b></summary><div class="join-build-body"><p><strong>问题</strong>回答看起来合理，不等于有来源或已验证。</p><p><strong>实现</strong>接入 MedQuAD 来源检索，把医学问答与盲评放在同一工作台；来源问答不冒充未来疾病概率。</p><p><strong>继续检查</strong>相关性、来源可追溯性、范围外拒答与未完成的独立标注。</p><div><code>medquad_qa.py · medquad_blind_eval.py</code><a href="/?view=workspace#review-desk">查看医学问答盲评 ↗</a></div></div></details>
+              <details><summary><span>04 / RESEARCH</span><h3>从自然语言，到有条件的研究计算</h3><b aria-hidden="true">＋</b></summary><div class="join-build-body"><p><strong>问题</strong>不能给任意医学问题随意生成百分比。</p><p><strong>实现</strong>核对基线未患糖尿病及五项指标后，调用接入 TFA 的三年新发糖尿病研究头；缺失或冲突时停止输出。</p><p><strong>继续检查</strong>完整性、范围限制与模型文件一致性；外部临床验证和目标人群校准仍未完成。</p><div><code>medical_language.py · forecast_prospective</code><a href="/?view=workspace#medical-language-studio">进入自然语言研究计算 ↗</a></div></div></details>
             </div>
           </div>
-          <div class="join-editorial-foot wrap"><span>06 / SYNTHETIC CASES</span><span>173 / INTERACTIVE DATA CENTERS</span><span>00 / EXTERNAL CLINICAL VALIDATION</span></div>
         </section>
-        <section class="join-process" aria-labelledby="join-process-title"><div class="wrap join-process-grid"><div><span class="join-overline">03 / HOW TO START</span><h2 id="join-process-title">合作从一个<br><em>清晰的问题</em>开始。</h2></div><ol><li><b>01</b><div><strong>写下你的方向</strong><p>说明你的背景、想解决的问题和可参与的方式，不需要提交患者资料或敏感信息。</p></div></li><li><b>02</b><div><strong>确认彼此适配</strong><p>项目团队根据收到的意向决定是否进一步沟通；填写表单不代表录用或合作承诺。</p></div></li><li><b>03</b><div><strong>约定可验证的工作</strong><p>如继续协作，再明确目标、交付物与责任边界，让设计、代码和证据一起前进。</p></div></li></ol></div></section>
+        <section class="join-case-story join-story-section" id="join-case-story" aria-labelledby="join-case-title">
+          <div class="wrap"><div class="join-story-heading"><div><span class="join-overline">04 / ONE CASE, END TO END</span><h2 id="join-case-title">一次交接，<br>走完<em>整条链路。</em></h2></div><p>以工作台已有的“夜间突发胸痛”合成案例说明操作过程。这里是流程导览，不预填推理结果或伪装实时运行。</p></div>
+            <div class="join-case-layout">
+              <div class="join-case-tabs" role="tablist" aria-label="完整操作案例的五个阶段" aria-orientation="vertical">
+                <button id="join-case-tab-input" type="button" role="tab" aria-controls="join-case-panel-input" aria-selected="true" tabindex="0" data-join-case="input"><span>01</span><strong>记录输入</strong><small>时间、表现与体征</small></button>
+                <button id="join-case-tab-compute" type="button" role="tab" aria-controls="join-case-panel-compute" aria-selected="false" tabindex="-1" data-join-case="compute"><span>02</span><strong>实际计算</strong><small>原始引擎与后端状态</small></button>
+                <button id="join-case-tab-source" type="button" role="tab" aria-controls="join-case-panel-source" aria-selected="false" tabindex="-1" data-join-case="source"><span>03</span><strong>证据核验</strong><small>出处、拒绝与缺口</small></button>
+                <button id="join-case-tab-human" type="button" role="tab" aria-controls="join-case-panel-human" aria-selected="false" tabindex="-1" data-join-case="human"><span>04</span><strong>人工复核</strong><small>接管决定与说明</small></button>
+                <button id="join-case-tab-export" type="button" role="tab" aria-controls="join-case-panel-export" aria-selected="false" tabindex="-1" data-join-case="export"><span>05</span><strong>保存与导出</strong><small>可回看的本次记录</small></button>
+              </div>
+              <div class="join-case-panels">
+                <div id="join-case-panel-input" class="join-case-panel" role="tabpanel" aria-labelledby="join-case-tab-input" tabindex="0"><span class="join-story-label">SYNTHETIC INPUT / 非真实患者</span><h3>先保留观察，<br>不先下诊断。</h3><blockquote>82 岁男性，夜间突发持续性胸部压榨感，向左臂放射，伴大汗、恶心和呼吸困难。护理员已停止活动并呼叫值班负责人。</blockquote><dl class="join-case-vitals"><div><dt>HR</dt><dd>112 <small>次/分</small></dd></div><div><dt>SpO₂</dt><dd>91 <small>%</small></dd></div><div><dt>体温</dt><dd>36.8 <small>°C</small></dd></div><div><dt>RR</dt><dd>25 <small>次/分</small></dd></div></dl><p>与工作台预设值一致。突发症状用于演示人工接管流程，不据此生成“患病概率”。</p></div>
+                <div id="join-case-panel-compute" class="join-case-panel" role="tabpanel" aria-labelledby="join-case-tab-compute" tabindex="0" hidden><span class="join-story-label">EXECUTION / 必须以接口回执为准</span><h3>运行的是工程，<br>不是一张结果图片。</h3><p>在工作台点击运行后，记录进入预处理与 MAPFM 协作链；DMA 按配置调用本机推理服务。</p><ol><li>检查本机服务和推理后端是否可用。</li><li>读取本次请求的执行轨迹与生成状态。</li><li>如果后端失败，查看明确的失败或降级提示，不把降级文本当作正常推理。</li></ol><code>/screening/engineering → MAPFM → DMA</code></div>
+                <div id="join-case-panel-source" class="join-case-panel" role="tabpanel" aria-labelledby="join-case-tab-source" tabindex="0" hidden><span class="join-story-label">TRACEABILITY / 来源不等于有效性</span><h3>每条线索，<br>都值得追问出处。</h3><p>检索、融合和来源核验分别保留职责。查看本次返回的来源标识、核验状态、拒绝原因与未解决的信息缺口。</p><ol><li>区分动态返回的资料与预置离线材料。</li><li>核对可追溯标识和来源是否与问题相关。</li><li>即使有出处，医学适用性也仍需专业人员判断。</li></ol><code>RAA → Fusion → Verification</code></div>
+                <div id="join-case-panel-human" class="join-case-panel" role="tabpanel" aria-labelledby="join-case-tab-human" tabindex="0" hidden><span class="join-story-label">HUMAN REVIEW / 不自动放行</span><h3>流程的下一步，<br>必须有人负责。</h3><p>该合成案例设置强制人工接管，用来检查系统能否把需要复核的信号交给使用者，而非自动作出临床决定。</p><ol><li>阅读本次结果、限制与来源状态。</li><li>在工作台填写复核决定及说明。</li><li>是否处置、升级或补充观察，由专业人员负责。</li></ol><code>Consensus → 人工复核记录</code></div>
+                <div id="join-case-panel-export" class="join-case-panel" role="tabpanel" aria-labelledby="join-case-tab-export" tabindex="0" hidden><span class="join-story-label">RECORD / 把过程留下来</span><h3>留下记录，<br>也留下它的边界。</h3><p>完成本次运行和人工复核后，可导出交接摘要与审计信息，并选择把合成案例保存到当前浏览器案例库。</p><ol><li>检查导出内容是否对应本次输入与复核。</li><li>案例库最多 10 条（含 6 个预设案例），可重新载入核查。</li><li>浏览器保存不等于院内病历系统，不录入真实患者身份信息。</li></ol><code>本次回执 + 人工说明 → 摘要 / 审计导出</code></div>
+                <div class="join-case-actions"><span>只有进入工作台并主动运行，才会产生本次结果。</span><a href="/?view=workspace&case=chest#input-title">在工作台运行这个合成案例 <b aria-hidden="true">↗</b></a></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="join-agent-story join-story-section" id="join-agent-story" aria-labelledby="join-agent-title"><div class="wrap">
+          <div class="join-story-heading"><div><span class="join-overline">05 / TEN ROLES, ONE WORKFLOW</span><h2 id="join-agent-title">不是各说各话，<br>而是<em>分工协作。</em></h2></div><p>“十智能体”指工程中的协作模块，不代表十个独立训练的大模型。不同任务使用不同路径：护理交接走协作链，糖尿病研究计算走 TFA 分支，MedQuAD 是独立来源检索。</p></div>
+          <ol class="join-agent-chain" aria-label="护理交接的主要协作链">
+            <li><span>01 / Perception</span><h3>感知编码</h3><p>整理输入，构建上下文。</p></li><li><span>02 / RAA</span><h3>检索增强</h3><p>找到候选资料与来源。</p></li><li><span>03 / Fusion</span><h3>知识融合</h3><p>合并资料，记录冲突。</p></li><li><span>04 / Verification</span><h3>来源核验</h3><p>检查出处，保留拒绝原因。</p></li><li><span>05 / DMA</span><h3>决策推理</h3><p>调用后端，记录降级状态。</p></li><li><span>06 / Consensus</span><h3>共识与接管</h3><p>执行门控，交给人工复核。</p></li>
+          </ol>
+          <div class="join-agent-support"><div><span>条件分支 / TFA</span><h3>时序研究预测</h3><p>任务与输入满足条件后，运行三年新发糖尿病研究权重；不是本页胸痛案例的疾病概率计算。</p></div><div><span>支撑模块 / Privacy · Maintenance · Topology</span><h3>隐私、监测与通信</h3><p>分别承担消息保护、模块状态检查和消息路由，为主链提供工程支撑。</p></div></div>
+          <a class="join-story-link" href="/?view=home#architecture-handbook">查看全部十个模块的机制、上下游与代码入口 <span aria-hidden="true">↗</span></a>
+        </div></section>
+        <section class="join-contribute join-story-section" id="join-contribute" aria-labelledby="join-contribute-title"><div class="wrap">
+          <div class="join-story-heading"><div><span class="join-overline">06 / FIND YOUR PART</span><h2 id="join-contribute-title">下一步，<br>你可以<em>参与什么？</em></h2></div><p>用具体任务说明合作方向。以下是可讨论的工作与交付物，不是现有成员履历，也不是岗位录用承诺。选择一个方向，可预填下方表单。</p></div>
+          <div class="join-role-grid">
+            <article><span>01 / PRODUCT</span><h3>产品与交互设计</h3><p>梳理交接、计算、复核的使用路径，识别误解和信息缺口。</p><dl><dt>可讨论的交付</dt><dd>任务流程图、交互原型、可用性检查清单。</dd></dl><button type="button" data-join-track="产品与交互设计">我想参与这个方向 ↗</button></article>
+            <article><span>02 / CREATIVE CODE</span><h3>前端与创意技术</h3><p>完善医学信息层级、响应式布局与有意义的动态表达。</p><dl><dt>可讨论的交付</dt><dd>可运行界面、键盘操作检查、动效降级与性能记录。</dd></dl><button type="button" data-join-track="前端与创意技术">我想参与这个方向 ↗</button></article>
+            <article><span>03 / ENGINEERING</span><h3>后端与 AI 工程</h3><p>增强接口可靠性、输入校验、错误回执和可复现评测。</p><dl><dt>可讨论的交付</dt><dd>接口测试、故障复现记录、模型与数据版本核对。</dd></dl><button type="button" data-join-track="后端与 AI 工程">我想参与这个方向 ↗</button></article>
+            <article><span>04 / FIELD RESEARCH</span><h3>照护场景研究</h3><p>形成经授权的调研问题，区分观察、解释与待验证假设。</p><dl><dt>可讨论的交付</dt><dd>访谈提纲、去标识化记录模板、问题与功能对应表。</dd></dl><button type="button" data-join-track="照护场景研究">我想参与这个方向 ↗</button></article>
+            <article><span>05 / MEDICAL REVIEW</span><h3>医学与合规咨询</h3><p>核查术语、用途边界、来源适用性和人工接管说明。</p><dl><dt>可讨论的交付</dt><dd>审阅意见、错误分类、边界文案与独立评测方案。</dd></dl><button type="button" data-join-track="医学与合规咨询">我想参与这个方向 ↗</button></article>
+            <article><span>06 / COLLABORATION</span><h3>机构或项目合作</h3><p>先明确研究目标、材料授权和责任，再讨论验证条件。</p><dl><dt>可讨论的交付</dt><dd>合作问题清单、验证范围与数据治理方案。</dd></dl><button type="button" data-join-track="机构或项目合作">我想参与这个方向 ↗</button></article>
+          </div>
+          <details class="join-material-note"><summary>材料与演示说明</summary><p>照片来自团队提供的历史材料；它们证明现场记录的存在，不等同于正式访谈结论、合作背书或临床效果验证。上述问题与功能对应关系属于当前产品设计整理。操作案例是合成内容，流程导览不是实时运行回执。研究模型仍无外部临床验证，不用于诊疗决策；请勿在联系表单提交真实患者信息。</p></details>
+        </div></section>
+        <section class="join-process" aria-labelledby="join-process-title"><div class="wrap join-process-grid"><div><span class="join-overline">07 / HOW TO START</span><h2 id="join-process-title">合作从一个<br><em>清晰的问题</em>开始。</h2></div><ol><li><b>01</b><div><strong>写下你的方向</strong><p>说明你的背景、想解决的问题和可参与的方式，不需要提交患者资料或敏感信息。</p></div></li><li><b>02</b><div><strong>确认彼此适配</strong><p>项目团队根据收到的意向决定是否进一步沟通；填写表单不代表录用或合作承诺。</p></div></li><li><b>03</b><div><strong>约定可验证的工作</strong><p>如继续协作，再明确目标、交付物与责任边界，让设计、代码和证据一起前进。</p></div></li></ol></div></section>
         <section class="join-form-section" id="join-form-section" aria-labelledby="join-form-title">
           <div class="wrap join-form-layout">
-            <div class="join-form-intro"><span class="join-overline">04 / YOUR SIGNAL</span><h2 id="join-form-title">把你的想法，<br><em>送到我们面前。</em></h2><p>填写下面的信息，说明你想参与或合作的方向。表单只用于项目联系，不用于收集患者资料或医疗咨询。</p><div class="join-contact-meta"><span>TO / 项目邮箱</span><strong>yuanjiegu52@gmail.com</strong><small>请勿提交身份证号、病历、患者照片等敏感信息。</small></div></div>
+            <div class="join-form-intro"><span class="join-overline">08 / YOUR SIGNAL</span><h2 id="join-form-title">把你的想法，<br><em>送到我们面前。</em></h2><p>填写下面的信息，说明你想参与或合作的方向。表单只用于项目联系，不用于收集患者资料或医疗咨询。</p><div class="join-contact-meta"><span>TO / 项目邮箱</span><strong>yuanjiegu52@gmail.com</strong><small>请勿提交身份证号、病历、患者照片等敏感信息。</small></div></div>
             <div class="join-form-panel">
               <div class="join-form-heading"><span>COLLABORATION NOTE / 2026</span><span>必填项标记 *</span></div>
               <form id="join-form" novalidate>

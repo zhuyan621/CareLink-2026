@@ -16,6 +16,10 @@
       "bytes": 16015,
       "sha256": "9039b31db72d8f2bd8ac9107f2bd7e3a46c5a01b137e88cf5a6010c889f15ebc"
     },
+    "CHANGES_20261020.md": {
+      "bytes": 1969,
+      "sha256": "dfa1b15f6d5f81a8697db7b60b57f6a98dcd65dd7cce183caabc2152e7902c49"
+    },
     "COMPETITION_DELTA.md": {
       "bytes": 4321,
       "sha256": "c861e376b0296e303a0340e057f4a49301c1e34bdb12549d8055642ab45a9165"
@@ -27,6 +31,10 @@
     "DELIVERY_QA_20261011.md": {
       "bytes": 3984,
       "sha256": "4f91382d7a77f45dfc523b98c9e0dc792cf7df42429f6d2c93b9b96cba2f39cb"
+    },
+    "DELIVERY_QA_JOIN_20261020.md": {
+      "bytes": 2526,
+      "sha256": "6fa6c36e031e8f591381389035b3d3f521b9ef3805ef0cf5b3629575d89a6a8e"
     },
     "DELIVERY_QA_MEDQUAD_20261012.md": {
       "bytes": 2615,
@@ -401,8 +409,16 @@
       "sha256": "2ec3e5821a0394388205f18531d40dc093bec2b963af9c8bbb46e10f088e4617"
     },
     "careguard_web/index.html": {
-      "bytes": 112011,
-      "sha256": "9f2430bed636b8e0cb3fed5c3a7f6aa51b59940ae3d2caf1229687e916ab55dc"
+      "bytes": 126309,
+      "sha256": "703b243ac2faa2d7f9df5b2df9ec28fb2b76fb972f41518937b92dea88dc2c75"
+    },
+    "careguard_web/join-story.css": {
+      "bytes": 13312,
+      "sha256": "8862129194b72a116d066e195bcc40f07abf249b0f1efae16ea44910f6150d55"
+    },
+    "careguard_web/join-story.js": {
+      "bytes": 1866,
+      "sha256": "389a9a876e6013416c6753f60037ccb5fe8dcf2c6971a78df8485e314d47b399"
     },
     "careguard_web/join.js": {
       "bytes": 6770,
@@ -2085,8 +2101,8 @@
       "sha256": "d32de32fd8a17c9dfd725be1e667e03c4afe0558f57b8b4eabd1e0e67dc317c9"
     },
     "package_competition.py": {
-      "bytes": 18020,
-      "sha256": "c0e90d0b26e3936d00a4fe7c309387b78b63951aebf4f577991158748d37deaa"
+      "bytes": 18154,
+      "sha256": "302d83e8da54f1faca0f3904204e8651121853dbae315075c70714cfb25fd547"
     },
     "prepare_nagala_diabetes.py": {
       "bytes": 4393,
@@ -2121,8 +2137,8 @@
       "sha256": "ffc9b0ab6d47a7f5ba98990c7eab489998d69b278c2e39a9ba69d8cca9badc32"
     },
     "tests/test_careguard_join.py": {
-      "bytes": 5040,
-      "sha256": "9f941cb9b0fca05bc7bb1638baea9bb9df16027fedcbedd63ccf06071e781fa9"
+      "bytes": 6766,
+      "sha256": "e346af4db8ef19027147b12c76bae30e39ff8ebdad0ee334e6b3db4ed2f933ef"
     },
     "tests/test_careguard_lab.py": {
       "bytes": 2782,
@@ -2184,6 +2200,10 @@
       "bytes": 8980,
       "sha256": "f2959281666665b72e12b5bb603707e1f57751f12db06e0c43860c45be7b6da5"
     },
+    "tests/test_join_story_controls.cjs": {
+      "bytes": 3496,
+      "sha256": "a131635687ad415be0bc94dc60cc3da6fff5af21d337e656e40258b611ba04bb"
+    },
     "tests/test_medical_language.py": {
       "bytes": 4685,
       "sha256": "e19573c68b40eea64054650031957dfc69719b2ce03cfa067b83636ca10a887f"
@@ -2197,8 +2217,8 @@
       "sha256": "b1ce51816eecb848e85220964ff6bfa3d1d8cf927088a44326d8b2164370c1d3"
     },
     "tests/test_package_competition.py": {
-      "bytes": 2096,
-      "sha256": "33a2048e8f71e23f3938c9e33d0986367060d3c2de1032b92ab3e4175fd13118"
+      "bytes": 2144,
+      "sha256": "3937ce9526e254f7b0d4b7dee3c4a22df34db67523f7f0c4691cd542488035f6"
     },
     "tests/test_regression.py": {
       "bytes": 8826,
@@ -2297,7 +2317,7 @@
       "sha256": "22264f1745785343444e05cbf5ae25c4cab8780b90a821362dd3899adec0ac9e"
     }
   },
-  "generated_at_utc": "2026-10-14T14:30:20.698414+00:00",
+  "generated_at_utc": "2026-10-20T11:58:20.102601+00:00",
   "package_root": "CareLink_2026",
   "schema_version": "careguard.delivery.v1"
 }
