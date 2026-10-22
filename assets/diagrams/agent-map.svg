@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+<title id="title">MAPFM collaboration map</title><desc id="desc">Six main workflow modules, the conditional TFA branch and three support modules. A source-based diagram, not live telemetry.</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#1b2120"/><stop offset="1" stop-color="#30372c"/></linearGradient><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#dfd4bd" stroke-opacity=".05"/></pattern></defs>
+<path fill="url(#bg)" d="M0 0h800v600H0z"/><path fill="url(#grid)" d="M0 0h800v600H0z"/>
+<g font-family="Arial,sans-serif"><text x="48" y="60" fill="#dcb398" font-size="13" letter-spacing="3">CARELINK / MAPFM COLLABORATION</text><text x="48" y="119" fill="#f4ede2" font-size="38">Different roles. One chain.</text>
+<g fill="none" stroke="#b5c39c" stroke-width="2"><path d="M170 223h460v120H170V223M400 343v86"/><path d="m388 421 12 8 12-8"/></g>
+<g fill="#232e29" stroke="#a3ae91"><rect x="65" y="183" width="210" height="80" rx="9"/><rect x="295" y="183" width="210" height="80" rx="9"/><rect x="525" y="183" width="210" height="80" rx="9"/><rect x="65" y="303" width="210" height="80" rx="9"/><rect x="295" y="303" width="210" height="80" rx="9"/><rect x="525" y="303" width="210" height="80" rx="9"/></g>
+<g fill="#e7e6d5" font-size="18" text-anchor="middle"><text x="170" y="230">Perception</text><text x="400" y="230">RAA</text><text x="630" y="230">Fusion</text><text x="630" y="350">Verification</text><text x="400" y="350">DMA</text><text x="170" y="350">Consensus</text></g>
+<g fill="#b4c49c" font-size="12"><text x="65" y="167">01 / ENCODE</text><text x="295" y="167">02 / RETRIEVE</text><text x="525" y="167">03 / MERGE</text></g>
+<rect x="65" y="430" width="270" height="60" rx="7" fill="#493d2f" stroke="#c49770"/><text x="86" y="466" fill="#edc19c" font-size="16">TFA / CONDITIONAL BRANCH</text>
+<rect x="355" y="430" width="380" height="60" rx="7" fill="#2c352c" stroke="#7d8e77"/><text x="375" y="466" fill="#c9d0b9" font-size="15">Privacy / Maintenance / Topology</text>
+<text x="48" y="561" fill="#a39f90" font-size="11" letter-spacing="1.5">ENGINEERING MODULES / NOT TEN INDEPENDENT LLMS / NOT LIVE TELEMETRY</text></g></svg>

@@ -1,7 +1,13 @@
 {
   "source_repository": "https://github.com/zhuyan621/CareLink-2026",
-  "source_commit": "314953090d14bf261aa5d299224e00fda67191e4",
+  "source_commit": "dce1c98bc0b44ab83fe5a5b399f89bf4e4ad7d15",
+  "project_name": "安护智链——多智能体康养风险预警平台",
   "original_content_preserved": true,
+  "retired_asset_directories_omitted": [
+    "assets/archive",
+    "assets/join",
+    "assets/research"
+  ],
   "adaptations": [
     "GitHub Pages project base path",
     "Direct API connection"

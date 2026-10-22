@@ -20,7 +20,7 @@
   const configs = {
     observation: { points: data.observationPoints(), ranges: [[80, 126], [88, 98], [16, 29]], axes: ["HR", "SpO₂", "RR"], defaultId: "chest-0-0-0" },
     gate: { points: data.gatePoints(), ranges: [[0, 4], [0, 1], [0, 7]], axes: ["冲突", "急性", "门控"], defaultId: "gate-0-0-0" },
-    source: { points: data.sourcePoints(), ranges: [[-0.25, 3.25], [-0.4, 4.4], [-0.2, 3.2]], axes: ["时间", "类型", "范围"], defaultId: "mapfm-paper" },
+    source: { points: data.sourcePoints(), ranges: [[-0.25, 3.25], [-0.4, 4.4], [-0.2, 3.2]], axes: ["层级", "类型", "范围"], defaultId: "module-design" },
   };
 
   class Scatter3D {
@@ -349,7 +349,7 @@
           const session = window.CareGuardSite?.getSessionSummary();
           this.detail.append(node("small", "lab-detail-live", session ? `当前会话 ${session.requestId} · ${session.engine} · ${session.priority} · ${session.evidenceCount} 条动态来源` : "当前浏览器会话尚未运行；此节点不冒充已生成的结果。"));
         }
-        this.primary.textContent = point.id === "session" ? "查看当前会话 ↗" : point.image && !point.materialKey ? "查看原始扫描图 ↗" : "查看对应材料 ↗";
+        this.primary.textContent = point.id === "session" ? "查看当前会话 ↗" : point.image && !point.materialKey ? "查看完整工程示意 ↗" : "查看对应设计或证据 ↗";
       }
     }
 

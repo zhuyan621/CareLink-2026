@@ -1,6 +1,6 @@
 // Connect only project API calls to the original running application.
 (() => {
-  const apiOrigin = "https://savings-functions-diverse-separate.trycloudflare.com";
+  const apiOrigin = "https://admissions-questions-dangerous-deputy.trycloudflare.com";
   const originalFetch = window.fetch.bind(window);
   window.fetch = (input, options) => {
     const raw = input instanceof Request ? input.url : String(input);
