@@ -25,7 +25,7 @@ def test_site_serves_product_frontend_and_local_assets():
     assert 'id="dataset-questions"' in home.text
     assert 'id="dataset-search"' in home.text
     assert 'medNo.22.csv' in home.text
-    assert "安护智链 CareLink" in home.text
+    assert "<title>安护智链——多智能体康养风险预警平台</title>" in home.text
     assert 'id="launch-open-case"' in home.text
     assert 'id="clinical-readout-title"' in home.text
     assert 'id="home-medical-wave"' in home.text

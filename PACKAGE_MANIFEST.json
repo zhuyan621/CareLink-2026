@@ -2177,8 +2177,8 @@
       "sha256": "ac71ab3eb197b43c08ae83accdecdadf68a1b9599356cbd94f0ff1c56981acad"
     },
     "tests/test_careguard_site.py": {
-      "bytes": 9440,
-      "sha256": "149f6e584d7925066ea78ed52395a341dc911a5627c317f5a788a0c2a8b5351a"
+      "bytes": 9488,
+      "sha256": "392b3bddd0dc1266a556a8b91e19604921d0727c8913672cf6a124f24aa2bd0b"
     },
     "tests/test_careguard_ui_state.py": {
       "bytes": 1251,
