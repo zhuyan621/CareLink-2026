@@ -88,12 +88,12 @@ savedCases = readSavedCases();
 registerSavedCases();
 
 const MATERIALS = {
-  visit: { index: "01 / 06", image: "/assets/archive/field-visit.jpeg", alt: "历史路演资料中的实地走访合影", kind: "FIELD ARCHIVE / 走访记录", overprint: "走进现场，\n但不把走访写成部署。", title: "历史走访照片", context: "来自既有路演资料的实地走访影像，可追溯项目的问题发现与交流过程。照片中的场景不等于当前软件已在该机构部署。", can: "曾开展实地走访与需求讨论", cannot: "机构授权、正式部署或临床效果", origin: "来源：11+智弈护晓.zip / 历史路演 PPT 图片" },
-  pharmacy: { index: "02 / 06", image: "/assets/archive/field-pharmacy.jpg", alt: "华圣现场调研照片，拍摄到两名人员背影与机构环境", kind: "FIELD ARCHIVE / 现场调研", overprint: "把真实环境，\n带回设计讨论。", title: "华圣现场调研", context: "项目资料中的现场环境照片，补充对照护场景的理解；图片本身不能证明开展了正式访谈、部署或临床测试。", can: "留存过现场调研影像", cannot: "访谈样本量、正式合作或临床有效性", origin: "来源：项目提供素材 / docs/华圣调研.jpg" },
-  session: { index: "03 / 06", image: "/assets/join/working-session.jpeg", alt: "项目历史资料中的多人围桌讨论照片", kind: "TEAM ARCHIVE / 讨论记录", overprint: "讨论形成问题，\n结论仍待验证。", title: "团队交流现场", context: "历史材料中的多人围桌讨论影像。用于展示问题讨论过程，不将照片中的人物身份、访谈对象或发言内容作未经核实的推断。", can: "曾组织团队讨论与交流", cannot: "正式访谈结论或软件效果", origin: "来源：11+智弈护晓.zip / 历史路演材料" },
-  team: { index: "04 / 06", image: "/assets/archive/team-work.jpg", alt: "团队成员围绕电脑协作的照片", kind: "TEAM ARCHIVE / 协作记录", overprint: "把现场问题，\n继续拆成工作。", title: "团队协作资料", context: "项目资料中的团队协作影像，呈现研究与设计过程；不将合照或讨论照片当作用户研究数据。", can: "团队开展过协作讨论", cannot: "受访者评价、真实世界使用量或疗效", origin: "来源：项目提供素材 / docs/团队成长.jpg" },
-  paper: { index: "05 / 06", image: "/assets/research/mapfm-paper-first-page.png", alt: "所提供的 MAPFM 论文首页扫描件", kind: "RESEARCH ARCHIVE / 文献扫描", overprint: "研究脉络可追溯，\n效果仍需另证。", title: "研究论文首页", context: "来自提供素材中的 MAPFM 相关论文首页。用于呈现方法研究与项目演进，不把论文发表等同于当前参赛原型的临床有效性。", can: "相关方法研究的存在与研究路径", cannot: "本版软件的诊断性能或医疗使用资格", origin: "来源：素材(3).zip / MAPFM 论文扫描件" },
-  interface: { index: "06 / 06", image: "/assets/archive/legacy-interface.jpeg", alt: "旧版 DawnGuard 知识库界面截图，仅作历史档案", kind: "HISTORICAL UI / 非当前系统", overprint: "看见设计演进，\n不混同当前交付。", title: "旧版界面档案", context: "历史路演 PPT 中的旧版知识库截图，仅展示交互探索过程。图中界面、计数与模块不是当前 CareLink 可运行功能清单。", can: "团队曾探索知识库交互界面", cannot: "当前版本的功能、数据量或在线状态", origin: "来源：11+智弈护晓.zip / 历史路演 PPT 图片" },
+  input: { index: "01 / 06", image: "/assets/diagrams/input-flow.svg", alt: "交接记录到结构化输入的原创流程示意", kind: "PRODUCT DESIGN / 输入流程", overprint: "把观察写清楚，\n再交给系统处理。", title: "结构化交接输入", context: "把观察记录、体征及已采取的措施组织成可核对的输入。示意图对应当前工作台字段，不含患者数据。", can: "输入结构与设计意图", cannot: "实时执行结果或临床效果", origin: "工程对应：site.js / handoff.js · 原创示意" },
+  agents: { index: "02 / 06", image: "/assets/diagrams/agent-map.svg", alt: "MAPFM 主链、条件分支与支撑模块示意", kind: "ENGINEERING / 模块协作", overprint: "职责分开，\n过程连起来。", title: "MAPFM 协作链", context: "展示主链模块、TFA 条件分支与隐私、监测、通信支撑；模块不等于十个独立大模型。", can: "工程模块及协作职责", cannot: "每个模块实时在线或临床有效性", origin: "工程对应：mapfm_ecosystem_repaired.py · 原创示意" },
+  sources: { index: "03 / 06", image: "/assets/diagrams/source-check.svg", alt: "来源标识、时间与核验原因的示意", kind: "TRACEABILITY / 来源核验", overprint: "有来源，\n也要有适用边界。", title: "来源核验设计", context: "说明候选资料的出处与可追溯信息如何进入核验记录。出处可追溯不等于医学结论正确。", can: "来源核验的检查项", cannot: "资料适用性或诊疗资格", origin: "工程对应：ProvenanceKnowledgeVerificationAgent.verify · 原创示意" },
+  review: { index: "04 / 06", image: "/assets/diagrams/review-loop.svg", alt: "系统结果进入人工复核后记录决定的示意", kind: "HUMAN REVIEW / 接管流程", overprint: "自动流程之后，\n决定仍然归于人。", title: "人工复核闭环", context: "结果、来源、复核决定与说明构成可检查的接管流程。示意图不是本次复核回执。", can: "人工接管与复核的设计", cannot: "已完成复核或实际处置结果", origin: "工程对应：careguard_presenter.py / site.js · 原创示意" },
+  research: { index: "05 / 06", image: "/assets/diagrams/research-head.svg", alt: "五项基线特征接入 TFA 三年糖尿病研究头的示意", kind: "RESEARCH / 条件计算", overprint: "先检查输入，\n再讨论研究估计。", title: "TFA 研究计算分支", context: "仅在任务和基线条件符合时运行现有三年糖尿病研究头；缺失或冲突时停止输出。", can: "研究计算的输入与门控关系", cannot: "外部临床校准或任意疾病概率", origin: "工程对应：mapfm_prospective_neural.py · 原创示意" },
+  audit: { index: "06 / 06", image: "/assets/diagrams/audit-trail.svg", alt: "请求、运行、来源与人工说明连接的审计示意", kind: "AUDIT DESIGN / 可追溯记录", overprint: "留下结果，\n更要留下过程。", title: "审计记录结构", context: "说明本次请求、运行状态、来源与人工说明的关系。真实记录需要进入工作台主动运行后生成。", can: "可追溯记录的组织方式", cannot: "已经生成的运行回执", origin: "工程对应：careguard_presenter.py / handoff.js · 原创示意" },
 };
 
 const FEATURES = {
@@ -1030,7 +1030,7 @@ renderCaseLibrary();
 setAudience("recorder");
 setAtlasCase("chest");
 setLaunchCase("chest");
-setMaterial("visit");
+setMaterial("input");
 setClaimFilter("all");
 selectClaim($('[data-claim-state]'));
 window.CareGuardSite = {

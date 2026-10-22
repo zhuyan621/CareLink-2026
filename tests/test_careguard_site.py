@@ -1,6 +1,7 @@
 """Basic contract checks for the standalone competition frontend."""
 
 import csv
+from xml.etree import ElementTree
 from pathlib import Path
 
 from fastapi.testclient import TestClient
@@ -45,7 +46,7 @@ def test_site_serves_product_frontend_and_local_assets():
     assert 'id="session-events"' in home.text
     assert 'id="diag-fallback"' in home.text
     assert 'id="material-image"' in home.text
-    assert 'data-material="interface"' in home.text
+    assert 'data-material="audit"' in home.text
     assert "case=stroke" not in home.text  # routing is handled by the local UI, not fake links
 
     css = client.get("/site.css")
@@ -85,8 +86,8 @@ def test_site_serves_product_frontend_and_local_assets():
     assert 'id="atlas-open-case"' in home.text
     assert "prefers-reduced-motion" in particles.text
     assert "visibilitychange" in particles.text
-    assert client.get("/assets/archive/field-visit.jpeg").status_code == 200
-    assert client.get("/assets/archive/legacy-interface.jpeg").status_code == 200
+    assert client.get("/assets/archive/field-visit.jpeg").status_code == 404
+    assert client.get("/assets/archive/legacy-interface.jpeg").status_code == 404
 
 
 def test_dataset_browser_preserves_source_rows_without_claiming_patient_cases():
@@ -142,8 +143,28 @@ def test_handover_and_local_library_controls_are_present():
     assert "护理交接记录：${note}" in script
     assert "caseInputSignature()" in script
     assert "当前交接内容尚未保存" in script
-    for asset in ("field-pharmacy.jpg", "team-work.jpg"):
-        assert client.get(f"/assets/archive/{asset}").status_code == 200
+    for asset in ("input-flow.svg", "agent-map.svg"):
+        assert client.get(f"/assets/diagrams/{asset}").status_code == 200
+
+
+def test_public_site_replaces_photos_and_institution_identifiers_with_original_diagrams():
+    client = TestClient(app)
+    public_text = "\n".join(client.get(path).text for path in ("/", "/site.js", "/lab-data.js"))
+    for retired in ("/assets/archive/", "/assets/join/", "/assets/research/", "学校", "校徽", "大学", "山东", "财经"):
+        assert retired not in public_text
+    for name in ("input-flow", "agent-map", "source-check", "review-loop", "research-head", "audit-trail"):
+        response = client.get(f"/assets/diagrams/{name}.svg")
+        assert response.status_code == 200
+        root = ElementTree.fromstring(response.content)
+        assert root.tag.endswith("svg")
+        assert root.find("{http://www.w3.org/2000/svg}title") is not None
+        assert not root.findall(".//{http://www.w3.org/2000/svg}image")
+        assert not root.findall(".//{http://www.w3.org/2000/svg}script")
+    for path in ("/assets/archive/field-group.jpg", "/assets/join/field-team.jpeg",
+                 "/assets/research/mapfm-paper-first-page.png", "/assets//archive/field-group.jpg",
+                 "/assets/archive%2Ffield-group.jpg", "/assets/diagrams/%2E%2E/archive/field-group.jpg"):
+        assert client.get(path).status_code == 404
+        assert client.head(path).status_code == 404
 
 
 def test_dataset_pager_and_manual_mail_fallback_are_explicit():

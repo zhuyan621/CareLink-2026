@@ -45,7 +45,7 @@ from medquad_qa import ask as ask_medquad, status as medquad_status
 from medical_language import parse_medical_prompt
 
 app = FastAPI(
-    title="CareLink Multi-Agent Screening API",
+    title="安护智链——多智能体康养风险预警平台",
     description=(
         "Competition and research prototype for care-risk screening, evidence tracing, "
         "and human review. It does not provide an autonomous clinical diagnosis."

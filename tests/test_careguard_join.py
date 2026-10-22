@@ -30,10 +30,10 @@ def test_join_page_and_photos_are_served():
     assert 'id="join-message-count"' in html
     assert "04 / ONE CASE, END TO END" in html
     assert "yuanjiegu52@gmail.com" in html
-    assert '<img src="/assets/archive/field-pharmacy.jpg" alt="项目团队在机构药房区域开展现场调研的照片">' in html
-    assert client.get("/assets/archive/field-pharmacy.jpg").status_code == 200
+    assert 'src="/assets/diagrams/input-flow.svg"' in html
+    assert client.get("/assets/archive/field-pharmacy.jpg").status_code == 404
     for name in ("working-session.jpeg", "field-place.jpeg"):
-        assert client.get(f"/assets/join/{name}").status_code == 200
+        assert client.get(f"/assets/join/{name}").status_code == 404
 
 
 def test_join_project_journey_is_chronological_and_source_bound():
@@ -47,8 +47,8 @@ def test_join_project_journey_is_chronological_and_source_bound():
         assert text not in journey
     for text in ("获奖", "铜奖", "三等奖", "旧奖项", "历史奖项"):
         assert text not in html
-    assert 'href="/assets/research/mapfm-paper-first-page.png"' in journey
-    assert client.get("/assets/research/mapfm-paper-first-page.png").status_code == 200
+    assert 'href="/?view=home#architecture-handbook"' in journey
+    assert client.get("/assets/research/mapfm-paper-first-page.png").status_code == 404
 
 
 def test_join_story_links_assets_and_controls_are_grounded():
@@ -76,15 +76,15 @@ def test_join_story_links_assets_and_controls_are_grounded():
     assert len(roles) == 6
     assert all(role["data-join-track"] in careguard_join.TRACKS for role in roles)
     assert all(role["type"] == "button" for role in roles)
-    for path in ("/join-story.css", "/join-story.js", "/assets/archive/field-group.jpg",
-                 "/assets/archive/field-pharmacy.jpg", "/assets/archive/team-work.jpg"):
+    for path in ("/join-story.css", "/join-story.js", "/assets/diagrams/input-flow.svg",
+                 "/assets/diagrams/agent-map.svg", "/assets/diagrams/review-loop.svg"):
         assert client.get(path).status_code == 200
     for path in ("/?view=workspace&case=chest#input-title", "/?view=workspace&case=draft#input-title",
                  "/?view=home#architecture-handbook", "/?view=workspace#review-desk"):
         assert any(tag == "a" and attrs.get("href") == path for tag, attrs in page.items)
     assert "不代表十个独立训练的大模型" in html
     assert "流程导览不是实时运行回执" in html
-    assert "不等同于正式访谈结论" in html
+    assert "不是实时运行截图、机构背书或临床效果证据" in html
 
 
 def test_join_is_clearly_unavailable_without_mail_configuration(monkeypatch):

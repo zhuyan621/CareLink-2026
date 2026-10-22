@@ -1,4 +1,13 @@
-/* Join narrative: field archive, inspectable engineering, and specific invitations. */
+/* Join narrative: product blueprints, inspectable engineering, and specific invitations. */
+/* Original engineering graphics replace all public historical photography. */
+.research-artifacts .artifact img,.lab-hero-material figure img,.lab-gallery-grid img,.join-photo-stack img,
+.join-fieldwork-spread figure img,.material-preview>img,.lab-point-detail .lab-detail-image { object-fit:contain; background:#202823; }
+.join-photo-stack .join-photo img { filter:none; }
+.material-preview { display:flex; flex-direction:column; }
+.material-preview>img { flex:1; height:auto; min-height:260px; }
+.material-preview .material-preview-overlay { position:relative; background:linear-gradient(125deg,#232c27,#3b352b); padding:20px 28px; }
+.material-preview .material-preview-overlay strong { font-size:clamp(21px,2.5vw,34px); }
+.lab-source-gallery .lab-gallery-grid img { aspect-ratio:4/3; }
 #join-view .join-story-section { padding: 106px 0; scroll-margin-top: 100px; }
 #join-view .join-story-heading { display:grid; grid-template-columns:1.1fr .9fr; gap:8%; align-items:end; margin-bottom:48px; }
 #join-view .join-story-heading h2 { font-size:clamp(36px,4.8vw,68px); line-height:1.13; letter-spacing:-.055em; margin:23px 0 0; }

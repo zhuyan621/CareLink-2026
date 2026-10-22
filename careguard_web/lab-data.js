@@ -64,16 +64,16 @@
   }
 
   const SOURCE_ITEMS = [
-    { id: "field-visit", title: "历史走访照片", group: "archive", x: 0, y: 0, z: 0, materialKey: "visit", image: "/assets/archive/field-visit.jpeg", source: "11+智弈护晓.zip / 路演图片", boundary: "能说明曾开展走访；不能推出当前部署或临床效果。" },
-    { id: "legacy-ui", title: "旧版界面档案", group: "archive", x: 0, y: 2, z: 0, materialKey: "interface", image: "/assets/archive/legacy-interface.jpeg", source: "11+智弈护晓.zip / 路演图片", boundary: "只能说明设计演进，不代表当前功能清单。" },
-    { id: "shwid-cover", title: "SHWID 2025 论文集封面", group: "archive", x: 1, y: 1, z: 0, image: "/assets/research/shwid-2025-cover.png", source: "素材(3).zip / 论文扫描件", boundary: "说明材料来源与年份，不证明本版软件效果。" },
-    { id: "shwid-contents", title: "论文集目录 · MAPFM / 212", group: "archive", x: 1, y: 1, z: 0, image: "/assets/research/shwid-2025-contents.png", source: "素材(3).zip / 论文扫描件", boundary: "证明目录列有 MAPFM 论文，不证明临床有效性。" },
-    { id: "mapfm-paper", title: "MAPFM 论文首页", group: "archive", x: 1, y: 1, z: 0, materialKey: "paper", image: "/assets/research/mapfm-paper-first-page.png", source: "素材(3).zip / 论文扫描件", boundary: "说明多智能体检索增强的研究路径，不等于当前产品已验证。" },
-    { id: "screening-api", title: "当前 /screening 接口", group: "build", x: 3, y: 3, z: 1, claimIndex: 0, source: "api.py", boundary: "证明存在可调用软件接口，不证明诊断准确率。" },
-    { id: "presenter", title: "分层输出与门控代码", group: "build", x: 3, y: 3, z: 1, claimIndex: 0, source: "careguard_presenter.py", boundary: "证明实现了显示规则与人工门控，不证明临床决策正确。" },
-    { id: "human-gate", title: "人工复核与审计导出", group: "build", x: 3, y: 3, z: 2, claimIndex: 3, source: "careguard_presenter.py / tests/test_careguard_presenter.py", boundary: "测试覆盖流程行为，不替代专业判断。" },
-    { id: "pytest", title: "自动化测试快照", group: "test", x: 3, y: 4, z: 2, claimIndex: 0, source: "artifacts/competition/careguard_pytest_latest.xml", boundary: "带时间戳的软件测试快照，不是实时监测。" },
-    { id: "smoke", title: "合成案例自检快照", group: "test", x: 3, y: 4, z: 2, claimIndex: 1, source: "artifacts/competition/careguard_live_smoke_latest.json", boundary: "历史 Ollama 自检不保证此刻仍在线。" },
+    { id: "input-design", title: "结构化输入设计", group: "design", x: 0, y: 0, z: 1, materialKey: "input", image: "/assets/diagrams/input-flow.svg", source: "site.js / handoff.js · 原创示意", boundary: "解释输入结构，不是实时运行结果。" },
+    { id: "module-design", title: "MAPFM 模块职责", group: "design", x: 0, y: 0, z: 1, materialKey: "agents", image: "/assets/diagrams/agent-map.svg", source: "mapfm_ecosystem_repaired.py · 原创示意", boundary: "解释模块协作，不代表全部模块实时在线。" },
+    { id: "source-design", title: "来源核验设计", group: "design", x: 0, y: 0, z: 1, materialKey: "sources", image: "/assets/diagrams/source-check.svg", source: "ProvenanceKnowledgeVerificationAgent.verify · 原创示意", boundary: "可追溯性不等于医学有效性。" },
+    { id: "review-design", title: "人工复核设计", group: "design", x: 0, y: 2, z: 1, materialKey: "review", image: "/assets/diagrams/review-loop.svg", source: "careguard_presenter.py / site.js · 原创示意", boundary: "解释接管流程，不代表已完成人工复核。" },
+    { id: "research-design", title: "TFA 研究计算分支", group: "design", x: 0, y: 1, z: 1, materialKey: "research", image: "/assets/diagrams/research-head.svg", source: "mapfm_prospective_neural.py · 原创示意", boundary: "研究模型尚无外部临床验证，不推及任意疾病。" },
+    { id: "screening-api", title: "当前工程筛查接口", group: "build", x: 1, y: 3, z: 1, claimIndex: 0, source: "api.py · /screening/engineering", boundary: "证明存在可调用软件接口，不证明诊断准确率。" },
+    { id: "presenter", title: "分层输出与门控代码", group: "build", x: 1, y: 3, z: 1, claimIndex: 0, source: "careguard_presenter.py", boundary: "证明实现了显示规则与人工门控，不证明临床决策正确。" },
+    { id: "human-gate", title: "人工复核与审计导出", group: "build", x: 1, y: 3, z: 2, claimIndex: 3, source: "careguard_presenter.py / tests/test_careguard_presenter.py", boundary: "测试覆盖流程行为，不替代专业判断。" },
+    { id: "pytest", title: "自动化测试快照", group: "test", x: 2, y: 4, z: 2, claimIndex: 0, source: "artifacts/competition/careguard_pytest_latest.xml", boundary: "带时间戳的软件测试快照，不是实时监测。" },
+    { id: "smoke", title: "合成案例自检快照", group: "test", x: 2, y: 4, z: 2, claimIndex: 1, source: "artifacts/competition/careguard_live_smoke_latest.json", boundary: "历史 Ollama 自检不保证此刻仍在线。" },
     { id: "session", title: "当前浏览器会话", group: "runtime", x: 3, y: 4, z: 1, source: "工作台本次 /screening 响应", boundary: "需现场运行才有状态；刷新浏览器即清空。" },
     { id: "clinical-gap", title: "外部临床验证缺口", group: "gap", x: 3, y: 4, z: 3, claimIndex: 5, source: "尚无可展示的独立外部验证", boundary: "明确未验证，不可把软件测试和历史研究升级为临床结论。" },
   ];
@@ -84,7 +84,7 @@
       const cell = `${item.x}-${item.y}-${item.z}`;
       const index = counts.get(cell) || 0;
       counts.set(cell, index + 1);
-      return { ...item, plotX: item.x + ((index % 3) - 1) * 0.11, plotY: item.y + (Math.floor(index / 3) - 0.5) * 0.11, plotZ: item.z, color: { archive: "#c9afea", build: "#a9e1c4", test: "#d9fa99", runtime: "#89baf0", gap: "#f2a391" }[item.group] };
+      return { ...item, plotX: item.x + ((index % 3) - 1) * 0.11, plotY: item.y + (Math.floor(index / 3) - 0.5) * 0.11, plotZ: item.z, color: { design: "#c9afea", build: "#a9e1c4", test: "#d9fa99", runtime: "#89baf0", gap: "#f2a391" }[item.group] };
     });
   }
 

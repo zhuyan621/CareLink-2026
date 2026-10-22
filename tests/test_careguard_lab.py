@@ -44,6 +44,7 @@ console.log(JSON.stringify({lengths:[a.length,b.length,c.length],
   centers:a.filter(p=>p.central).map(p=>[p.caseId,p.x,p.y,p.z]),
   unique:[new Set(a.map(p=>p.id)).size,new Set(b.map(p=>p.id)).size,new Set(c.map(p=>p.id)).size],
   counts,gap:c.find(p=>p.id==='clinical-gap').group,
+  designs:c.filter(p=>p.group==='design').map(p=>({key:p.materialKey,image:p.image,color:p.color})),
   gates:b.map(p=>({conflicts:p.conflicts,acute:p.acute,highRisk:p.highRisk,
     hitl:p.hitl,consensusApproved:p.consensusApproved,code:p.code}))}));
 """
@@ -59,6 +60,8 @@ console.log(JSON.stringify({lengths:[a.length,b.length,c.length],
     ]
     assert report["counts"] == {"P1": 76, "P2": 3, "P3": 1}
     assert report["gap"] == "gap"
+    assert {point["key"] for point in report["designs"]} == {"input", "agents", "sources", "review", "research"}
+    assert all(point["image"].startswith("/assets/diagrams/") and point["color"] for point in report["designs"])
     for gate in report["gates"]:
         raw = {
             "high_risk": gate["highRisk"],

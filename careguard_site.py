@@ -162,4 +162,16 @@ def medquad_review_tool() -> RedirectResponse:
     return RedirectResponse(url="/?view=workspace#review-desk", status_code=302)
 
 
+@app.api_route("/assets/{asset_path:path}", methods=["GET", "HEAD"])
+def public_assets(asset_path: str) -> FileResponse:
+    """Keep retired photos/scans recoverable on disk but outside the public site."""
+    asset_root = (WEB_ROOT / "assets").resolve()
+    path = (asset_root / asset_path).resolve()
+    if not path.is_relative_to(asset_root) or not path.is_file():
+        raise HTTPException(status_code=404, detail="Asset not found")
+    if path.relative_to(asset_root).parts[0].lower() in {"archive", "join", "research"}:
+        raise HTTPException(status_code=404, detail="Asset not published")
+    return FileResponse(path)
+
+
 app.mount("/", StaticFiles(directory=WEB_ROOT, html=True), name="careguard-web")
